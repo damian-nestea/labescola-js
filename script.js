@@ -107,12 +107,30 @@ const turmas =[
 
 const estudantes =[
   {
-    estudante: "",
-    turma: "",
-    curso: "",
-    valor: 0,
-    nParcelas: 0,
+    estudante: "Chris Evans",
+    turma: "Hipátia",
+    curso: "JavaScript",
+    valor: 900,
+    nParcelas: 9,
+    desconto: false,
+    parcelas: 100
+  },
+  {
+    estudante: "Halle Berry",
+    turma: "Burnell",
+    curso: "APIsRest",
+    valor: 2000,
+    nParcelas: 4,
+    desconto: false,
+    parcelas: 500
+  },
+  {
+    estudante: "Lashana Lynch",
+    turma: "Zhenyi",
+    curso: "HTML e CSS",
+    valor: 500,
+    nParcelas: 1,
     desconto: true,
-    parcelas: 0
+    parcelas: 500 
   }
 ]
