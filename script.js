@@ -50,57 +50,57 @@ const turmas =[
     concluida: false
   },
   {
-    turma: "Hipátia",
-    curso: "Javascript",
-    inicio: "30/11/2011",
-    termino: "30/01/2023",
-    numeroDeAlunos: 150,
+    turma: "Curie",
+    curso: "HTML e CSS",
+    inicio: "15/09/2022",
+    termino: "15/10/2022",
+    numeroDeAlunos: 180,
     periodo: "noturno",
+    concluida: true
+  },
+  {
+    turma: "Zhenyi",
+    curso: "HTML e CSS",
+    inicio: "01/11/2022",
+    termino: "01/01/2023",
+    numeroDeAlunos: 80,
+    periodo: "integral",
     concluida: false
   },
   {
-    turma: "Hipátia",
-    curso: "Javascript",
-    inicio: "30/11/2011",
-    termino: "30/01/2023",
-    numeroDeAlunos: 150,
+    turma: "Clarke",
+    curso: "HTML e CSS",
+    inicio: "04/07/2022",
+    termino: "04/09/2022",
+    numeroDeAlunos: 200,
     periodo: "noturno",
-    concluida: false
+    concluida: true
   },
   {
-    turma: "Hipátia",
-    curso: "Javascript",
-    inicio: "30/11/2011",
-    termino: "30/01/2023",
-    numeroDeAlunos: 150,
-    periodo: "noturno",
-    concluida: false
+    turma: "Blackwell",
+    curso: "APIsRest",
+    inicio: "20/03/2022",
+    termino: "20/06/2022",
+    numeroDeAlunos: 100,
+    periodo: "integral",
+    concluida: true
   },
   {
-    turma: "Hipátia",
-    curso: "Javascript",
-    inicio: "30/11/2011",
-    termino: "30/01/2023",
-    numeroDeAlunos: 150,
+    turma: "Elion",
+    curso: "APIsRest",
+    inicio: "12/01/2022",
+    termino: "12/06/2022",
+    numeroDeAlunos: 200,
     periodo: "noturno",
-    concluida: false
+    concluida: true
   },
   {
-    turma: "Hipátia",
-    curso: "Javascript",
-    inicio: "30/11/2011",
-    termino: "30/01/2023",
-    numeroDeAlunos: 150,
-    periodo: "noturno",
-    concluida: false
-  },
-  {
-    turma: "Hipátia",
-    curso: "Javascript",
-    inicio: "30/11/2011",
-    termino: "30/01/2023",
-    numeroDeAlunos: 150,
-    periodo: "noturno",
+    turma: "Burnell ",
+    curso: "APIsRest",
+    inicio: "18/10/2022",
+    termino: "18/04/2023",
+    numeroDeAlunos: 90,
+    periodo: "integral",
     concluida: false
   }
 ];
