@@ -9,6 +9,7 @@ const turmas = ["HC1", "JS1", "JS2", "REST1", "REST2"];
 const estudantes = ["João", "Ana", "Cris"];
  */
 
+// array de objetos contendo os cursos da escola de programação e suas propriedades
 const cursos =[
   {
     curso: "HTML e CSS",
@@ -30,6 +31,8 @@ const cursos =[
   }
 ]; 
 
+
+// array de objetos contendo as turmas da escola de programação e suas propriedades
 const turmas =[
   {
     turma: "Hipátia",
@@ -105,6 +108,8 @@ const turmas =[
   }
 ];
 
+
+// array de objetos contendo os estudantes da escola de programação e suas propriedades
 const estudantes =[
   {
     estudante: "Chris Evans",
