@@ -140,6 +140,7 @@ const estudantes =[
   }
 ];
 
+// função criada para o calculo do valor total do curso  e das parcelas dependendo a quantidade de parcelas
 const parcelarCurso = (parcela) => {
   let valorDoCurso = cursos[1].valor;
   let valorDaParcela;
