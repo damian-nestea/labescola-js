@@ -138,4 +138,19 @@ const estudantes =[
     desconto: true,
     parcelas: 500 
   }
-]
+];
+
+const parcelarCurso = (parcela) => {
+  let valorDoCurso = cursos[1].valor;
+  let valorDaParcela;
+  if(parcela <=2){
+    valorDoCurso *= 0.8;
+    valorDaParcela = valorDoCurso / parcela;
+    console.log(`O curso ${cursos[1].curso} ficou no valor total de R$ ${valorDoCurso}. Em ${parcela}x de ${valorDaParcela} reais. Foi concedido desconto de 20%`);
+  }else{
+    valorDaParcela = valorDoCurso / parcela;
+    console.log(`O curso ${cursos[1].curso} ficou no valor total de R$ ${valorDoCurso}. Em ${parcela}x de ${valorDaParcela} reais.`) 
+  }
+}
+
+// parcelarCurso(3);
