@@ -184,3 +184,32 @@ const buscarEstudante = (nomeEstudante) => {
     }
   }
 }
+
+
+// função de matrícula
+const matricular = (nomeEstudante, nomeDoCurso, nomeDaTurma, numeroParcelas) =>{
+  const novoEstudante = {
+    estudante: nomeEstudante,
+    turma: nomeDaTurma,
+    curso: nomeDoCurso,
+    valor: buscarCurso(nomeDoCurso).valor,
+    nParcelas: numeroParcelas,
+    desconto: numeroParcelas <= 2 ? true : false,
+    parcelas: buscarCurso(nomeDoCurso).valor / numeroParcelas
+  }
+  // inserindo o aluno no array de estudantes
+  estudantes.push(novoEstudante);
+  
+  // impressão do array  no console
+  for(let estudante of estudantes){
+    console.log(estudante);
+  }
+  
+  // impressão no console apenas do último aluno adicionado
+  console.log("Aluno Matriculado");
+  console.log(`Nome: ${estudantes[estudantes.length-1].estudante}`);
+  console.log(`Nome: ${estudantes[estudantes.length-1].curso}`);
+  console.log(`Nome: ${estudantes[estudantes.length-1].turma}`);
+}
+
+matricular("Carlos", "HTML e CSS", "Clarke", 2);
