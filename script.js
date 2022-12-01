@@ -153,5 +153,30 @@ const parcelarCurso = (parcela) => {
     console.log(`O curso ${cursos[1].curso} ficou no valor total de R$ ${valorDoCurso}. Em ${parcela}x de ${valorDaParcela} reais.`) 
   }
 }
-
 // parcelarCurso(3);
+
+
+// função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
+const buscarCurso = (nomeDoCurso) => {
+  for(let cadaCurso of cursos){
+    if(cadaCurso.curso === nomeDoCurso){
+      return cadaCurso
+    }else{
+      console.log("Curso não encontrado!")
+    }
+  }
+}
+console.log(buscarCurso("HTML e CSS"))
+
+// função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
+const buscarTurma = (nomeDaTurma) => {
+  for(let cadaTurma of turmas){
+    if(cadaTurma.turma === nomeDaTurma){
+      return cadaTurma
+    }else{
+      console.log("Turma não encontrada!")
+    }
+  }
+}
+
+console.log(buscarTurma("Hipátia"))
