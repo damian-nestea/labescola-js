@@ -142,18 +142,51 @@ const estudantes =[
 
 
 // função criada para o calculo do valor total do curso  e das parcelas dependendo a quantidade de parcelas
-const parcelarCurso = (parcela) => {
-  let valorDoCurso = cursos[1].valor;
-  let valorDaParcela;
-  if(parcela <=2){
-    valorDoCurso *= 0.8;
-    valorDaParcela = valorDoCurso / parcela;
-    console.log(`O curso ${cursos[1].curso} ficou no valor total de R$ ${valorDoCurso}. Em ${parcela}x de ${valorDaParcela} reais. Foi concedido desconto de 20%`);
-  }else{
-    valorDaParcela = valorDoCurso / parcela;
-    console.log(`O curso ${cursos[1].curso} ficou no valor total de R$ ${valorDoCurso}. Em ${parcela}x de ${valorDaParcela} reais.`) 
+const parcelarCurso = (carrinhoCursos,parcela) => {
+
+// função que percorre o array de cursos e devolve o valor total de todas as compras
+  const calculaTotalCarrinhoCursos = (arrayCursos) => {
+    let valorTotal = 0;
+    for(let valorCurso of arrayCursos){
+      valorTotal += valorCurso;
+    }
+    return valorTotal;
   }
+  
+  let valorDaParcela = 0;
+  let valorTotalCursos = calculaTotalCarrinhoCursos(carrinhoCursos);
+  
+
+// cálculo de desconto por número de cursos comprados
+  if(carrinhoCursos.length > 1){
+    switch(carrinhoCursos.length){
+      case 2:
+        valorTotalCursos *= 0.9; // desconto de 10 % se forem comprados 2 cursos
+        break;
+      case 3:
+        valorTotalCursos *= 0.85; // desconto de 15 % se forem comprados 3 cursos
+        break;
+      default:
+        valorTotalCursos *= 1; // sem desconto, paga 100% do valor
+    }
+  }
+
+// cálculo de cursos por numero de parcelas e impressão no console.
+  if(parcela ===1){
+    valorTotalCursos *= 0.8
+    console.log(`O valor do pagamento é de R$ ${valorTotalCursos} com 20% de desconto, pagamento à vista`);
+  }else if(parcela <=2){
+    valorTotalCursos *= 0.8;
+    valorDaParcela = (valorTotalCursos / parcela).toFixed(2);
+    console.log(`A sua compra dos cursos ficou no valor total de R$ ${valorTotalCursos}. Em ${parcela}x de ${valorDaParcela} reais. Foi concedido desconto de 20%`);
+  }else{
+    valorDaParcela = (valorTotalCursos / parcela).toFixed(2);
+    console.log(`A sua compra dos cursos ficou no valor total de R$${valorTotalCursos}. Em ${parcela}x de ${valorDaParcela} reais.`) 
+  } 
 }
+
+parcelarCurso([500,900],2);
+
 
 
 // função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
@@ -212,4 +245,4 @@ const matricular = (nomeEstudante, nomeDoCurso, nomeDaTurma, numeroParcelas) =>{
   console.log(`Nome: ${estudantes[estudantes.length-1].turma}`);
 }
 
-matricular("Carlos", "HTML e CSS", "Clarke", 2);
+// matricular("Carlos", "HTML e CSS", "Clarke", 2);
