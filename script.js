@@ -172,20 +172,20 @@ const parcelarCurso = (carrinhoCursos,parcela) => {
   }
 
 // cálculo de cursos por numero de parcelas e impressão no console.
-  if(parcela ===1){
+  if(parcela === 1){
     valorTotalCursos *= 0.8
-    console.log(`O valor do pagamento é de R$ ${valorTotalCursos} com 20% de desconto, pagamento à vista`);
-  }else if(parcela <=2){
+    console.log(`O valor do pagamento é de R$ ${valorTotalCursos} com 20% de desconto, pagamento à vista.`);
+  }else if(parcela <= 2){
     valorTotalCursos *= 0.8;
-    valorDaParcela = (valorTotalCursos / parcela).toFixed(2);
-    console.log(`A sua compra dos cursos ficou no valor total de R$ ${valorTotalCursos}. Em ${parcela}x de ${valorDaParcela} reais. Foi concedido desconto de 20%`);
+    valorDaParcela = (valorTotalCursos / parcela);
+    console.log(`A sua compra dos cursos ficou no valor total de R$ ${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}. Foi concedido desconto de 20%`);
   }else{
-    valorDaParcela = (valorTotalCursos / parcela).toFixed(2);
-    console.log(`A sua compra dos cursos ficou no valor total de R$${valorTotalCursos}. Em ${parcela}x de ${valorDaParcela} reais.`) 
+    valorDaParcela = (valorTotalCursos / parcela);
+    console.log(`A sua compra dos cursos ficou no valor total de R$${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}.`) 
   } 
 }
 
-parcelarCurso([500,900],2);
+parcelarCurso([500,500],3);
 
 
 
