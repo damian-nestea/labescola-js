@@ -140,6 +140,9 @@ const estudantes =[
   }
 ];
 
+// array de carrinhoCursos que conterá os cursos que o estudante vai comprar
+const carrinhoCursos =[];
+
 
 // função criada para o calculo do valor total do curso  e das parcelas dependendo a quantidade de parcelas
 const parcelarCurso = (carrinhoCursos,parcela) => {
@@ -246,3 +249,12 @@ const matricular = (nomeEstudante, nomeDoCurso, nomeDaTurma, numeroParcelas) =>{
 }
 
 // matricular("Carlos", "HTML e CSS", "Clarke", 2);
+
+
+// função para preencher o carrinho de cursos com o valor do curso buscando pelo nome que recebe como parâmetro
+const preencheCarrinhoCursos =(nomeCurso) => {
+  carrinhoCursos.push(buscarCurso(nomeCurso).valor);
+  return carrinhoCursos;
+}
+
+// console.log(preencheCarrinhoCursos('HTML e CSS'));
