@@ -247,7 +247,6 @@ const matricular = (nomeEstudante, nomeDoCurso, nomeDaTurma, numeroParcelas) =>{
   console.log(`Nome: ${estudantes[estudantes.length-1].curso}`);
   console.log(`Nome: ${estudantes[estudantes.length-1].turma}`);
 }
-
 // matricular("Carlos", "HTML e CSS", "Clarke", 2);
 
 
@@ -256,9 +255,10 @@ const preencheCarrinhoCursos =(nomeCurso) => {
   carrinhoCursos.push(buscarCurso(nomeCurso).valor);
   return carrinhoCursos;
 }
-
 // console.log(preencheCarrinhoCursos('HTML e CSS'));
 
+
+// função para buscar estudante com sequência de letras que o estudante contenha
 const relatorioEstudante = (nomeEstudante) => {
   const resultadoBuscaEstudante = estudantes.filter((aluno) =>{
     return aluno.estudante.includes(nomeEstudante);
@@ -266,4 +266,22 @@ const relatorioEstudante = (nomeEstudante) => {
   return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : resultadoBuscaEstudante;
 }
 
-console.log(relatorioEstudante("ber"));
+
+// função para imprimir relatório de estudantes
+const imprimirRelatorioEstudantes = (arrayEstudantes) => {
+  if(arrayEstudantes.length < 1){
+    console.log(`Aluno não encontrado`);
+  }else{
+    for(aluno of arrayEstudantes){
+      console.log(`*******************************`)
+      console.log(`Aluno: ${aluno.estudante}`)
+      console.log(`Turma: ${aluno.turma}`)
+      console.log(`Curso: ${aluno.curso}`)
+      console.log(`Valor Total: ${aluno.valor}`)
+      console.log(`Valor Parcela: ${aluno.parcelas}`)
+      console.log(`N. Parcelas: ${aluno.nParcelas}`)
+    }
+  }
+}
+
+imprimirRelatorioEstudantes(relatorioEstudante("Ber"));
