@@ -258,3 +258,12 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 }
 
 // console.log(preencheCarrinhoCursos('HTML e CSS'));
+
+const relatorioEstudante = (nomeEstudante) => {
+  const resultadoBuscaEstudante = estudantes.filter((aluno) =>{
+    return aluno.estudante.includes(nomeEstudante);
+  })
+  return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : resultadoBuscaEstudante;
+}
+
+console.log(relatorioEstudante("ber"));
