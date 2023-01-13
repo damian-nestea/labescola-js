@@ -208,11 +208,11 @@ const imprimirRelatorioCurso = (objetoCurso) => {
 // função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
 const buscarCurso = (nomeDoCurso) => {
   const encontraCurso = cursos.find((curso)=>{
-    return curso.curso.includes(nomeDoCurso);
+    return curso.curso.toLowerCase().includes(nomeDoCurso.toLowerCase());
   });
-  return encontraCurso === undefined ? `Curso não encontrado`:imprimirRelatorioCurso(encontraCurso);
+  return encontraCurso === undefined ? console.log(`Curso não encontrado`):imprimirRelatorioCurso(encontraCurso);
 }
-// buscarCurso("J");
+// buscarCurso("javascript");
 
 
 // função para imprimir turmas
@@ -237,11 +237,11 @@ const imprimirRelatorioTurmas = (arrayTurmas) => {
 // função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
 const buscarTurma = (nomeDaTurma) => {
   const filtroBuscaTurma = turmas.filter((turmas)=>{
-    return turmas.turma.includes(nomeDaTurma);
+    return turmas.turma.toLowerCase().includes(nomeDaTurma.toLowerCase());
   });
-  return filtroBuscaTurma.length < 1 ? `Turma não encontrada`: imprimirRelatorioTurmas(filtroBuscaTurma);
+  return filtroBuscaTurma.length < 1 ? console.log(`Turma não encontrada`): imprimirRelatorioTurmas(filtroBuscaTurma);
 }
-// buscarTurma(`ur`);
+// buscarTurma(`AR`);
 
 
 // função para imprimir relatório de estudantes
@@ -270,7 +270,7 @@ const buscarEstudante = (nomeEstudante) => {
   return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : imprimirRelatorioEstudantes(resultadoBuscaEstudante);
 }
 
-  buscarEstudante('Ev');
+//  buscarEstudante('evans');
 
 
 // função de matrícula de estudante
