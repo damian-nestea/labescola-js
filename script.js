@@ -191,15 +191,28 @@ const parcelarCurso = (carrinhoCursos,parcela) => {
 parcelarCurso([500,500,1000],2);
 
 
+// função para imprimir curso 
+const imprimirRelatorioCurso = (objetoCurso) => {
+  if(objetoCurso === undefined){
+    console.log(`Curso não encontrado`);
+  }else{
+    console.log(`*******************************`);
+    console.log(`Curso: ${objetoCurso.curso}`);
+    console.log(`Descrição: ${objetoCurso.descricao}`);
+    console.log(`Duração: ${objetoCurso.duracao}`);
+    console.log(`Valor: R$${objetoCurso.valor}`);
+  }
+}
+
 
 // função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
 const buscarCurso = (nomeDoCurso) => {
-  for(let cadaCurso of cursos){
-    if(cadaCurso.curso === nomeDoCurso){
-      return cadaCurso
-    }
-  }
+  const encontraCurso = cursos.find((curso)=>{
+    return curso.curso.includes(nomeDoCurso);
+  });
+  return encontraCurso === undefined ? `Curso não encontrado`:imprimirRelatorioCurso(encontraCurso);
 }
+// buscarCurso("J");
 
 
 // função para imprimir turmas
@@ -228,16 +241,36 @@ const buscarTurma = (nomeDaTurma) => {
   });
   return filtroBuscaTurma.length < 1 ? `Turma não encontrada`: imprimirRelatorioTurmas(filtroBuscaTurma);
 }
-// console.log(buscarTurma(`ur`));
+// buscarTurma(`ur`);
 
-// função para buscar um estudante e retorna o objeto contendo o estudante selecionado com suas propriedades
-const buscarEstudante = (nomeEstudante) => {
-  for(let cadaEstudante of estudantes){
-    if(cadaEstudante.estudante === nomeEstudante){
-      return cadaEstudante;
+
+// função para imprimir relatório de estudantes
+const imprimirRelatorioEstudantes = (arrayEstudantes) => {
+  if(arrayEstudantes.length < 1){
+    console.log(`Aluno não encontrado`);
+  }else{
+    for(aluno of arrayEstudantes){
+      console.log(`*******************************`);
+      console.log(`Aluno: ${aluno.estudante}`);
+      console.log(`Turma: ${aluno.turma}`);
+      console.log(`Curso: ${aluno.curso}`);
+      console.log(`Valor Total: ${aluno.valor}`);
+      console.log(`Valor Parcela: ${aluno.parcelas}`);
+      console.log(`N. Parcelas: ${aluno.nParcelas}`);
     }
   }
 }
+
+
+// função para buscar estudante com sequência de letras que o estudante contenha
+const buscarEstudante = (nomeEstudante) => {
+  const resultadoBuscaEstudante = estudantes.filter((aluno) =>{
+    return aluno.estudante.toLowerCase().includes(nomeEstudante.toLowerCase());
+  });
+  return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : imprimirRelatorioEstudantes(resultadoBuscaEstudante);
+}
+
+  buscarEstudante('Ev');
 
 
 // função de matrícula de estudante
@@ -276,32 +309,9 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 // console.log(preencheCarrinhoCursos('HTML e CSS'));
 
 
-// função para imprimir relatório de estudantes
-const imprimirRelatorioEstudantes = (arrayEstudantes) => {
-  if(arrayEstudantes.length < 1){
-    console.log(`Aluno não encontrado`);
-  }else{
-    for(aluno of arrayEstudantes){
-      console.log(`*******************************`);
-      console.log(`Aluno: ${aluno.estudante}`);
-      console.log(`Turma: ${aluno.turma}`);
-      console.log(`Curso: ${aluno.curso}`);
-      console.log(`Valor Total: ${aluno.valor}`);
-      console.log(`Valor Parcela: ${aluno.parcelas}`);
-      console.log(`N. Parcelas: ${aluno.nParcelas}`);
-    }
-  }
-}
 
 
-// função para buscar estudante com sequência de letras que o estudante contenha
-const relatorioEstudante = (nomeEstudante) => {
-  const resultadoBuscaEstudante = estudantes.filter((aluno) =>{
-    return aluno.estudante.includes(nomeEstudante);
-  });
-  return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : imprimirRelatorioEstudantes(resultadoBuscaEstudante);
-}
 
-// console.log(relatorioEstudante('err'))
+
 
 
