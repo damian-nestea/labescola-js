@@ -201,16 +201,37 @@ const buscarCurso = (nomeDoCurso) => {
   }
 }
 
-
-// função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
-const buscarTurma = (nomeDaTurma) => {
-  for(let cadaTurma of turmas){
-    if(cadaTurma.turma === nomeDaTurma){
-      return cadaTurma
+// função para imprimir turmas
+const imprimirRelatorioTurmas = (arrayTurmas) => {
+  if(arrayTurmas.length < 1){
+    console.log(`Turma não encontrada`);
+  }else{
+    for(turma of arrayTurmas){
+      console.log(`*******************************`)
+      console.log(`Turma: ${turma.turma}`)
+      console.log(`Curso: ${turma.curso}`)
+      console.log(`Início: ${turma.inicio}`)
+      console.log(`Término: ${turma.termino}`)
+      console.log(`No. de Alunos: ${turma.numeroDeAlunos}`)
+      console.log(`Período: ${turma.periodo}`)
+      console.log(`Concluida: ${turma.concluida}`)
     }
   }
 }
 
+// função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
+const buscarTurma = (nomeDaTurma) => {
+  const filtroBuscaTurma = turmas.filter((turmas)=>{
+    return turmas.turma.includes(nomeDaTurma);
+  });
+  return filtroBuscaTurma.length < 1 ? `Turma não encontrada`: imprimirRelatorioTurmas(filtroBuscaTurma);
+/*   for(let cadaTurma of turmas){
+    if(cadaTurma.turma === nomeDaTurma){
+      return cadaTurma
+    }
+  } */
+}
+// console.log(buscarTurma(`ur`));
 
 // função para buscar um estudante e retorna o objeto contendo o estudante selecionado com suas propriedades
 const buscarEstudante = (nomeEstudante) => {
@@ -258,15 +279,6 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 // console.log(preencheCarrinhoCursos('HTML e CSS'));
 
 
-// função para buscar estudante com sequência de letras que o estudante contenha
-const relatorioEstudante = (nomeEstudante) => {
-  const resultadoBuscaEstudante = estudantes.filter((aluno) =>{
-    return aluno.estudante.includes(nomeEstudante);
-  })
-  return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : resultadoBuscaEstudante;
-}
-
-
 // função para imprimir relatório de estudantes
 const imprimirRelatorioEstudantes = (arrayEstudantes) => {
   if(arrayEstudantes.length < 1){
@@ -284,4 +296,15 @@ const imprimirRelatorioEstudantes = (arrayEstudantes) => {
   }
 }
 
-imprimirRelatorioEstudantes(relatorioEstudante("Ber"));
+
+// função para buscar estudante com sequência de letras que o estudante contenha
+const relatorioEstudante = (nomeEstudante) => {
+  const resultadoBuscaEstudante = estudantes.filter((aluno) =>{
+    return aluno.estudante.includes(nomeEstudante);
+  })
+  return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : imprimirRelatorioEstudantes(resultadoBuscaEstudante);
+}
+
+// console.log(relatorioEstudante('err'))
+
+
