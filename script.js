@@ -201,23 +201,25 @@ const buscarCurso = (nomeDoCurso) => {
   }
 }
 
+
 // função para imprimir turmas
 const imprimirRelatorioTurmas = (arrayTurmas) => {
   if(arrayTurmas.length < 1){
     console.log(`Turma não encontrada`);
   }else{
     for(turma of arrayTurmas){
-      console.log(`*******************************`)
-      console.log(`Turma: ${turma.turma}`)
-      console.log(`Curso: ${turma.curso}`)
-      console.log(`Início: ${turma.inicio}`)
-      console.log(`Término: ${turma.termino}`)
-      console.log(`No. de Alunos: ${turma.numeroDeAlunos}`)
-      console.log(`Período: ${turma.periodo}`)
-      console.log(`Concluida: ${turma.concluida}`)
+      console.log(`*******************************`);
+      console.log(`Turma: ${turma.turma}`);
+      console.log(`Curso: ${turma.curso}`);
+      console.log(`Início: ${turma.inicio}`);
+      console.log(`Término: ${turma.termino}`);
+      console.log(`No. de Alunos: ${turma.numeroDeAlunos}`);
+      console.log(`Período: ${turma.periodo}`);
+      console.log(`Concluida: ${turma.concluida}`);
     }
   }
 }
+
 
 // função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
 const buscarTurma = (nomeDaTurma) => {
@@ -225,11 +227,6 @@ const buscarTurma = (nomeDaTurma) => {
     return turmas.turma.includes(nomeDaTurma);
   });
   return filtroBuscaTurma.length < 1 ? `Turma não encontrada`: imprimirRelatorioTurmas(filtroBuscaTurma);
-/*   for(let cadaTurma of turmas){
-    if(cadaTurma.turma === nomeDaTurma){
-      return cadaTurma
-    }
-  } */
 }
 // console.log(buscarTurma(`ur`));
 
@@ -237,13 +234,13 @@ const buscarTurma = (nomeDaTurma) => {
 const buscarEstudante = (nomeEstudante) => {
   for(let cadaEstudante of estudantes){
     if(cadaEstudante.estudante === nomeEstudante){
-      return cadaEstudante
+      return cadaEstudante;
     }
   }
 }
 
 
-// função de matrícula
+// função de matrícula de estudante
 const matricular = (nomeEstudante, nomeDoCurso, nomeDaTurma, numeroParcelas) =>{
   const novoEstudante = {
     estudante: nomeEstudante,
@@ -285,13 +282,13 @@ const imprimirRelatorioEstudantes = (arrayEstudantes) => {
     console.log(`Aluno não encontrado`);
   }else{
     for(aluno of arrayEstudantes){
-      console.log(`*******************************`)
-      console.log(`Aluno: ${aluno.estudante}`)
-      console.log(`Turma: ${aluno.turma}`)
-      console.log(`Curso: ${aluno.curso}`)
-      console.log(`Valor Total: ${aluno.valor}`)
-      console.log(`Valor Parcela: ${aluno.parcelas}`)
-      console.log(`N. Parcelas: ${aluno.nParcelas}`)
+      console.log(`*******************************`);
+      console.log(`Aluno: ${aluno.estudante}`);
+      console.log(`Turma: ${aluno.turma}`);
+      console.log(`Curso: ${aluno.curso}`);
+      console.log(`Valor Total: ${aluno.valor}`);
+      console.log(`Valor Parcela: ${aluno.parcelas}`);
+      console.log(`N. Parcelas: ${aluno.nParcelas}`);
     }
   }
 }
@@ -301,7 +298,7 @@ const imprimirRelatorioEstudantes = (arrayEstudantes) => {
 const relatorioEstudante = (nomeEstudante) => {
   const resultadoBuscaEstudante = estudantes.filter((aluno) =>{
     return aluno.estudante.includes(nomeEstudante);
-  })
+  });
   return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : imprimirRelatorioEstudantes(resultadoBuscaEstudante);
 }
 
