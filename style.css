@@ -3,3 +3,29 @@
   padding:0;
   box-sizing: border-box;
 }
+
+header{
+  background-color: aqua;
+  height: 7rem;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo-container img{
+  width: 18vw;
+}
+
+.menu{
+  font-family:'Arial';
+  font-size: 1.5rem;
+  list-style: none;
+  display:flex;
+  gap: 3rem;
+}
+
+.menu a{
+  text-decoration: none;
+  color: #0E0E0E;
+  font-weight: 700;
+}
