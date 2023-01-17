@@ -70,8 +70,7 @@ header{
 
 .middle-content{
   background-color: #0E0E0E;
-  height: 40vh;
-  padding: 0 20vw;
+  padding: 15vh 20vw 10vh 20vw;
   display:flex;
   flex-direction: column;
   gap: 2rem;
@@ -88,4 +87,49 @@ header{
   color: #FBFBFB;
   line-height: 2rem;
   font-family: 'Poppins', sans-serif;
+}
+
+.bottom-content{
+  background-color: #0E0E0E;
+  padding: 0 15vw 15vh 15vw;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+}
+
+#titulo-bottom-content{
+  color: #FBFBFB;
+  font-family: 'Poppins',sans-serif;
+}
+
+.depoimentos-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.depoimentos-card{
+  background-color: #FBFBFB;
+  width: 15rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  border-radius: 0.5rem;
+  font-family: 'Poppins',sans-serif;
+}
+
+.foto-depoimento img{
+  width: 40%;
+  border-radius: 100%;
+}
+
+.foto-depoimento{
+  display: flex;
+  justify-content: center;
 }
