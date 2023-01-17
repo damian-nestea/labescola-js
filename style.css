@@ -10,7 +10,7 @@
 }
 
 header{
-  background-color: aqua;
+  background-color:#FBFBFB;
   height: 7rem;
   display:flex;
   align-items: center;
@@ -23,7 +23,7 @@ header{
 
 .menu{
   font-family:'Arial';
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   list-style: none;
   display:flex;
   gap: 3rem;
@@ -34,4 +34,37 @@ header{
   color: #0E0E0E;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
+}
+
+.top-content{
+  background-color: lightpink;
+  height: 60vh;
+  font-family: 'Poppins',sans-serif;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+}
+
+#titulo-top-content{
+  color:#0E0E0E;
+  font-size: 1.8rem;
+}
+
+#frase-top-content{
+  color:#0E0E0E;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+#botao-conheca-cursos{
+  font-weight: 700;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #FBFBFB;
+  background-color: #0E0E0E;
+  padding:1rem 3rem;
+  border-radius: 0.3rem;
+
 }
