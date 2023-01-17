@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+}
+
 header{
   background-color: aqua;
   height: 7rem;
@@ -28,4 +33,5 @@ header{
   text-decoration: none;
   color: #0E0E0E;
   font-weight: 700;
+  font-family: 'Poppins', sans-serif;
 }
