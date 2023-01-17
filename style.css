@@ -1,0 +1,135 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+}
+
+header{
+  background-color:#FBFBFB;
+  height: 7rem;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo-container img{
+  width: 18vw;
+}
+
+.menu{
+  font-family:'Arial';
+  font-size: 1.1rem;
+  list-style: none;
+  display:flex;
+  gap: 3rem;
+}
+
+.menu a{
+  text-decoration: none;
+  color: #0E0E0E;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.top-content{
+  background-color: lightpink;
+  height: 60vh;
+  font-family: 'Poppins',sans-serif;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+}
+
+#titulo-top-content{
+  color:#0E0E0E;
+  font-size: 1.8rem;
+}
+
+#frase-top-content{
+  color:#0E0E0E;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+#botao-conheca-cursos{
+  font-weight: 700;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #FBFBFB;
+  background-color: #0E0E0E;
+  padding:1rem 3rem;
+  border-radius: 0.3rem;
+}
+
+.middle-content{
+  background-color: #0E0E0E;
+  padding: 15vh 20vw 10vh 20vw;
+  display:flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#titulo-middle-content{
+  color: #FBFBFB;
+  font-family: 'Poppins',sans-serif;
+}
+
+#sobre-nos-middle-content{
+  color: #FBFBFB;
+  line-height: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bottom-content{
+  background-color: #0E0E0E;
+  padding: 0 15vw 15vh 15vw;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
+}
+
+#titulo-bottom-content{
+  color: #FBFBFB;
+  font-family: 'Poppins',sans-serif;
+}
+
+.depoimentos-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.depoimentos-card{
+  background-color: #FBFBFB;
+  width: 15rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  border-radius: 0.5rem;
+  font-family: 'Poppins',sans-serif;
+}
+
+.foto-depoimento img{
+  width: 40%;
+  border-radius: 100%;
+}
+
+.foto-depoimento{
+  display: flex;
+  justify-content: center;
+}
