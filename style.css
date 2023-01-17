@@ -66,5 +66,26 @@ header{
   background-color: #0E0E0E;
   padding:1rem 3rem;
   border-radius: 0.3rem;
+}
 
+.middle-content{
+  background-color: #0E0E0E;
+  height: 40vh;
+  padding: 0 20vw;
+  display:flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#titulo-middle-content{
+  color: #FBFBFB;
+  font-family: 'Poppins',sans-serif;
+}
+
+#sobre-nos-middle-content{
+  color: #FBFBFB;
+  line-height: 2rem;
+  font-family: 'Poppins', sans-serif;
 }
