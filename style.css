@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-}
-
 header{
   background-color:#FBFBFB;
   height: 7rem;
@@ -37,7 +32,9 @@ header{
 }
 
 .top-content{
-  background-color: lightpink;
+  background-color: #F6C34A;
+  background-image: url('./assets/background-hero.png');
+  background-repeat: no-repeat;
   height: 60vh;
   font-family: 'Poppins',sans-serif;
   display:flex;
@@ -86,12 +83,12 @@ header{
 #sobre-nos-middle-content{
   color: #FBFBFB;
   line-height: 2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .bottom-content{
   background-color: #0E0E0E;
-  padding: 0 15vw 15vh 15vw;
+  padding: 0 15vw 18vh 15vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -115,13 +112,14 @@ header{
 .depoimentos-card{
   background-color: #FBFBFB;
   width: 15rem;
+  margin-top: 2rem;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
   border-radius: 0.5rem;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Open Sans',sans-serif;
 }
 
 .foto-depoimento img{
