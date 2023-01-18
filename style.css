@@ -4,11 +4,7 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
-}
-
+/* Estilização do header que será igual em todas as páginas */
 header{
   background-color:#FBFBFB;
   height: 7rem;
@@ -36,8 +32,13 @@ header{
   font-family: 'Poppins', sans-serif;
 }
 
+
+/* ESTILIZAÇÃO PÁGINA HOME */
+/* Estilização do top-content da página home */
 .top-content{
-  background-color: lightpink;
+  background-color: #F6C34A;
+  background-image: url('./assets/background-hero.png');
+  background-repeat: no-repeat;
   height: 60vh;
   font-family: 'Poppins',sans-serif;
   display:flex;
@@ -68,6 +69,8 @@ header{
   border-radius: 0.3rem;
 }
 
+
+/* Estilização do middle-content da página home (sobre nós)*/
 .middle-content{
   background-color: #0E0E0E;
   padding: 15vh 20vw 10vh 20vw;
@@ -86,18 +89,19 @@ header{
 #sobre-nos-middle-content{
   color: #FBFBFB;
   line-height: 2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
+
+/* Estilização do bottom-content da página home (depoimentos)*/
 .bottom-content{
   background-color: #0E0E0E;
-  padding: 0 15vw 15vh 15vw;
+  padding: 0 15vw 18vh 15vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-
 }
 
 #titulo-bottom-content{
@@ -115,13 +119,14 @@ header{
 .depoimentos-card{
   background-color: #FBFBFB;
   width: 15rem;
+  margin-top: 2rem;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
   border-radius: 0.5rem;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Open Sans',sans-serif;
 }
 
 .foto-depoimento img{
@@ -132,4 +137,92 @@ header{
 .foto-depoimento{
   display: flex;
   justify-content: center;
+}
+
+
+
+/* ESTILIZAÇÃO PÁGINA CURSOS */
+
+/* Estilização do top content da página de cursos(cards dos cursos com uma curta descrição */
+.cursos-top-content{
+  height: 80vh;
+  background-color: #F6C34A;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 4vh 12vw;
+}
+
+.cursos-descricao-cards-container{
+  display:flex;
+  gap: 4rem;
+}
+
+.cursos-card{
+  background-color: #FFF;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.cursos-cards-titulo{
+  font-family: 'Poppins',sans-serif;
+  font-size: 1.5rem;
+}
+
+.cursos-cards-descricao{
+  font-family: 'Open Sans',sans-serif;
+  line-height: 1.5rem;
+}
+
+.botao-quero-fazer-parte{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: #FBFBFB;
+  background-color: #0E0E0E;
+  padding:1rem 5rem;
+  border-radius: 0.3rem;
+}
+
+
+/* Estilização do bottom content da página de cursos (cards dos cursos com conteúdo dos módulos*/
+
+.cursos-bottom-content{
+  background-color: #0E0E0E;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  padding: 10vh 12vw;
+}
+
+.cursos-bottom-content-card{
+  background-color: #FBFBFB;
+  width: 60rem;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding:2rem 3rem ;
+  border-radius: 0.3rem;
+  font-family: 'Poppins',sans serif;
+}
+
+.cursos-modulo{
+  display:flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cursos-conteudo-modulo{
+  font-family: 'Open Sans',sans-serif;
+  line-height: 1.5rem;
 }
