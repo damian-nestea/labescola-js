@@ -142,6 +142,8 @@ header{
 
 
 /* ESTILIZAÇÃO PÁGINA CURSOS */
+
+/* Estilização do top content da página de cursos(cards dos cursos com uma curta descrição */
 .cursos-top-content{
   height: 80vh;
   background-color: #F6C34A;
@@ -187,4 +189,40 @@ header{
   background-color: #0E0E0E;
   padding:1rem 5rem;
   border-radius: 0.3rem;
+}
+
+
+/* Estilização do bottom content da página de cursos (cards dos cursos com conteúdo dos módulos*/
+
+.cursos-bottom-content{
+  background-color: #0E0E0E;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:1rem;
+  padding: 10vh 12vw;
+}
+
+.cursos-bottom-content-card{
+  background-color: #FBFBFB;
+  width: 60rem;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  padding:2rem 3rem ;
+  border-radius: 0.3rem;
+  font-family: 'Poppins',sans serif;
+}
+
+.cursos-modulo{
+  display:flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cursos-conteudo-modulo{
+  font-family: 'Open Sans',sans-serif;
+  line-height: 1.5rem;
 }
