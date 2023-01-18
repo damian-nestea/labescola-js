@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 /* Estilização do header que será igual em todas as páginas */
 header{
   background-color:#FBFBFB;
@@ -34,6 +33,7 @@ header{
 }
 
 
+/* ESTILIZAÇÃO PÁGINA HOME */
 /* Estilização do top-content da página home */
 .top-content{
   background-color: #F6C34A;
@@ -137,4 +137,54 @@ header{
 .foto-depoimento{
   display: flex;
   justify-content: center;
+}
+
+
+
+/* ESTILIZAÇÃO PÁGINA CURSOS */
+.cursos-top-content{
+  height: 80vh;
+  background-color: #F6C34A;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 4vh 12vw;
+}
+
+.cursos-descricao-cards-container{
+  display:flex;
+  gap: 4rem;
+}
+
+.cursos-card{
+  background-color: #FFF;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.cursos-cards-titulo{
+  font-family: 'Poppins',sans-serif;
+  font-size: 1.5rem;
+}
+
+.cursos-cards-descricao{
+  font-family: 'Open Sans',sans-serif;
+  line-height: 1.5rem;
+}
+
+.botao-quero-fazer-parte{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  color: #FBFBFB;
+  background-color: #0E0E0E;
+  padding:1rem 5rem;
+  border-radius: 0.3rem;
 }
