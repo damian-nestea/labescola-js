@@ -267,3 +267,41 @@ header{
   border-radius: 0.1rem;
   align-self: stretch;
 }
+
+
+
+
+/* ESTILIZAÇÃO PÁGINA ÁREA ADMIN */
+
+/* Estilização do menu lateral da página de area-adm (menu à esquerda)*/
+
+.area-adm-main-container{
+  display:flex;
+}
+
+.area-adm-menu-lateral{
+  width: 25vw;
+  background-color: #0E0E0E;
+  color: #FFF;
+  padding: 3rem 0;
+  display:flex;
+  justify-content: center;
+}
+
+.area-adm-menu-lateral ul{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  list-style: none;
+  font-family: 'Poppins',sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+
+/* Estilização do right-content da página de area-adm (conteúdo da direita)*/
+
+.area-adm-right-content{
+  background-color: #F6C34A;
+}
+
