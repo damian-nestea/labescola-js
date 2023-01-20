@@ -226,3 +226,44 @@ header{
   font-family: 'Open Sans',sans-serif;
   line-height: 1.5rem;
 }
+
+
+
+/* ESTILIZAÇÃO PÁGINA CONTATO */
+
+/* Estilização do form-content da página de contato (formulário simples de fale conosco)*/
+.contato-content{
+  background-color: #0E0E0E;
+  padding: 6rem 0;
+  display:flex;
+  justify-content: center;
+}
+
+.contato-formulario{
+  background-color:#F0F0F0;
+  font-family: 'Poppins',sans-serif;
+  padding: 2rem;
+  display:flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  border-radius: 0.2rem;
+}
+
+.contato-form-grupo{
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display:flex;
+  flex-direction: column;
+  align-items:stretch;
+}
+
+.contato-formulario button{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 700;
+  background-color: #F6C34A;
+  padding: 0.5rem 4rem;
+  border-radius: 0.1rem;
+  align-self: stretch;
+}

@@ -5,13 +5,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato</title>
+  <script src="../script.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div>LOGO</div>
-    <nav></nav>
+    <div class="logo-container"><img src="../assets/logo.svg" alt="Logo da LabEscola"></div>
+    <nav>
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/cursos.html">Cursos</a></li>
+        <li><a href="../pages/contato.html">Contato</a></li>
+        <li><a href="../pages/area-adm.html">Área ADM</a></li>
+      </ul>
+    </nav>
   </header>
-  <section>
+  <section class="contato-content">
+    <form class="contato-formulario" action="#">
+      <h2 class="contato-titulo-formulario">Fale Conosco</h2>
+      <div class="contato-form-grupo">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome">
+      </div>
+      <div class="contato-form-grupo">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+      </div>
+      <div class="contato-form-grupo">
+        <label for="mensagem">Mensagem</label>
+        <textarea name="mensagem" id="mensagem" cols="40" rows="10"></textarea>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+
+
 
   </section>
   <footer>
