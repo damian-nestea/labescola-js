@@ -246,7 +246,9 @@ const buscarTurma = () => {
   });
 
   inputBuscaTurma.value ="";
-  return filtroBuscaTurma.length < 1 ? console.log(`Turma não encontrada`): imprimirRelatorioTurmas(filtroBuscaTurma);
+  return filtroBuscaTurma.length < 1 ? alert(`Turma não encontrada`): gerarCard(filtroBuscaTurma);
+
+  /* return filtroBuscaTurma.length < 1 ? alert(`Turma não encontrada`): imprimirRelatorioTurmas(filtroBuscaTurma); */
 
 }
 // buscarTurma(`AR`);
@@ -316,6 +318,44 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 }
 // console.log(preencheCarrinhoCursos('HTML e CSS'));
 
+
+// MANIPULAÇÃO DE DOM
+
+//Manipulação de DOM, página Area Adm, busca de turmas
+const gerarCard = (arrayTurmasBuscadas) => {
+  const sectionBuscarTurma = document.querySelector('.area-adm-right-content') // section de cards
+
+  const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
+  divCardsContainer.setAttribute('class','area-adm-turmas-cards-container'); 
+
+  const divCard = document.createElement('div'); // div que contém o card
+  divCardsContainer.setAttribute('class','area-adm-turmas-card');
+
+  divCardsContainer.insertAdjacentElement('afterbegin',divCard);
+  sectionBuscarTurma.insertAdjacentElement('beforeend', divCardsContainer);
+
+  const nomeDaTurma = document.createElement('h2'); // criando h2 com o nome da turma do card
+  nomeDaTurma.innerHTML = "Hipátia";
+  divCard.insertAdjacentElement('afterbegin',nomeDaTurma);
+
+  const divConteudoTurmaContainer = document.createElement('div');
+  divConteudoTurmaContainer.setAttribute('class', 'area-adm-conteudo-turma');
+  divCard.insertAdjacentElement('beforeend',divConteudoTurmaContainer);
+
+  const divConteudoTurmaLinha = document.createElement('div');
+  divConteudoTurmaLinha.setAttribute('class','area-adm-conteudo-turma-linha');
+  divConteudoTurmaContainer.insertAdjacentElement('beforeend',divConteudoTurmaLinha);
+
+  const keyConteudoTurma = document.createElement('p');
+  keyConteudoTurma.setAttribute('class','area-adm-turma-info');
+  keyConteudoTurma.innerHTML = "Curso";
+  divConteudoTurmaLinha.insertAdjacentElement('beforeend',keyConteudoTurma);
+
+  const valueConteudoTurma = document.createElement('p');
+  valueConteudoTurma.innerHTML = "JavaScript";
+  divConteudoTurmaLinha.insertAdjacentElement('beforeend',valueConteudoTurma);
+  
+}
 
 
 
