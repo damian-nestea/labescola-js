@@ -217,6 +217,7 @@ const buscarCurso = (nomeDoCurso) => {
 
 // função para imprimir turmas
 const imprimirRelatorioTurmas = (arrayTurmas) => {
+  
   if(arrayTurmas.length < 1){
     console.log(`Turma não encontrada`);
   }else{
@@ -235,11 +236,18 @@ const imprimirRelatorioTurmas = (arrayTurmas) => {
 
 
 // função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
-const buscarTurma = (nomeDaTurma) => {
+const buscarTurma = () => {
+//  captura do value do input para busca de turma
+  const inputBuscaTurma = document.querySelector('#area-adm-caixa-texto');
+  const turmaABuscar = inputBuscaTurma.value;
+
   const filtroBuscaTurma = turmas.filter((turmas)=>{
-    return turmas.turma.toLowerCase().includes(nomeDaTurma.toLowerCase());
+    return turmas.turma.toLowerCase().includes(turmaABuscar.toLowerCase());
   });
+
+  inputBuscaTurma.value ="";
   return filtroBuscaTurma.length < 1 ? console.log(`Turma não encontrada`): imprimirRelatorioTurmas(filtroBuscaTurma);
+
 }
 // buscarTurma(`AR`);
 
