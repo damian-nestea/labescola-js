@@ -312,7 +312,7 @@ header{
 .area-adm-right-content{
   background-color: #F6C34A;
   width: 75vw;
-  height: 100vh;
+  min-height: 100vh;
   padding: 3rem 0;
   display:flex;
   flex-direction: column;
