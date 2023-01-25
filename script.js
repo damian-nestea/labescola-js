@@ -323,7 +323,8 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 
 //Manipulação de DOM, página Area Adm, busca de turmas
 const gerarCard = (arrayTurmasBuscadas) => {
-  const sectionBuscarTurma = document.querySelector('.area-adm-right-content') // section de cards
+  
+  /* const sectionBuscarTurma = document.querySelector('.area-adm-right-content') // section de cards
 
   const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
   divCardsContainer.setAttribute('class','area-adm-turmas-cards-container'); 
@@ -353,7 +354,7 @@ const gerarCard = (arrayTurmasBuscadas) => {
 
   const valueConteudoTurma = document.createElement('p');
   valueConteudoTurma.innerHTML = "JavaScript";
-  divConteudoTurmaLinha.insertAdjacentElement('beforeend',valueConteudoTurma);
+  divConteudoTurmaLinha.insertAdjacentElement('beforeend',valueConteudoTurma); */
   
 }
 
