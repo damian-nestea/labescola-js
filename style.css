@@ -131,6 +131,7 @@ header{
 
 .foto-depoimento img{
   width: 40%;
+  border:0.25rem solid #F6C34A;
   border-radius: 100%;
 }
 
