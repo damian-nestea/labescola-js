@@ -263,7 +263,9 @@ header{
 .contato-formulario button{
   font-family: 'Poppins',sans-serif;
   font-weight: 700;
+  height: 2.5rem;
   background-color: #F6C34A;
+  border:0;
   padding: 0.5rem 4rem;
   border-radius: 0.1rem;
   align-self: stretch;
