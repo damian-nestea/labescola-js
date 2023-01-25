@@ -323,11 +323,10 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 
 //Manipulação de DOM, página Area Adm, busca de turmas
 const gerarCard = (arrayTurmasBuscadas) => {
-  
-  /* const sectionBuscarTurma = document.querySelector('.area-adm-right-content') // section de cards
+  const sectionBuscarTurma = document.querySelector('.area-adm-right-content');
 
   const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
-  divCardsContainer.setAttribute('class','area-adm-turmas-cards-container'); 
+  divCardsContainer.setAttribute('class','area-adm-turmas-cards-container');
 
   const divCard = document.createElement('div'); // div que contém o card
   divCardsContainer.setAttribute('class','area-adm-turmas-card');
@@ -335,27 +334,26 @@ const gerarCard = (arrayTurmasBuscadas) => {
   divCardsContainer.insertAdjacentElement('afterbegin',divCard);
   sectionBuscarTurma.insertAdjacentElement('beforeend', divCardsContainer);
 
-  const nomeDaTurma = document.createElement('h2'); // criando h2 com o nome da turma do card
-  nomeDaTurma.innerHTML = "Hipátia";
-  divCard.insertAdjacentElement('afterbegin',nomeDaTurma);
-
-  const divConteudoTurmaContainer = document.createElement('div');
-  divConteudoTurmaContainer.setAttribute('class', 'area-adm-conteudo-turma');
-  divCard.insertAdjacentElement('beforeend',divConteudoTurmaContainer);
-
-  const divConteudoTurmaLinha = document.createElement('div');
-  divConteudoTurmaLinha.setAttribute('class','area-adm-conteudo-turma-linha');
-  divConteudoTurmaContainer.insertAdjacentElement('beforeend',divConteudoTurmaLinha);
-
-  const keyConteudoTurma = document.createElement('p');
-  keyConteudoTurma.setAttribute('class','area-adm-turma-info');
-  keyConteudoTurma.innerHTML = "Curso";
-  divConteudoTurmaLinha.insertAdjacentElement('beforeend',keyConteudoTurma);
-
-  const valueConteudoTurma = document.createElement('p');
-  valueConteudoTurma.innerHTML = "JavaScript";
-  divConteudoTurmaLinha.insertAdjacentElement('beforeend',valueConteudoTurma); */
-  
+  arrayTurmasBuscadas.forEach(function(item,index){
+    console.log(item,index);
+    for(key in item){
+      console.log(key);
+      if(key==='turma'){
+        const nomeDaTurma = document.createElement('h2'); // criando h2 com o nome da turma do card
+        console.log(item[key])
+        nomeDaTurma.innerHTML = item[key];
+        divCard.insertAdjacentElement('afterbegin',nomeDaTurma);
+      }else{
+        const conteudoTurma = document.createElement('p');
+        const keyConteudoTurma = document.createElement('span');
+        keyConteudoTurma.setAttribute('class', 'area-adm-turma-info');
+        keyConteudoTurma.innerHTML = key;
+        conteudoTurma.insertAdjacentElement('beforeend',keyConteudoTurma);
+        conteudoTurma.innerHTML += ` ${item[key]}`;
+        divCard.insertAdjacentElement('beforeend',conteudoTurma);
+      }
+    }
+  });  
 }
 
 
