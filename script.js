@@ -328,38 +328,62 @@ const gerarCard = (arrayTurmasBuscadas) => {
   const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
   divCardsContainer.setAttribute('class','area-adm-turmas-cards-container');
 
-  /* const divCard = document.createElement('div'); // div que contém o card
-  divCardsContainer.setAttribute('class','area-adm-turmas-card');
-
-  divCardsContainer.insertAdjacentElement('afterbegin',divCard);
-  sectionBuscarTurma.insertAdjacentElement('beforeend', divCardsContainer); */
-
   arrayTurmasBuscadas.forEach(function(item,index){
     const divCard = document.createElement('div'); // div que contém o card
     divCard.setAttribute('class','area-adm-turmas-card');
 
     console.log(item,index);
-    for(key in item){
-      console.log(key);
-      if(key==='turma'){
-        const nomeDaTurma = document.createElement('h2'); // criando h2 com o nome da turma do card
-        console.log(item[key])
-        nomeDaTurma.innerHTML = item[key];
-        divCard.insertAdjacentElement('afterbegin',nomeDaTurma);
-      }else{
-        const conteudoTurma = document.createElement('p');
-        const keyConteudoTurma = document.createElement('span');
-        keyConteudoTurma.setAttribute('class', 'area-adm-turma-info');
-        keyConteudoTurma.innerHTML = key;
-        conteudoTurma.insertAdjacentElement('beforeend',keyConteudoTurma);
-        conteudoTurma.innerHTML += ` ${item[key]}`;
-        divCard.insertAdjacentElement('beforeend',conteudoTurma);
-      }
-    }
+
+    const nomeDaTurma = document.createElement('h2'); // criando h2 com o nome da turma do card
+    console.log(item)
+    nomeDaTurma.innerHTML = item.turma;
+    divCard.insertAdjacentElement('afterbegin',nomeDaTurma);
+
+    const conteudoTurma = document.createElement('p'); // p para mostrar o curso
+    const conteudoTurmaInicio = document.createElement('p'); // p para mostrar a data de início do curso
+    const conteudoTurmaTermino = document.createElement('p'); // p para mostrar a data de início do curso
+    const conteudoTurmaNumeroAlunos = document.createElement('p'); // p para mostrar a data de início do curso
+    const conteudoTurmaPeriodo = document.createElement('p'); // p para mostrar a data de início do curso
+    const conteudoTurmaConcluido = document.createElement('p'); // p para mostrar a data de início do curso
+
+    const keyConteudoTurma = document.createElement('span');
+    /* Adição do curso no card */
+    keyConteudoTurma.setAttribute('class', 'area-adm-turma-info');
+    keyConteudoTurma.innerHTML = "Curso:";
+    conteudoTurma.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurma.innerHTML += ` ${item.curso}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurma);
+    /* Adição da data de início no card */
+    keyConteudoTurma.innerHTML = "Início:";
+    conteudoTurmaInicio.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaInicio.innerHTML += ` ${item.inicio}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaInicio);
+    /* Adição da data de término no card */
+    keyConteudoTurma.innerHTML = "Término:";
+    conteudoTurmaTermino.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaTermino.innerHTML += ` ${item.termino}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaTermino);
+    /* Adição de número de alunos no card */
+    keyConteudoTurma.innerHTML = "Número de alunos:";
+    conteudoTurmaNumeroAlunos.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaNumeroAlunos.innerHTML += ` ${item.numeroDeAlunos}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaNumeroAlunos);
+    /* Adição de período da turma no card */
+    keyConteudoTurma.innerHTML = "Período:";
+    conteudoTurmaPeriodo.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaPeriodo.innerHTML += ` ${item.periodo}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaPeriodo);
+    /* Adição de info se a turma já foi concluída no card */
+    keyConteudoTurma.innerHTML = "Concluído:";
+    conteudoTurmaConcluido.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaConcluido.innerHTML += ` ${item.concluida === true ? 'Sim': 'Não' }`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaConcluido);
+
+    /* Adiciona card no container */
     divCardsContainer.insertAdjacentElement('afterbegin',divCard);
   });  
-  
-  sectionBuscarTurma.insertAdjacentElement('beforeend', divCardsContainer);
+
+  /* Adiciona container de cards na section */
   sectionBuscarTurma.insertAdjacentElement('beforeend',divCardsContainer);
 }
 
