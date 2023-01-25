@@ -328,13 +328,16 @@ const gerarCard = (arrayTurmasBuscadas) => {
   const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
   divCardsContainer.setAttribute('class','area-adm-turmas-cards-container');
 
-  const divCard = document.createElement('div'); // div que contém o card
+  /* const divCard = document.createElement('div'); // div que contém o card
   divCardsContainer.setAttribute('class','area-adm-turmas-card');
 
   divCardsContainer.insertAdjacentElement('afterbegin',divCard);
-  sectionBuscarTurma.insertAdjacentElement('beforeend', divCardsContainer);
+  sectionBuscarTurma.insertAdjacentElement('beforeend', divCardsContainer); */
 
   arrayTurmasBuscadas.forEach(function(item,index){
+    const divCard = document.createElement('div'); // div que contém o card
+    divCard.setAttribute('class','area-adm-turmas-card');
+
     console.log(item,index);
     for(key in item){
       console.log(key);
@@ -353,7 +356,11 @@ const gerarCard = (arrayTurmasBuscadas) => {
         divCard.insertAdjacentElement('beforeend',conteudoTurma);
       }
     }
+    divCardsContainer.insertAdjacentElement('afterbegin',divCard);
   });  
+  
+  sectionBuscarTurma.insertAdjacentElement('beforeend', divCardsContainer);
+  sectionBuscarTurma.insertAdjacentElement('beforeend',divCardsContainer);
 }
 
 
