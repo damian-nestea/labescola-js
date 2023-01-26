@@ -7,7 +7,7 @@
 /* Estilização do header que será igual em todas as páginas */
 header{
   background-color:#FBFBFB;
-  height: 7rem;
+  min-height: 7rem;
   display:flex;
   align-items: center;
   justify-content: space-around;
@@ -30,6 +30,25 @@ header{
   color: #0E0E0E;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
+}
+
+
+/* Estilização do footer que será igual em todas as páginas */
+.footer-container{
+  min-height: 40vh;
+  background-color: #F6C34A;
+  display:flex;
+  flex-direction: column;
+  padding:2rem 12rem 7rem 12rem;
+}
+
+.footer-top-content{
+  height: 2rem;
+}
+
+.footer-top-content-logo{
+  background: #F6C34A;
+  height: 100%;
 }
 
 
