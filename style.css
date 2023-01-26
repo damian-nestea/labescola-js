@@ -39,17 +39,44 @@ header{
   background-color: #F6C34A;
   display:flex;
   flex-direction: column;
+  gap: 4rem;
   padding:2rem 12rem 7rem 12rem;
 }
 
 .footer-top-content{
-  height: 2rem;
+  height: 2.5rem;
 }
 
 .footer-top-content-logo{
-  background: #F6C34A;
+  fill: #F6C34A;
   height: 100%;
 }
+
+.footer-bottom-content{
+  display:flex;
+  gap:7rem;
+}
+
+.footer-endereco,
+.footer-links{
+  display:flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mapouter{
+  border:0.1rem solid #0E0E0E;
+  margin-bottom: 0.5rem;
+}
+
+.footer-list-links{
+  list-style: none;
+  display:flex;
+  flex-direction: column;
+  gap:0.7rem;
+}
+
+
 
 
 /* ESTILIZAÇÃO PÁGINA HOME */
