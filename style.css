@@ -36,6 +36,7 @@ header{
 /* Estilização do footer que será igual em todas as páginas */
 .footer-container{
   min-height: 40vh;
+  font-family: 'Poppins',sans-serif;
   background-color: #F6C34A;
   display:flex;
   flex-direction: column;
