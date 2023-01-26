@@ -59,7 +59,8 @@ header{
 }
 
 .footer-endereco,
-.footer-links{
+.footer-links,
+.footer-redes-sociais{
   display:flex;
   flex-direction: column;
   gap: 2rem;
@@ -77,6 +78,15 @@ header{
   gap:0.7rem;
 }
 
+.footer-list-redes-sociais{
+  height: 2rem;
+  display:flex;
+  gap:1rem;
+}
+
+.footer-bottom-content img{
+  height: 100%;
+}
 
 
 
