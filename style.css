@@ -482,6 +482,7 @@ header{
 /* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO MATRÍCULAS*/
 .area-adm-main-matriculas{
   display:none;
+  width: 100%;
 }
 
 .area-adm-matriculas-container{
@@ -532,10 +533,6 @@ header{
   font-weight: 700;
   border-radius: 0.3rem;
   text-align: center;
-}
-
-.area-adm-aluno-matriculado-container{
-  display:none;
 }
 
 .area-adm-aluno-matriculado{

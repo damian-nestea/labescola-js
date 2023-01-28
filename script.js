@@ -400,28 +400,43 @@ const mostraAreaMatriculas = () => {
 }
 
 const mostraAlunoMatriculado = () => {
-  const containerLayoutAlunoMatriculado = document.querySelector('.area-adm-aluno-matriculado-container')
-  const layoutAlunoMatriculado = document.querySelector('.area-adm-aluno-matriculado');
+  const sectionBuscarTurma = document.querySelector('.area-adm-right-content')
 
   const inputNomeAluno = document.getElementById('nome')
   const inputCursoAluno = document.getElementById('curso')
   const inputTurmaAluno = document.getElementById('turma')
 
+  const containerLayoutAlunoMatriculado = document.createElement('div');
+  const layoutAlunoMatriculado = document.createElement('div');
+  const alunoMatriculadoCorfirmacao = document.createElement('h2');
+  const alunoMatriculadoCorfirmacaoLogo = document.createElement('img');
+  const tituloAluno = document.createElement('p');
   const nomeAluno = document.createElement('p');
   const cursoAluno = document.createElement('p');
   const turmaAluno = document.createElement('p');
 
+  alunoMatriculadoCorfirmacaoLogo.setAttribute('src', '../assets/vector.png');
+  alunoMatriculadoCorfirmacao.innerHTML =`Aluno matriculado`;
+  alunoMatriculadoCorfirmacao.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacaoLogo);
+
+  tituloAluno.innerHTML = `Aluno Matriculado`
   nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
   cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
   turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
 
   console.log(nomeAluno);
+  
+  containerLayoutAlunoMatriculado.setAttribute('class', 'area-adm-aluno-matriculado-container');
+  layoutAlunoMatriculado.setAttribute('class','area-adm-aluno-matriculado');
 
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacao);
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',tituloAluno);
   layoutAlunoMatriculado.insertAdjacentElement('beforeend',nomeAluno);
   layoutAlunoMatriculado.insertAdjacentElement('beforeend',cursoAluno);
   layoutAlunoMatriculado.insertAdjacentElement('beforeend',turmaAluno);
-
-  containerLayoutAlunoMatriculado.setAttribute('class','layout-ativado')
+  containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
+  sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
+  console.log(sectionBuscarTurma)
 }
 
 
