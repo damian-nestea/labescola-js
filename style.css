@@ -390,6 +390,7 @@ header{
 
 .layout-ativado{
   display:block;
+  width: 100%;
 }
 
 
@@ -479,6 +480,10 @@ header{
 
 
 /* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO MATRÍCULAS*/
+.area-adm-main-matriculas{
+  display:none;
+}
+
 .area-adm-matriculas-container{
   display:flex;
   justify-content: space-between;
@@ -509,7 +514,7 @@ header{
 }
 
 .area-adm-matriculas-form h2,
-.area-adm-aluno-encontrado h2{
+.area-adm-aluno-matriculado h2{
   margin-bottom: 1.5rem;
 }
 
@@ -524,23 +529,23 @@ header{
   border-radius: 0.3rem;
 }
 
-.area-adm-aluno-encontrado{
+.area-adm-aluno-matriculado{
   display:flex;
   flex-direction: column;
   gap:0.3rem;
 }
 
-.area-adm-aluno-encontrado img{
+.area-adm-aluno-matriculado img{
   margin-left: 2rem;
 }
 
-.area-adm-aluno-encontrado h2{
+.area-adm-aluno-matriculado h2{
   font-family: 'Poppins',sans-serif;
   display:flex;
   align-items:center;
 }
 
-.area-adm-aluno-encontrado p{
+.area-adm-aluno-matriculado p{
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
 }

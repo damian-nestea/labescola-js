@@ -391,14 +391,14 @@ const gerarCard = (arrayTurmasBuscadas) => {
 //Manipulação de DOM, página Area Adm, abrindo layout de matrícula de estudante
 
 const mostraAreaMatriculas = () => {
-  const layoutMatriculas = document.querySelector("#area-adm-matriculas");
+  const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
   const layoutTurmas = document.querySelector(".area-adm-busca-container");
   
 
 
   layoutTurmas.setAttribute('class','layout-desativado');
   layoutMatriculas.setAttribute('class','layout-ativado');
-  /* layoutMatriculas.setAttribute('class','area-adm-matriculas-container'); */
+
 }
 
 
