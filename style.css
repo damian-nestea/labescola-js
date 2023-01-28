@@ -397,21 +397,27 @@ header{
 
 
 /* Estilização do right-content da página de area-adm (conteúdo da direita)*/
-
 .area-adm-right-content{
   background-color: #F6C34A;
   border-bottom: 0.1rem solid #0E0E0E;
   width: 75vw;
   min-height: 100vh;
   padding: 3rem 0;
+  border-bottom: 0.1rem solid #0E0E0E;
+}
+
+
+/* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO TURMAS*/
+.area-adm-busca-turmas{
+  background-color: #F6C34A;
+  width: 75vw;
+  min-height: 100vh;
   display:flex;
   flex-direction: column;
   align-items: center;
   gap:3rem;
 }
 
-
-/* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO TURMAS*/
 .area-adm-busca-container{
   display:flex;
   align-items: center;

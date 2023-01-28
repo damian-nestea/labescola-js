@@ -323,7 +323,7 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 
 //Manipulação de DOM, página Area Adm, busca de turmas
 const gerarCard = (arrayTurmasBuscadas) => {
-  const sectionBuscarTurma = document.querySelector('.area-adm-right-content');
+  const sectionBuscarTurma = document.querySelector('.area-adm-busca-turmas');
 
   const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
   divCardsContainer.setAttribute('class','area-adm-turmas-cards-container');
@@ -392,7 +392,7 @@ const gerarCard = (arrayTurmasBuscadas) => {
 
 const mostraAreaMatriculas = () => {
   const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
-  const layoutTurmas = document.querySelector(".area-adm-busca-container");
+  const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
 
   layoutTurmas.setAttribute('class','layout-desativado');
   layoutMatriculas.setAttribute('class','layout-ativado');
@@ -400,7 +400,7 @@ const mostraAreaMatriculas = () => {
 }
 
 const mostraAlunoMatriculado = () => {
-  const sectionBuscarTurma = document.querySelector('.area-adm-right-content')
+  const sectionBuscarTurma = document.querySelector('.area-adm-matriculas-container')
 
   const inputNomeAluno = document.getElementById('nome')
   const inputCursoAluno = document.getElementById('curso')
@@ -435,6 +435,7 @@ const mostraAlunoMatriculado = () => {
   layoutAlunoMatriculado.insertAdjacentElement('beforeend',cursoAluno);
   layoutAlunoMatriculado.insertAdjacentElement('beforeend',turmaAluno);
   containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
+  console.log(sectionBuscarTurma);
   sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
   console.log(sectionBuscarTurma)
 }
