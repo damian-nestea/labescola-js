@@ -153,7 +153,7 @@ header{
 /* Estilização do bottom-content da página home (depoimentos)*/
 .bottom-content{
   background-color: #0E0E0E;
-  padding: 0 15vw 18vh 15vw;
+  padding: 0 10vw 18vh 10vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -175,7 +175,7 @@ header{
 
 .depoimentos-card{
   background-color: #FBFBFB;
-  width: 15rem;
+  width: 17rem;
   margin-top: 2rem;
   padding: 1.5rem;
   display: flex;
