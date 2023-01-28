@@ -18,7 +18,7 @@
       <ul class="menu">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../pages/cursos.html">Cursos</a></li>
-        <li><a onclick="mostraAreaMatriculas()" href="../pages/contato.html">Contato</a></li>
+        <li><a href="../pages/contato.html">Contato</a></li>
         <li><a href="../pages/area-adm.html">Área ADM</a></li>
       </ul>
     </nav>
@@ -27,15 +27,33 @@
     <nav class="area-adm-menu-lateral">
       <ul>
         <li id="area-adm-turmas"><a href="./area-adm.html">Turmas</a></li>
-        <li id="area-adm-matriculas"><a href=".">Matrículas</a></li>
+        <li id="area-adm-matriculas"><a onclick="mostraAreaMatriculas()">Matrículas</a></li>
         <li id="area-adm-financeiro"><a href=".">Financeiro Alunos</a></li>
       </ul>
     </nav>
     <section class="area-adm-right-content">
-        <div class="area-adm-busca-container">
+      <!-- Início Layout de opção Turmas -->
+        <!-- <div class="area-adm-busca-container">
           <input id="area-adm-caixa-texto" placeholder="Digite o número da turma" type="text" name="buscar">
           <a onclick="buscarTurma()" class="area-adm-botao-buscar" href="#">Buscar</a>
-        </div>
+        </div> -->
+      <!-- Fim Layout de opção Turmas -->
+      <!-- Início Layout de opção Matrículas -->
+      <div class="area-adm-matriculas-container">
+        <form class="area-adm-matriculas-form" action="#">
+          <h2>Matrículas</h2>
+          <label for="nome">Nome</label>
+          <input type="text" name="nome" id="nome">
+          <label for="nome">Curso</label>
+          <input type="text" name="nome" id="nome">
+          <label for="nome">Turma</label>
+          <input type="text" name="nome" id="nome">
+          <label for="nome">Número de parcelas</label>
+          <input type="text" name="nome" id="nome">
+          <button>Matricular Aluno</button>
+        </form>
+      </div>
+
     </section>
   </main>
   <footer class="footer-container">

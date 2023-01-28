@@ -402,6 +402,8 @@ header{
   gap:3rem;
 }
 
+
+/* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO TURMAS*/
 .area-adm-busca-container{
   display:flex;
   align-items: center;
@@ -457,20 +459,6 @@ header{
   border-radius: 0.5rem;
 }
 
-/* .area-adm-conteudo-turma{
-  display:flex;
-  flex-direction: column;
-  gap:0.2rem;
-} */
-
-/* .area-adm-conteudo-turma-linha{
-  font-size: 0.9rem;
-  font-family: 'Open Sans',sans-serif;
-  display: flex;
-  align-items: center;
-  gap:0.3rem;
-} */
-
 .area-adm-turma-info{
   font-weight: 700;
 }
@@ -481,4 +469,44 @@ header{
   margin-bottom: 0.2rem;
   align-self: center;
 }
+
+
+/* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO MATRÍCULAS*/
+.area-adm-matriculas-form{
+  font-family: 'Poppins',sans-serif;
+  width: 20rem;
+  display:flex;
+  flex-direction: column;
+  gap:0.05rem;
+  padding:1rem;
+}
+
+.area-adm-matriculas-form label{
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.area-adm-matriculas-form input{
+  margin-bottom: 0.6rem;
+  height: 2rem;
+  width: 100%;
+  border:none;
+  border-radius: 0.3rem;
+}
+
+.area-adm-matriculas-form h2{
+  margin-bottom: 1.5rem;
+}
+
+.area-adm-matriculas-form button{
+  margin-top: 2rem;
+  width: 100%;
+  height: 2.3rem;
+  background-color: #0E0E0E;
+  color: #F0F0F0;
+  font-weight: 700;
+  border:none;
+  border-radius: 0.3rem;
+}
+
 
