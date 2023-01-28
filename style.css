@@ -71,6 +71,10 @@ header{
 .mapouter{
   border:0.1rem solid #0E0E0E;
   margin-bottom: 0.5rem;
+  position:relative;
+  text-align:right;
+  height:inherit;
+  width:inherit;
 }
 
 .footer-list-links,
