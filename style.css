@@ -369,20 +369,22 @@ header{
   font-weight: 700;
 }
 
-#area-adm-turmas-link a{
+
+#area-adm-turmas-link,
+#area-adm-matriculas-link,
+#area-adm-financeiro-link{
+  text-decoration: none;
+}
+
+.link-ativado-visited:visited{
   color:#F0F0F0;
 }
 
-#area-adm-matriculas-link a,
-#area-adm-financeiro-link a{
+.link-desativado-visited:visited{
   color:#707070;
 }
 
-#area-adm-turmas-link a,
-#area-adm-matriculas-link a,
-#area-adm-financeiro-link a{
-  text-decoration: none;
-}
+
 
 .layout-desativado{
   display:none;
@@ -391,6 +393,14 @@ header{
 .layout-ativado{
   display:block;
   width: 100%;
+}
+
+#link-desativado{
+  color:#707070;
+}
+
+#link-ativado{
+  color:#F0F0F0;
 }
 
 

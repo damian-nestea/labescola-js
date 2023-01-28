@@ -393,10 +393,14 @@ const gerarCard = (arrayTurmasBuscadas) => {
 const mostraAreaMatriculas = () => {
   const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
   const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
+  const linkTurmas = document.querySelector("#area-adm-turmas-link");
+  const linkMatriculas = document.querySelector("#area-adm-matriculas-link");
 
-  layoutTurmas.setAttribute('class','layout-desativado');
+  layoutTurmas.setAttribute('class','layout-desativado ');
   layoutMatriculas.setAttribute('class','layout-ativado');
-
+  console.log(linkMatriculas)
+  linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
+  linkMatriculas.setAttribute('class','link-ativado link-ativado-visited');
 }
 
 const mostraAlunoMatriculado = () => {
