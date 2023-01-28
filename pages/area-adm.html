@@ -39,7 +39,7 @@
         </div> -->
       <!-- Fim Layout de opção Turmas -->
       <!-- Início Layout de opção Matrículas -->
-      <div class="area-adm-matriculas-container">
+      <div id="area-adm-matriculas" class="area-adm-matriculas-container">
         <form class="area-adm-matriculas-form" action="#">
           <h2>Matrículas</h2>
           <label for="nome">Nome</label>
@@ -49,9 +49,17 @@
           <label for="nome">Turma</label>
           <input type="text" name="nome" id="nome">
           <label for="nome">Número de parcelas</label>
-          <input type="text" name="nome" id="nome">
+          <input type="number" name="nome" id="nome">
           <button>Matricular Aluno</button>
         </form>
+        <div class="area-adm-aluno-encontrado">
+          <h2>Aluno Matriculado<img src="../assets/vector.png" alt=""></h2>
+          <p>Aluno Matriculado</p>
+          <p>Nome: Calvin Klein</p>
+          <p>Curso: Javascript</p>
+          <p>Turma: Clarke</p>
+
+        </div>
       </div>
 
     </section>
