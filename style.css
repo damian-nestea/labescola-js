@@ -369,18 +369,18 @@ header{
   font-weight: 700;
 }
 
-#area-adm-turmas a{
+#area-adm-turmas-link a{
   color:#F0F0F0;
 }
 
-#area-adm-matriculas a,
-#area-adm-financeiro a{
+#area-adm-matriculas-link a,
+#area-adm-financeiro-link a{
   color:#707070;
 }
 
-#area-adm-turmas a,
-#area-adm-matriculas a,
-#area-adm-financeiro a{
+#area-adm-turmas-link a,
+#area-adm-matriculas-link a,
+#area-adm-financeiro-link a{
   text-decoration: none;
 }
 
@@ -525,7 +525,7 @@ header{
   margin-bottom: 1.5rem;
 }
 
-.area-adm-botao-matricular:visited{
+.area-adm-botao-matricular,.area-adm-botao-matricular:link,.area-adm-botao-matricular:visited{
   color:#F0F0F0;
 }
 
@@ -535,6 +535,7 @@ header{
   width: 100%;
   padding: 0.5rem 0;
   background-color: #0E0E0E;
+  text-decoration: none;
   color: #F0F0F0;
   font-weight: 700;
   border-radius: 0.3rem;
