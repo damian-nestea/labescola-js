@@ -518,15 +518,24 @@ header{
   margin-bottom: 1.5rem;
 }
 
-.area-adm-matriculas-form button{
+.area-adm-botao-matricular:visited{
+  color:#F0F0F0;
+}
+
+.area-adm-botao-matricular
+{
   margin-top: 2rem;
   width: 100%;
-  height: 2.3rem;
+  padding: 0.5rem 0;
   background-color: #0E0E0E;
   color: #F0F0F0;
   font-weight: 700;
-  border:none;
   border-radius: 0.3rem;
+  text-align: center;
+}
+
+.area-adm-aluno-matriculado-container{
+  display:none;
 }
 
 .area-adm-aluno-matriculado{

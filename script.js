@@ -393,12 +393,35 @@ const gerarCard = (arrayTurmasBuscadas) => {
 const mostraAreaMatriculas = () => {
   const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
   const layoutTurmas = document.querySelector(".area-adm-busca-container");
-  
-
 
   layoutTurmas.setAttribute('class','layout-desativado');
   layoutMatriculas.setAttribute('class','layout-ativado');
 
+}
+
+const mostraAlunoMatriculado = () => {
+  const containerLayoutAlunoMatriculado = document.querySelector('.area-adm-aluno-matriculado-container')
+  const layoutAlunoMatriculado = document.querySelector('.area-adm-aluno-matriculado');
+
+  const inputNomeAluno = document.getElementById('nome')
+  const inputCursoAluno = document.getElementById('curso')
+  const inputTurmaAluno = document.getElementById('turma')
+
+  const nomeAluno = document.createElement('p');
+  const cursoAluno = document.createElement('p');
+  const turmaAluno = document.createElement('p');
+
+  nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
+  cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
+  turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
+
+  console.log(nomeAluno);
+
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',nomeAluno);
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',cursoAluno);
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',turmaAluno);
+
+  containerLayoutAlunoMatriculado.setAttribute('class','layout-ativado')
 }
 
 

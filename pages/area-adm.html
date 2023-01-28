@@ -27,7 +27,7 @@
     <nav class="area-adm-menu-lateral">
       <ul>
         <li id="area-adm-turmas"><a href="./area-adm.html">Turmas</a></li>
-        <li id="area-adm-matriculas"><a onclick="mostraAreaMatriculas()">Matrículas</a></li>
+        <li id="area-adm-matriculas"><a href="../pages/area-adm.html" onclick="mostraAreaMatriculas();return false;">Matrículas</a></li>
         <li id="area-adm-financeiro"><a href=".">Financeiro Alunos</a></li>
       </ul>
     </nav>
@@ -45,25 +45,22 @@
             <h2>Matrículas</h2>
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome">
-            <label for="nome">Curso</label>
-            <input type="text" name="nome" id="nome">
-            <label for="nome">Turma</label>
-            <input type="text" name="nome" id="nome">
-            <label for="nome">Número de parcelas</label>
-            <input type="number" name="nome" id="nome">
-            <button>Matricular Aluno</button>
+            <label for="curso">Curso</label>
+            <input type="text" name="curso" id="curso">
+            <label for="turma">Turma</label>
+            <input type="text" name="turma" id="turma">
+            <label for="numParcelas">Número de parcelas</label>
+            <input type="number" name="numParcelas" id="numParcelas">
+            <a class="area-adm-botao-matricular" onclick="mostraAlunoMatriculado()">Matricular Aluno</a>
           </form>
-          <div class="area-adm-aluno-matriculado">
-            <h2>Aluno Matriculado<img src="../assets/vector.png" alt=""></h2>
-            <p>Aluno Matriculado</p>
-            <p>Nome: Calvin Klein</p>
-            <p>Curso: Javascript</p>
-            <p>Turma: Clarke</p>
-
+          <div class="area-adm-aluno-matriculado-container">
+            <div class="area-adm-aluno-matriculado">
+              <h2>Aluno Matriculado<img src="../assets/vector.png" alt=""></h2>
+              <p>Aluno Matriculado</p>
+            </div>
           </div>
         </div>
       </div>
-
     </section>
   </main>
   <footer class="footer-container">
