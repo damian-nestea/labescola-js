@@ -423,8 +423,6 @@ const mostraAlunoMatriculado = () => {
   nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
   cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
   turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
-
-  console.log(nomeAluno);
   
   containerLayoutAlunoMatriculado.setAttribute('class', 'area-adm-aluno-matriculado-container');
   layoutAlunoMatriculado.setAttribute('class','area-adm-aluno-matriculado');
@@ -435,9 +433,11 @@ const mostraAlunoMatriculado = () => {
   layoutAlunoMatriculado.insertAdjacentElement('beforeend',cursoAluno);
   layoutAlunoMatriculado.insertAdjacentElement('beforeend',turmaAluno);
   containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
-  console.log(sectionBuscarTurma);
   sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
-  console.log(sectionBuscarTurma)
+
+  inputNomeAluno.value = "";
+  inputCursoAluno.value = "";
+  inputTurmaAluno.value = "";
 }
 
 
