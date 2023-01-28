@@ -354,7 +354,6 @@ header{
 .area-adm-menu-lateral{
   width: 25vw;
   background-color: #0E0E0E;
-  color: #FFF;
   padding: 3rem 0;
   display:flex;
   justify-content: center;
@@ -370,11 +369,30 @@ header{
   font-weight: 700;
 }
 
+#area-adm-turmas a{
+  color:#F0F0F0;
+}
+
+#area-adm-matriculas a,
+#area-adm-financeiro a{
+  color:#707070;
+}
+
+#area-adm-turmas a,
+#area-adm-matriculas a,
+#area-adm-financeiro a{
+  text-decoration: none;
+}
+
+
+
+
 
 /* Estilização do right-content da página de area-adm (conteúdo da direita)*/
 
 .area-adm-right-content{
   background-color: #F6C34A;
+  border-bottom: 0.1rem solid #0E0E0E;
   width: 75vw;
   min-height: 100vh;
   padding: 3rem 0;

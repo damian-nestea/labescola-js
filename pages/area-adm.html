@@ -18,7 +18,7 @@
       <ul class="menu">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../pages/cursos.html">Cursos</a></li>
-        <li><a href="../pages/contato.html">Contato</a></li>
+        <li><a onclick="mostraAreaMatriculas()" href="../pages/contato.html">Contato</a></li>
         <li><a href="../pages/area-adm.html">Área ADM</a></li>
       </ul>
     </nav>
@@ -26,9 +26,9 @@
   <main class="area-adm-main-container">
     <nav class="area-adm-menu-lateral">
       <ul>
-        <li>Turmas</li>
-        <li>Matrículas</li>
-        <li>Financeiro Alunos</li>
+        <li id="area-adm-turmas"><a href="./area-adm.html">Turmas</a></li>
+        <li id="area-adm-matriculas"><a href=".">Matrículas</a></li>
+        <li id="area-adm-financeiro"><a href=".">Financeiro Alunos</a></li>
       </ul>
     </nav>
     <section class="area-adm-right-content">
@@ -36,49 +36,6 @@
           <input id="area-adm-caixa-texto" placeholder="Digite o número da turma" type="text" name="buscar">
           <a onclick="buscarTurma()" class="area-adm-botao-buscar" href="#">Buscar</a>
         </div>
-        <!-- <div class="area-adm-turmas-cards-container">
-          <div class="area-adm-turmas-card">
-            <h2>Hipátia</h2>
-            <p><span class="area-adm-turma-info">Curso:</span> Javascript</p>
-            <p><span class="area-adm-turma-info">Curso:</span> Javascript</p>
-            <p><span class="area-adm-turma-info">Curso:</span> Javascript</p>
-            <p><span class="area-adm-turma-info">Curso:</span> Javascript</p>
-            <p><span class="area-adm-turma-info">Curso:</span> Javascript</p>
-            <p><span class="area-adm-turma-info">Curso:</span> Javascript</p>
-          </div>
-        </div> -->
-
-<!--         <div class="area-adm-turmas-cards-container">
-          <div class="area-adm-turmas-card">
-            <h2>Hipátia</h2>
-            <div class="area-adm-conteudo-turma">
-              <div class="area-adm-conteudo-turma-linha">
-                <p class="area-adm-turma-info">Curso:</p>
-                <p>Javascript</p>
-              </div>
-              <div class="area-adm-conteudo-turma-linha">
-                <p class="area-adm-turma-info">Início:</p>
-                <p>30/11/2022</p>
-              </div>
-              <div class="area-adm-conteudo-turma-linha">
-                <p class="area-adm-turma-info">Término:</p>
-                <p>30/01/2023</p>
-              </div>
-              <div class="area-adm-conteudo-turma-linha">
-                <p class="area-adm-turma-info">Número de alunos:</p>
-                <p>150</p>
-              </div>
-              <div class="area-adm-conteudo-turma-linha">
-                <p class="area-adm-turma-info">Período:</p>
-                <p>Noturno</p>
-              </div>
-              <div class="area-adm-conteudo-turma-linha">
-                <p class="area-adm-turma-info">Concluído:</p>
-                <p>Não</p>
-              </div>
-            </div>
-          </div>
-        </div>  -->
     </section>
   </main>
   <footer class="footer-container">
