@@ -32,6 +32,10 @@ header{
   font-family: 'Poppins', sans-serif;
 }
 
+.menu-selected{
+  text-decoration: underline !important; 
+}
+
 
 /* Estilização do footer que será igual em todas as páginas */
 .footer-container{
