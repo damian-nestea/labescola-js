@@ -572,3 +572,10 @@ header{
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
 }
+
+
+/* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO FINANCEIRO ALUNOS*/
+.area-adm-main-financeiro-alunos{
+  display:none;
+  width: 100%;
+}

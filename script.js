@@ -444,6 +444,21 @@ const mostraAlunoMatriculado = () => {
   inputTurmaAluno.value = "";
 }
 
+const mostraAreaFinanceiro = () => {
+  const layoutFinanceiroAlunos = document.querySelector(".area-adm-main-financeiro-alunos");
+  const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
+  const linkTurmas = document.querySelector("#area-adm-turmas-link");
+  const linkFinanceiro = document.querySelector("#area-adm-financeiro-link");
+
+  console.log(layoutTurmas)
+
+
+  layoutTurmas.setAttribute('class','layout-desativado ');
+  layoutFinanceiroAlunos.setAttribute('class','layout-ativado');
+  
+  linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
+  linkFinanceiro.setAttribute('class','link-ativado link-ativado-visited');
+}
 
 
 
