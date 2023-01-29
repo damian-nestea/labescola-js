@@ -89,6 +89,16 @@ header{
   gap:0.7rem;
 }
 
+.footer-list-links a,
+.footer-list-links a:link,
+.footer-list-links a:visited
+.footer-list-pocoes-area-adm a,
+.footer-list-pocoes-area-adm a:link,
+.footer-list-pocoes-area-adm a:visited{
+  text-decoration: none;
+  color:initial;
+}
+
 .footer-list-redes-sociais{
   height: 2rem;
   display:flex;
