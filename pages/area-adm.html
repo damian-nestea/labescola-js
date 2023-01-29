@@ -70,12 +70,23 @@
             <input type="number" name="numero-parcelas-financeiro" id="numero-parcelas-financeiro">
             <a class="area-adm-botao-financeiro" href="../pages/area-adm.html" onclick="mostraValorCurso()">Ver valor</a>
           </form>
-          <form class="area-adm-relatorio-aluno" action="#">
-            <h2>Relatório Aluno</h2>
-            <label for="nome-relatorio-aluno">Nome</label>
-            <input type="text" name="nome-relatorio-aluno" id="nome-relatorio-aluno">
-            <a class="area-adm-botao-financeiro" href="../pages/area-adm.html" onclick="buscarEstudante();return false">Buscar</a>
-          </form>
+          <div class="area-adm-relatorio-aluno-container">
+            <form class="area-adm-relatorio-aluno" action="#">
+              <h2>Relatório Aluno</h2>
+              <label for="nome-relatorio-aluno">Nome</label>
+              <input type="text" name="nome-relatorio-aluno" id="nome-relatorio-aluno">
+              <a class="area-adm-botao-financeiro" href="../pages/area-adm.html" onclick="buscarEstudante();return false">Buscar</a>
+            </form>
+            <!-- <div class="area-adm-relatorio-aluno-encontrado">
+              <p>Aluno: Chris Evans</p>
+              <p>Turma: Hipátia</p>
+              <p>Curso: Javascript</p>
+              <p>Valor total: R$900</p>
+              <p>Valor parcela: R$100</p>
+              <p>N. parcelas: 9</p>
+            </div> -->
+
+          </div>
         </div>
         
       </div>

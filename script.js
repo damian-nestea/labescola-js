@@ -255,21 +255,39 @@ const buscarTurma = () => {
 
 
 // função para imprimir relatório de estudantes
-const imprimirRelatorioEstudantes = (arrayEstudantes) => {
-  console.log(arrayEstudantes);
-  /* if(arrayEstudantes.length < 1){
-    console.log(`Aluno não encontrado`);
+const imprimirRelatorioEstudantes = (estudanteBuscado) => {
+  const layoutRelatorioAluno = document.querySelector('.area-adm-relatorio-aluno-container');
+  const layoutAlunoEncontrado = document.createElement('div');
+
+  layoutAlunoEncontrado.setAttribute('class','area-adm-relatorio-aluno-encontrado');
+  if(estudanteBuscado === 'Aluno não encontrado!'){
+    const layoutInfoAlunoNaoEncontrado = document.createElement('p');
+
+    layoutInfoAlunoNaoEncontrado.innerHTML = estudanteBuscado;
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoNaoEncontrado);
   }else{
-    for(aluno of arrayEstudantes){
-      console.log(`*******************************`);
-      console.log(`Aluno: ${aluno.estudante}`);
-      console.log(`Turma: ${aluno.turma}`);
-      console.log(`Curso: ${aluno.curso}`);
-      console.log(`Valor Total: ${aluno.valor}`);
-      console.log(`Valor Parcela: ${aluno.parcelas}`);
-      console.log(`N. Parcelas: ${aluno.nParcelas}`);
-    }
-  } */
+    const layoutInfoAlunoNome = document.createElement('p');
+    const layoutInfoAlunoTurma = document.createElement('p');
+    const layoutInfoAlunoCurso = document.createElement('p');
+    const layoutInfoAlunoValorTotal = document.createElement('p');
+    const layoutInfoAlunoValorParcela = document.createElement('p');
+    const layoutInfoAlunoNumeroParcelas = document.createElement('p');
+    
+    layoutInfoAlunoNome.innerHTML = `Aluno: ${estudanteBuscado.estudante}`;
+    layoutInfoAlunoTurma.innerHTML = `Turma: ${estudanteBuscado.turma}`;
+    layoutInfoAlunoCurso.innerHTML = `Curso: ${estudanteBuscado.curso}`;
+    layoutInfoAlunoValorTotal.innerHTML = `Valor total: R$${estudanteBuscado.valor}`;
+    layoutInfoAlunoValorParcela.innerHTML = `Valor parcela: R$${estudanteBuscado.parcelas}`;
+    layoutInfoAlunoNumeroParcelas.innerHTML = `N. parcelas: ${estudanteBuscado.nParcelas}`;
+
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoNome);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoTurma);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoCurso);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoValorTotal);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoValorParcela);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoNumeroParcelas);
+  }
+  layoutRelatorioAluno.insertAdjacentElement('beforeend',layoutAlunoEncontrado);
 }
 
 
@@ -279,8 +297,8 @@ const buscarEstudante = () => {
   const resultadoBuscaEstudante = estudantes.find((aluno) =>{
     return aluno.estudante.toLowerCase().includes(nomeEstudante.toLowerCase());
   });
-  console.log(resultadoBuscaEstudante);
-  return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : imprimirRelatorioEstudantes(resultadoBuscaEstudante);
+  
+   return resultadoBuscaEstudante === undefined ? imprimirRelatorioEstudantes(`Aluno não encontrado!`) : imprimirRelatorioEstudantes(resultadoBuscaEstudante); 
 }
 
 //  buscarEstudante('evans');
