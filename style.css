@@ -7,7 +7,7 @@
 /* Estilização do header que será igual em todas as páginas */
 header{
   background-color:#FBFBFB;
-  height: 7rem;
+  min-height: 7rem;
   display:flex;
   align-items: center;
   justify-content: space-around;
@@ -31,6 +31,84 @@ header{
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
 }
+
+.menu-selected{
+  text-decoration: underline !important; 
+}
+
+
+/* Estilização do footer que será igual em todas as páginas */
+.footer-container{
+  min-height: 40vh;
+  font-family: 'Poppins',sans-serif;
+  background-color: #F6C34A;
+  display:flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding:2rem 9rem 5rem 9rem;
+}
+
+.footer-top-content{
+  height: 2.5rem;
+}
+
+.footer-top-content-logo{
+  fill: #F6C34A;
+  height: 100%;
+}
+
+.footer-bottom-content{
+  display:flex;
+  justify-content: space-between;
+  gap:5rem;
+}
+
+.footer-endereco,
+.footer-links,
+.footer-redes-sociais,
+.footer-area-restrita{
+  display:flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mapouter{
+  border:0.1rem solid #0E0E0E;
+  margin-bottom: 0.5rem;
+  position:relative;
+  text-align:right;
+  height:inherit;
+  width:inherit;
+}
+
+.footer-list-links,
+.footer-list-pocoes-area-adm{
+  list-style: none;
+  display:flex;
+  flex-direction: column;
+  gap:0.7rem;
+}
+
+.footer-list-links a,
+.footer-list-links a:link,
+.footer-list-links a:visited
+.footer-list-pocoes-area-adm a,
+.footer-list-pocoes-area-adm a:link,
+.footer-list-pocoes-area-adm a:visited{
+  text-decoration: none;
+  color:initial;
+}
+
+.footer-list-redes-sociais{
+  height: 2rem;
+  display:flex;
+  gap:0.5rem;
+}
+
+.footer-bottom-content img{
+  height: 100%;
+}
+
 
 
 /* ESTILIZAÇÃO PÁGINA HOME */
@@ -96,7 +174,7 @@ header{
 /* Estilização do bottom-content da página home (depoimentos)*/
 .bottom-content{
   background-color: #0E0E0E;
-  padding: 0 15vw 18vh 15vw;
+  padding: 0 10vw 18vh 10vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -118,7 +196,7 @@ header{
 
 .depoimentos-card{
   background-color: #FBFBFB;
-  width: 15rem;
+  width: 17rem;
   margin-top: 2rem;
   padding: 1.5rem;
   display: flex;
@@ -131,6 +209,7 @@ header{
 
 .foto-depoimento img{
   width: 40%;
+  border:0.25rem solid #F6C34A;
   border-radius: 100%;
 }
 
@@ -226,3 +305,361 @@ header{
   font-family: 'Open Sans',sans-serif;
   line-height: 1.5rem;
 }
+
+
+
+/* ESTILIZAÇÃO PÁGINA CONTATO */
+
+/* Estilização do form-content da página de contato (formulário simples de fale conosco)*/
+.contato-content{
+  background-color: #0E0E0E;
+  padding: 6rem 0;
+  display:flex;
+  justify-content: center;
+}
+
+.contato-formulario{
+  background-color:#F0F0F0;
+  font-family: 'Poppins',sans-serif;
+  padding: 2rem;
+  display:flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  border-radius: 0.2rem;
+}
+
+.contato-form-grupo{
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display:flex;
+  flex-direction: column;
+  align-items:stretch;
+}
+
+.contato-formulario button{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 700;
+  height: 2.5rem;
+  background-color: #F6C34A;
+  border:0;
+  padding: 0.5rem 4rem;
+  border-radius: 0.1rem;
+  align-self: stretch;
+}
+
+.contato-inputs{
+  height: 2rem;
+  font-size: 1.1rem;
+}
+
+
+
+
+/* ESTILIZAÇÃO PÁGINA ÁREA ADMIN */
+
+/* Estilização do menu lateral da página de area-adm (menu à esquerda)*/
+
+.area-adm-main-container{
+  display:flex;
+}
+
+.area-adm-menu-lateral{
+  width: 25vw;
+  background-color: #0E0E0E;
+  padding: 3rem 0;
+  display:flex;
+  justify-content: center;
+}
+
+.area-adm-menu-lateral ul{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  list-style: none;
+  font-family: 'Poppins',sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+
+#area-adm-turmas-link,
+#area-adm-matriculas-link,
+#area-adm-financeiro-link{
+  text-decoration: none;
+}
+
+.link-ativado-visited:visited{
+  color:#F0F0F0;
+}
+
+.link-desativado-visited:visited{
+  color:#707070;
+}
+
+
+
+.layout-desativado{
+  display:none;
+}
+
+.layout-ativado{
+  display:block;
+  width: 100%;
+}
+
+#link-desativado{
+  color:#707070;
+}
+
+#link-ativado{
+  color:#F0F0F0;
+}
+
+
+
+
+/* Estilização do right-content da página de area-adm (conteúdo da direita)*/
+.area-adm-right-content{
+  background-color: #F6C34A;
+  border-bottom: 0.1rem solid #0E0E0E;
+  width: 75vw;
+  min-height: 100vh;
+  padding: 3rem 0;
+  border-bottom: 0.1rem solid #0E0E0E;
+}
+
+
+/* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO TURMAS*/
+.area-adm-busca-turmas{
+  background-color: #F6C34A;
+  width: 75vw;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:3rem;
+}
+
+.area-adm-busca-container{
+  display:flex;
+  align-items: center;
+  height: 3rem;
+  border-radius: 0.5rem;
+}
+
+#area-adm-caixa-texto{
+  font-size: 0.9rem;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 700;
+  width: 20rem;
+  height: 100%;
+  padding-left: 1rem;
+  border-bottom-left-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+  border:0px;
+}
+
+
+.area-adm-botao-buscar{
+  font-size: 1.2rem;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 700;
+  height: 100%;
+  text-decoration: none;
+  background-color: #0E0E0E;
+  color: #F0F0F0;
+  padding: 0 2rem;
+  display:flex;
+  align-items: center;  
+  border-top-right-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}
+
+.area-adm-turmas-cards-container{
+  display:flex;
+  padding:0 4rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.area-adm-turmas-card{
+  background-color: #FFF;
+  font-family: 'Open Sans',sans serif;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap:0.3rem;
+  padding:1rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.area-adm-turma-info{
+  font-weight: 700;
+}
+
+.area-adm-turmas-card h2{
+  font-family: 'Poppins',sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  align-self: center;
+}
+
+
+/* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO MATRÍCULAS*/
+.area-adm-main-matriculas{
+  display:none;
+  width: 100%;
+}
+
+.area-adm-matriculas-container{
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10vw;
+}
+
+.area-adm-matriculas-form{
+  font-family: 'Poppins',sans-serif;
+  width: 20rem;
+  display:flex;
+  flex-direction: column;
+  gap:0.05rem;
+  padding:1rem;
+}
+
+.area-adm-matriculas-form label{
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.area-adm-matriculas-form input{
+  margin-bottom: 0.6rem;
+  height: 2rem;
+  width: 100%;
+  border:none;
+  border-radius: 0.3rem;
+}
+
+.area-adm-matriculas-form h2,
+.area-adm-aluno-matriculado h2{
+  margin-bottom: 1.5rem;
+}
+
+.area-adm-botao-matricular,.area-adm-botao-matricular:link,.area-adm-botao-matricular:visited{
+  color:#F0F0F0;
+}
+
+.area-adm-botao-matricular
+{
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.5rem 0;
+  background-color: #0E0E0E;
+  text-decoration: none;
+  color: #F0F0F0;
+  font-weight: 700;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+
+.area-adm-aluno-matriculado{
+  display:flex;
+  flex-direction: column;
+  gap:0.3rem;
+}
+
+.area-adm-aluno-matriculado img{
+  margin-left: 2rem;
+}
+
+.area-adm-aluno-matriculado h2{
+  font-family: 'Poppins',sans-serif;
+  display:flex;
+  align-items:center;
+}
+
+.area-adm-aluno-matriculado p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+}
+
+
+/* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO FINANCEIRO ALUNOS*/
+.area-adm-main-financeiro-alunos{
+  display:none;
+  width: 100%;
+}
+
+.area-adm-financeiro-alunos-container{
+  padding: 0 10vw;
+  display:flex;
+  gap:15vw;
+  justify-content: center;
+}
+
+.area-adm-financeiro,
+.area-adm-relatorio-aluno{
+  font-family: 'Poppins',sans-serif;
+  display:flex;
+  flex-direction: column;
+  width: 18vw;
+  gap:0.2rem;
+}
+
+.area-adm-financeiro h2,
+.area-adm-relatorio-aluno h2{
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.area-adm-financeiro label,
+.area-adm-relatorio-aluno label{
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.area-adm-financeiro input,
+.area-adm-relatorio-aluno input{
+  font-size: 1.1rem;
+  font-weight: 400;
+  height: 2rem;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.area-adm-botao-financeiro{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 700;
+  text-align: center;
+  background-color: #0E0E0E;
+  width: 100%;
+  color: #F0F0F0;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  margin-top: 2rem;
+  border-radius: 0.3rem;
+}
+
+.adiciona-curso{
+  color:#0E0E0E;
+  font-size: 0.8rem;
+}
+
+.area-adm-financeiro p{
+  margin-bottom: 0.8rem;
+}
+
+.area-adm-relatorio-aluno-container{
+  display:flex;
+  flex-direction: column;
+  gap:3rem;
+}
+
+.area-adm-relatorio-aluno-encontrado{
+  font-family: 'Poppins',sans-serif;
+}
+

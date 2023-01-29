@@ -217,6 +217,7 @@ const buscarCurso = (nomeDoCurso) => {
 
 // função para imprimir turmas
 const imprimirRelatorioTurmas = (arrayTurmas) => {
+  
   if(arrayTurmas.length < 1){
     console.log(`Turma não encontrada`);
   }else{
@@ -235,39 +236,69 @@ const imprimirRelatorioTurmas = (arrayTurmas) => {
 
 
 // função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
-const buscarTurma = (nomeDaTurma) => {
+const buscarTurma = () => {
+//  captura do value do input para busca de turma
+  const inputBuscaTurma = document.querySelector('#area-adm-caixa-texto');
+  const turmaABuscar = inputBuscaTurma.value;
+
   const filtroBuscaTurma = turmas.filter((turmas)=>{
-    return turmas.turma.toLowerCase().includes(nomeDaTurma.toLowerCase());
+    return turmas.turma.toLowerCase().includes(turmaABuscar.toLowerCase());
   });
-  return filtroBuscaTurma.length < 1 ? console.log(`Turma não encontrada`): imprimirRelatorioTurmas(filtroBuscaTurma);
+
+  inputBuscaTurma.value ="";
+  return filtroBuscaTurma.length < 1 ? alert(`Turma não encontrada`): gerarCard(filtroBuscaTurma);
+
+  /* return filtroBuscaTurma.length < 1 ? alert(`Turma não encontrada`): imprimirRelatorioTurmas(filtroBuscaTurma); */
+
 }
 // buscarTurma(`AR`);
 
 
 // função para imprimir relatório de estudantes
-const imprimirRelatorioEstudantes = (arrayEstudantes) => {
-  if(arrayEstudantes.length < 1){
-    console.log(`Aluno não encontrado`);
+const imprimirRelatorioEstudantes = (estudanteBuscado) => {
+  const layoutRelatorioAluno = document.querySelector('.area-adm-relatorio-aluno-container');
+  const layoutAlunoEncontrado = document.createElement('div');
+
+  layoutAlunoEncontrado.setAttribute('class','area-adm-relatorio-aluno-encontrado');
+  if(estudanteBuscado === 'Aluno não encontrado!'){
+    const layoutInfoAlunoNaoEncontrado = document.createElement('p');
+
+    layoutInfoAlunoNaoEncontrado.innerHTML = estudanteBuscado;
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoNaoEncontrado);
   }else{
-    for(aluno of arrayEstudantes){
-      console.log(`*******************************`);
-      console.log(`Aluno: ${aluno.estudante}`);
-      console.log(`Turma: ${aluno.turma}`);
-      console.log(`Curso: ${aluno.curso}`);
-      console.log(`Valor Total: ${aluno.valor}`);
-      console.log(`Valor Parcela: ${aluno.parcelas}`);
-      console.log(`N. Parcelas: ${aluno.nParcelas}`);
-    }
+    const layoutInfoAlunoNome = document.createElement('p');
+    const layoutInfoAlunoTurma = document.createElement('p');
+    const layoutInfoAlunoCurso = document.createElement('p');
+    const layoutInfoAlunoValorTotal = document.createElement('p');
+    const layoutInfoAlunoValorParcela = document.createElement('p');
+    const layoutInfoAlunoNumeroParcelas = document.createElement('p');
+    
+    layoutInfoAlunoNome.innerHTML = `Aluno: ${estudanteBuscado.estudante}`;
+    layoutInfoAlunoTurma.innerHTML = `Turma: ${estudanteBuscado.turma}`;
+    layoutInfoAlunoCurso.innerHTML = `Curso: ${estudanteBuscado.curso}`;
+    layoutInfoAlunoValorTotal.innerHTML = `Valor total: R$${estudanteBuscado.valor}`;
+    layoutInfoAlunoValorParcela.innerHTML = `Valor parcela: R$${estudanteBuscado.parcelas}`;
+    layoutInfoAlunoNumeroParcelas.innerHTML = `N. parcelas: ${estudanteBuscado.nParcelas}`;
+
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoNome);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoTurma);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoCurso);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoValorTotal);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoValorParcela);
+    layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoNumeroParcelas);
   }
+  layoutRelatorioAluno.insertAdjacentElement('beforeend',layoutAlunoEncontrado);
 }
 
 
 // função para buscar estudante com sequência de letras que o estudante contenha
-const buscarEstudante = (nomeEstudante) => {
-  const resultadoBuscaEstudante = estudantes.filter((aluno) =>{
+const buscarEstudante = () => {
+  const nomeEstudante = document.getElementById('nome-relatorio-aluno').value;
+  const resultadoBuscaEstudante = estudantes.find((aluno) =>{
     return aluno.estudante.toLowerCase().includes(nomeEstudante.toLowerCase());
   });
-  return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : imprimirRelatorioEstudantes(resultadoBuscaEstudante);
+  
+   return resultadoBuscaEstudante === undefined ? imprimirRelatorioEstudantes(`Aluno não encontrado!`) : imprimirRelatorioEstudantes(resultadoBuscaEstudante); 
 }
 
 //  buscarEstudante('evans');
@@ -309,8 +340,158 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 // console.log(preencheCarrinhoCursos('HTML e CSS'));
 
 
+// MANIPULAÇÃO DE DOM
+
+//Manipulação de DOM, página Area Adm, busca de turmas
+const gerarCard = (arrayTurmasBuscadas) => {
+  const sectionBuscarTurma = document.querySelector('.area-adm-busca-turmas');
+
+  const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
+  divCardsContainer.setAttribute('class','area-adm-turmas-cards-container');
+
+  arrayTurmasBuscadas.forEach(function(item,index){
+    const divCard = document.createElement('div'); // div que contém o card
+    divCard.setAttribute('class','area-adm-turmas-card');
+
+    console.log(item,index);
+
+    const nomeDaTurma = document.createElement('h2'); // criando h2 com o nome da turma do card
+    console.log(item)
+    nomeDaTurma.innerHTML = item.turma;
+    divCard.insertAdjacentElement('afterbegin',nomeDaTurma);
+
+    const conteudoTurma = document.createElement('p'); // p para mostrar o curso
+    const conteudoTurmaInicio = document.createElement('p'); // p para mostrar a data de início do curso
+    const conteudoTurmaTermino = document.createElement('p'); // p para mostrar a data de início do curso
+    const conteudoTurmaNumeroAlunos = document.createElement('p'); // p para mostrar a data de início do curso
+    const conteudoTurmaPeriodo = document.createElement('p'); // p para mostrar a data de início do curso
+    const conteudoTurmaConcluido = document.createElement('p'); // p para mostrar a data de início do curso
+
+    const keyConteudoTurma = document.createElement('span');
+    /* Adição do curso no card */
+    keyConteudoTurma.setAttribute('class', 'area-adm-turma-info');
+    keyConteudoTurma.innerHTML = "Curso:";
+    conteudoTurma.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurma.innerHTML += ` ${item.curso}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurma);
+    /* Adição da data de início no card */
+    keyConteudoTurma.innerHTML = "Início:";
+    conteudoTurmaInicio.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaInicio.innerHTML += ` ${item.inicio}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaInicio);
+    /* Adição da data de término no card */
+    keyConteudoTurma.innerHTML = "Término:";
+    conteudoTurmaTermino.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaTermino.innerHTML += ` ${item.termino}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaTermino);
+    /* Adição de número de alunos no card */
+    keyConteudoTurma.innerHTML = "Número de alunos:";
+    conteudoTurmaNumeroAlunos.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaNumeroAlunos.innerHTML += ` ${item.numeroDeAlunos}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaNumeroAlunos);
+    /* Adição de período da turma no card */
+    keyConteudoTurma.innerHTML = "Período:";
+    conteudoTurmaPeriodo.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaPeriodo.innerHTML += ` ${item.periodo}`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaPeriodo);
+    /* Adição de info se a turma já foi concluída no card */
+    keyConteudoTurma.innerHTML = "Concluído:";
+    conteudoTurmaConcluido.insertAdjacentElement('beforeend',keyConteudoTurma);
+    conteudoTurmaConcluido.innerHTML += ` ${item.concluida === true ? 'Sim': 'Não' }`;
+    divCard.insertAdjacentElement('beforeend',conteudoTurmaConcluido);
+
+    /* Adiciona card no container */
+    divCardsContainer.insertAdjacentElement('afterbegin',divCard);
+  });  
+
+  /* Adiciona container de cards na section */
+  sectionBuscarTurma.insertAdjacentElement('beforeend',divCardsContainer);
+}
 
 
+//Manipulação de DOM, página Area Adm, abrindo layout de matrícula de estudante
+  
+
+const mostraAreaMatriculas = () => {
+  const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
+  const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
+  const layoutFinanceiro = document.querySelector(".area-adm-main-financeiro-alunos");
+  const linkTurmas = document.querySelector("#area-adm-turmas-link");
+  const linkMatriculas = document.querySelector("#area-adm-matriculas-link");
+  const linkFinanceiro = document.querySelector("#area-adm-financeiro-link");
+  
+
+  layoutTurmas.setAttribute('class','layout-desativado ');
+  layoutFinanceiro.setAttribute('class','layout-desativado ');
+  layoutMatriculas.setAttribute('class','layout-ativado');
+  console.log(linkMatriculas)
+
+  linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
+  linkFinanceiro.setAttribute('class','link-desativado link-desativado-visited');
+  linkMatriculas.setAttribute('class','link-ativado link-ativado-visited');
+}
+
+const mostraAlunoMatriculado = () => {
+  const sectionBuscarTurma = document.querySelector('.area-adm-matriculas-container')
+
+  const inputNomeAluno = document.getElementById('nome')
+  const inputCursoAluno = document.getElementById('curso')
+  const inputTurmaAluno = document.getElementById('turma')
+
+  const containerLayoutAlunoMatriculado = document.createElement('div');
+  const layoutAlunoMatriculado = document.createElement('div');
+  const alunoMatriculadoCorfirmacao = document.createElement('h2');
+  const alunoMatriculadoCorfirmacaoLogo = document.createElement('img');
+  const tituloAluno = document.createElement('p');
+  const nomeAluno = document.createElement('p');
+  const cursoAluno = document.createElement('p');
+  const turmaAluno = document.createElement('p');
+
+  alunoMatriculadoCorfirmacaoLogo.setAttribute('src', '../assets/vector.png');
+  alunoMatriculadoCorfirmacao.innerHTML =`Aluno matriculado`;
+  alunoMatriculadoCorfirmacao.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacaoLogo);
+
+  tituloAluno.innerHTML = `Aluno Matriculado`
+  nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
+  cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
+  turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
+  
+  containerLayoutAlunoMatriculado.setAttribute('class', 'area-adm-aluno-matriculado-container');
+  layoutAlunoMatriculado.setAttribute('class','area-adm-aluno-matriculado');
+
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacao);
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',tituloAluno);
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',nomeAluno);
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',cursoAluno);
+  layoutAlunoMatriculado.insertAdjacentElement('beforeend',turmaAluno);
+  containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
+  sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
+
+  inputNomeAluno.value = "";
+  inputCursoAluno.value = "";
+  inputTurmaAluno.value = "";
+}
+
+//Manipulação de DOM, página Area Adm, abrindo layout de Financeiro Alunos
+const mostraAreaFinanceiro = () => {
+  const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
+  const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
+  const layoutFinanceiro = document.querySelector(".area-adm-main-financeiro-alunos");
+  const linkTurmas = document.querySelector("#area-adm-turmas-link");
+  const linkMatriculas = document.querySelector("#area-adm-matriculas-link");
+  const linkFinanceiro = document.querySelector("#area-adm-financeiro-link");
+  
+
+  console.log(layoutMatriculas)
+
+  layoutMatriculas.setAttribute('class','layout-desativado ');
+  layoutTurmas.setAttribute('class','layout-desativado ');
+  layoutFinanceiro.setAttribute('class','layout-ativado');
+  
+  linkMatriculas.setAttribute('class','link-desativado link-desativado-visited');
+  linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
+  linkFinanceiro.setAttribute('class','link-ativado link-ativado-visited'); 
+}
 
 
 

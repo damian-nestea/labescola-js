@@ -5,18 +5,135 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Área ADM</title>
+  <script src="../script.js"></script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <div>LOGO</div>
-    <nav></nav>
+    <div class="logo-container"><a href="../index.html"><img src="../assets/logo.svg" alt="Logo da LabEscola"></a></div>
+    <nav>
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/cursos.html">Cursos</a></li>
+        <li><a href="../pages/contato.html">Contato</a></li>
+        <li><a class="menu-selected" href="../pages/area-adm.html">Área ADM</a></li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <nav></nav>
-    <section></section>
+  <main class="area-adm-main-container">
+    <nav class="area-adm-menu-lateral">
+      <ul>
+        <li><a id="area-adm-turmas-link" class="link-ativado link-ativado-visited" href="./area-adm.html">Turmas</a></li>
+        <li ><a id="area-adm-matriculas-link" class="link-desativado link-desativado-visited" href="../pages/area-adm.html" onclick="mostraAreaMatriculas();return false;">Matrículas</a></li>
+        <li><a id="area-adm-financeiro-link" class="link-desativado link-desativado-visited" href="../pages/area-adm.html" onclick="mostraAreaFinanceiro();return false;">Financeiro Alunos</a></li>
+      </ul>
+    </nav>
+    <section class="area-adm-right-content">
+      <!-- Início Layout de opção Turmas -->
+      <div class="area-adm-busca-turmas">
+        <div class="area-adm-busca-container">
+          <input id="area-adm-caixa-texto" placeholder="Digite o número da turma" type="text" name="buscar">
+          <a onclick="buscarTurma()" class="area-adm-botao-buscar" href="#">Buscar</a>
+        </div>
+      </div>
+      <!-- Fim Layout de opção Turmas -->
+      <!-- Início Layout de opção Matrículas -->
+      <div class="area-adm-main-matriculas">
+        <div id="area-adm-matriculas" class="area-adm-matriculas-container">
+          <form class="area-adm-matriculas-form" action="#">
+            <h2>Matrículas</h2>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+            <label for="curso">Curso</label>
+            <input type="text" name="curso" id="curso">
+            <label for="turma">Turma</label>
+            <input type="text" name="turma" id="turma">
+            <label for="numParcelas">Número de parcelas</label>
+            <input type="number" name="numParcelas" id="numParcelas">
+            <a class="area-adm-botao-matricular" href="../pages/area-adm.html" onclick="mostraAlunoMatriculado();return false">Matricular Aluno</a>
+          </form>
+        </div>
+      </div>
+      <!-- Fim Layout de opção Matrículas -->
+      <!-- Início Layout de opção Financeiro Alunos -->
+      <div class="area-adm-main-financeiro-alunos">
+        <div class="area-adm-financeiro-alunos-container">
+          <form class="area-adm-financeiro" action="#">
+            <h2>Financeiro</h2>
+            <label for="curso-financeiro">Curso</label>
+            <input type="text" name="curso-financeiro" id="curso-financeiro">
+            <p><a class="adiciona-curso" href="">Adicionar outro curso</a></p>
+            <label for="numero-parcelas-financeiro">Número de parcelas</label>
+            <input type="number" name="numero-parcelas-financeiro" id="numero-parcelas-financeiro">
+            <a class="area-adm-botao-financeiro" href="../pages/area-adm.html" onclick="mostraValorCurso()">Ver valor</a>
+          </form>
+          <div class="area-adm-relatorio-aluno-container">
+            <form class="area-adm-relatorio-aluno" action="#">
+              <h2>Relatório Aluno</h2>
+              <label for="nome-relatorio-aluno">Nome</label>
+              <input type="text" name="nome-relatorio-aluno" id="nome-relatorio-aluno">
+              <a class="area-adm-botao-financeiro" href="../pages/area-adm.html" onclick="buscarEstudante();return false">Buscar</a>
+            </form>
+            <!-- <div class="area-adm-relatorio-aluno-encontrado">
+              <p>Aluno: Chris Evans</p>
+              <p>Turma: Hipátia</p>
+              <p>Curso: Javascript</p>
+              <p>Valor total: R$900</p>
+              <p>Valor parcela: R$100</p>
+              <p>N. parcelas: 9</p>
+            </div> -->
+
+          </div>
+        </div>
+        
+      </div>
+    </section>
   </main>
-  <footer>
-    
+  <footer class="footer-container">
+    <div class="footer-top-content">
+      <img class="footer-top-content-logo" src="../assets/logo.svg" alt="Logo">
+    </div>
+    <div class="footer-bottom-content">
+      <div class="footer-endereco">
+        <h3>Endereço</h3>
+        <div>
+          <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="280" id="gmap_canvas" src="https://maps.google.com/maps?q=rua%20pa%C3%ADs%20leme%20215&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies</a><br><a href="https://www.embedgooglemap.net">interactive google map for website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:280px;width:400px;}</style></div></div>
+          <p>R. Pais Leme, 215. CEP 05424-150 - Pinheiros</p>
+        </div>
+      </div><!--  -->
+      <div class="footer-links">
+        <h3>Links</h3>
+        <ul class="footer-list-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="./cursos.html">Cursos</a></li>
+          <li>Blog</li>
+          <li><a href="./contato.html">Fale conosco</a></li>
+          <li>Termos e condições</li>
+          <li>Política de privacidade</li>
+          <li>FAQ</li>
+        </ul>
+      </div>
+      <div class="footer-redes-sociais">
+        <h3>Redes sociais</h3>
+        <div class="footer-list-redes-sociais">
+          <a href="https://twitter.com/" target="_blank"><img src="../assets/icon-twitter1.png" alt="Logo do Twitter"></a>
+          <a href="https://www.linkedin.com/in/jair-dami%C3%A1n-mart%C3%ADnez-bautista-4b35b1a6/" target="_blank"><img src="../assets/icon-linkedin1.png" alt="Logo do Linkedin"></a>
+          <a href="https://www.facebook.com/jairdamian.martinez/" target="_blank"><img src="../assets/icon-fb1.png" alt="Logo do Facebook"></a>
+          <a href="https://www.instagram.com/jairdamianmartinez/" target="_blank"><img src="../assets/icon-ig1.png" alt="Logo do Instagram"></a>
+        </div>
+      </div>
+      <div class="footer-area-restrita">
+        <h3>Área restrita</h3>
+        <ul class="footer-list-pocoes-area-adm">
+          <li><a href="./area-adm.html">Área restrita</a></li>
+          <li>Espaço do aluno</li>
+        </ul>
+      </div>
+      
+    </div>
   </footer>
 </body>
 </html>
