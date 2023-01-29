@@ -389,17 +389,24 @@ const gerarCard = (arrayTurmasBuscadas) => {
 
 
 //Manipulação de DOM, página Area Adm, abrindo layout de matrícula de estudante
+  
 
 const mostraAreaMatriculas = () => {
   const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
   const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
+  const layoutFinanceiro = document.querySelector(".area-adm-main-financeiro-alunos");
   const linkTurmas = document.querySelector("#area-adm-turmas-link");
   const linkMatriculas = document.querySelector("#area-adm-matriculas-link");
+  const linkFinanceiro = document.querySelector("#area-adm-financeiro-link");
+  
 
   layoutTurmas.setAttribute('class','layout-desativado ');
+  layoutFinanceiro.setAttribute('class','layout-desativado ');
   layoutMatriculas.setAttribute('class','layout-ativado');
   console.log(linkMatriculas)
+
   linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
+  linkFinanceiro.setAttribute('class','link-desativado link-desativado-visited');
   linkMatriculas.setAttribute('class','link-ativado link-ativado-visited');
 }
 
@@ -444,20 +451,25 @@ const mostraAlunoMatriculado = () => {
   inputTurmaAluno.value = "";
 }
 
+//Manipulação de DOM, página Area Adm, abrindo layout de Financeiro Alunos
 const mostraAreaFinanceiro = () => {
-  const layoutFinanceiroAlunos = document.querySelector(".area-adm-main-financeiro-alunos");
+  const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
   const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
+  const layoutFinanceiro = document.querySelector(".area-adm-main-financeiro-alunos");
   const linkTurmas = document.querySelector("#area-adm-turmas-link");
+  const linkMatriculas = document.querySelector("#area-adm-matriculas-link");
   const linkFinanceiro = document.querySelector("#area-adm-financeiro-link");
-
-  console.log(layoutTurmas)
-
-
-  layoutTurmas.setAttribute('class','layout-desativado ');
-  layoutFinanceiroAlunos.setAttribute('class','layout-ativado');
   
+
+  console.log(layoutMatriculas)
+
+  layoutMatriculas.setAttribute('class','layout-desativado ');
+  layoutTurmas.setAttribute('class','layout-desativado ');
+  layoutFinanceiro.setAttribute('class','layout-ativado');
+  
+  linkMatriculas.setAttribute('class','link-desativado link-desativado-visited');
   linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
-  linkFinanceiro.setAttribute('class','link-ativado link-ativado-visited');
+  linkFinanceiro.setAttribute('class','link-ativado link-ativado-visited'); 
 }
 
 

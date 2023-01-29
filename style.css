@@ -579,3 +579,19 @@ header{
   display:none;
   width: 100%;
 }
+
+.area-adm-financeiro-alunos-container{
+  padding: 0 15vw;
+  display:flex;
+  gap:15vw;
+  justify-content: center;
+}
+
+.area-adm-financeiro,
+.area-adm-relatorio-aluno{
+  font-family: 'Poppins',sans-serif;
+  display:flex;
+  flex-direction: column;
+  width: 20vw;
+  gap:0.2rem;
+}
