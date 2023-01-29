@@ -256,7 +256,8 @@ const buscarTurma = () => {
 
 // função para imprimir relatório de estudantes
 const imprimirRelatorioEstudantes = (arrayEstudantes) => {
-  if(arrayEstudantes.length < 1){
+  console.log(arrayEstudantes);
+  /* if(arrayEstudantes.length < 1){
     console.log(`Aluno não encontrado`);
   }else{
     for(aluno of arrayEstudantes){
@@ -268,15 +269,17 @@ const imprimirRelatorioEstudantes = (arrayEstudantes) => {
       console.log(`Valor Parcela: ${aluno.parcelas}`);
       console.log(`N. Parcelas: ${aluno.nParcelas}`);
     }
-  }
+  } */
 }
 
 
 // função para buscar estudante com sequência de letras que o estudante contenha
-const buscarEstudante = (nomeEstudante) => {
-  const resultadoBuscaEstudante = estudantes.filter((aluno) =>{
+const buscarEstudante = () => {
+  const nomeEstudante = document.getElementById('nome-relatorio-aluno').value;
+  const resultadoBuscaEstudante = estudantes.find((aluno) =>{
     return aluno.estudante.toLowerCase().includes(nomeEstudante.toLowerCase());
   });
+  console.log(resultadoBuscaEstudante);
   return resultadoBuscaEstudante.length < 1 ? `Aluno não encontrado!` : imprimirRelatorioEstudantes(resultadoBuscaEstudante);
 }
 
