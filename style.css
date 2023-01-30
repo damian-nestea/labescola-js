@@ -109,6 +109,14 @@ header{
   height: 100%;
 }
 
+/* Estilização icone de whatsapp fixo no canto direito inferior*/
+.icone-whatsapp{
+  position:fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 4rem;
+  z-index: 1;
+}
 
 
 /* ESTILIZAÇÃO PÁGINA HOME */
@@ -117,7 +125,7 @@ header{
   background-color: #F6C34A;
   background-image: url('./assets/background-hero.png');
   background-repeat: no-repeat;
-  height: 60vh;
+  min-height: 80vh;
   font-family: 'Poppins',sans-serif;
   display:flex;
   flex-direction: column;
@@ -208,8 +216,7 @@ header{
 }
 
 .foto-depoimento img{
-  width: 40%;
-  border:0.25rem solid #F6C34A;
+  width: 75%;  
   border-radius: 100%;
 }
 
