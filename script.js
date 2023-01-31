@@ -494,5 +494,11 @@ const mostraAreaFinanceiro = () => {
 }
 
 
-
-
+/* Função para envio de email */
+const sendMail = () => {
+  var link = "mailto:damian.nestea87@gmail.com"
+           + "?cc="
+           + "&subject=" + encodeURIComponent("Quero entrar na LabEscola!")
+  ;
+  window.location.href = link;
+}

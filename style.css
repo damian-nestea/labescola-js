@@ -53,7 +53,7 @@ header{
 }
 
 .footer-top-content-logo{
-  fill: #F6C34A;
+  fill:  #F6C34A !important;
   height: 100%;
 }
 
