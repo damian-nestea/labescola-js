@@ -426,6 +426,9 @@ const mostraAreaMatriculas = () => {
   layoutMatriculas.setAttribute('class','layout-ativado');
   console.log(linkMatriculas)
 
+  /* refatorar */
+  layourTurmas.classList.add('')
+
   linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
   linkFinanceiro.setAttribute('class','link-desativado link-desativado-visited');
   linkMatriculas.setAttribute('class','link-ativado link-ativado-visited');
@@ -494,5 +497,11 @@ const mostraAreaFinanceiro = () => {
 }
 
 
-
-
+/* Função para envio de email */
+const sendMail = () => {
+  var link = "mailto:damian.nestea87@gmail.com"
+           + "?cc="
+           + "&subject=" + encodeURIComponent("Quero entrar na LabEscola!")
+  ;
+  window.location.href = link;
+}
