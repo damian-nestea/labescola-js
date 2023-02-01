@@ -344,15 +344,23 @@ header{
   align-items:stretch;
 }
 
-.contato-formulario button{
+.botao-enviar-contato{
   font-family: 'Poppins',sans-serif;
   font-weight: 700;
   height: 2.5rem;
   background-color: #F6C34A;
   border:0;
   padding: 0.5rem 4rem;
-  border-radius: 0.1rem;
+  border-radius: 0.2rem;
   align-self: stretch;
+  text-align: center;
+  text-decoration: none;
+}
+
+.botao-enviar-contato,
+.botao-enviar-contato:link,
+.botao-enviar-contato:visited{
+  color:#0E0E0E;
 }
 
 .contato-inputs{
