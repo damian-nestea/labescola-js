@@ -249,8 +249,8 @@ header{
 
 .cursos-card{
   background-color: #FFF;
-  min-width: 10vw;
-  max-width: 22vw;
+  min-width: 8vw;
+  max-width: 20vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
