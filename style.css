@@ -369,8 +369,15 @@ header{
 
 .contato-inputs{
   height: 2rem;
-  font-size: 1.1rem;
 }
+
+.contato-inputs,
+.contato-form-grupo textarea{
+  font-size: 0.85rem;
+  font-family: 'Poppins',sans-serif;
+  padding:0.15rem;
+}
+
 
 
 
