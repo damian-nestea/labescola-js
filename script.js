@@ -410,8 +410,6 @@ const gerarCard = (arrayTurmasBuscadas) => {
 
 
 //Manipulação de DOM, página Area Adm, abrindo layout de matrícula de estudante
-  
-
 const mostraAreaMatriculas = () => {
   const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
   const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
@@ -420,19 +418,23 @@ const mostraAreaMatriculas = () => {
   const linkMatriculas = document.querySelector("#area-adm-matriculas-link");
   const linkFinanceiro = document.querySelector("#area-adm-financeiro-link");
   
+  layoutMatriculas.classList.remove('layout-desativado');
+  layoutTurmas.classList.remove('layout-ativado');
+  layoutFinanceiro.classList.remove('layout-ativado');
 
-  layoutTurmas.setAttribute('class','layout-desativado ');
-  layoutFinanceiro.setAttribute('class','layout-desativado ');
-  layoutMatriculas.setAttribute('class','layout-ativado');
-  console.log(linkMatriculas)
+  layoutMatriculas.classList.add('layout-ativado');
+  layoutTurmas.classList.add('layout-desativado');
+  layoutFinanceiro.classList.add('layout-desativado');
 
-  /* refatorar */
-  layourTurmas.classList.add('')
+  linkMatriculas.classList.remove('link-desativado', 'link-desativado-visited');
+  linkTurmas.classList.remove('link-ativado', 'link-ativado-visited');
+  linkFinanceiro.classList.remove('link-ativado', 'link-ativado-visited');
 
-  linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
-  linkFinanceiro.setAttribute('class','link-desativado link-desativado-visited');
-  linkMatriculas.setAttribute('class','link-ativado link-ativado-visited');
+  linkMatriculas.classList.add('link-ativado', 'link-ativado-visited');
+  linkTurmas.classList.add('link-desativado', 'link-desativado-visited');
+  linkFinanceiro.classList.add('link-desativado', 'link-desativado-visited');
 }
+
 
 const mostraAlunoMatriculado = () => {
   const sectionBuscarTurma = document.querySelector('.area-adm-matriculas-container')
@@ -476,6 +478,7 @@ const mostraAlunoMatriculado = () => {
 }
 
 //Manipulação de DOM, página Area Adm, abrindo layout de Financeiro Alunos
+
 const mostraAreaFinanceiro = () => {
   const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
   const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
@@ -484,18 +487,22 @@ const mostraAreaFinanceiro = () => {
   const linkMatriculas = document.querySelector("#area-adm-matriculas-link");
   const linkFinanceiro = document.querySelector("#area-adm-financeiro-link");
   
+  layoutFinanceiro.classList.remove('layout-desativado');
+  layoutTurmas.classList.remove('layout-ativado');
+  layoutMatriculas.classList.remove('layout-ativado');
 
-  console.log(layoutMatriculas)
+  layoutFinanceiro.classList.add('layout-ativado');
+  layoutTurmas.classList.add('layout-desativado');
+  layoutMatriculas.classList.add('layout-desativado');
 
-  layoutMatriculas.setAttribute('class','layout-desativado ');
-  layoutTurmas.setAttribute('class','layout-desativado ');
-  layoutFinanceiro.setAttribute('class','layout-ativado');
-  
-  linkMatriculas.setAttribute('class','link-desativado link-desativado-visited');
-  linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
-  linkFinanceiro.setAttribute('class','link-ativado link-ativado-visited'); 
+  linkFinanceiro.classList.remove('link-desativado', 'link-desativado-visited');
+  linkTurmas.classList.remove('link-ativado', 'link-ativado-visited');
+  linkMatriculas.classList.remove('link-ativado', 'link-ativado-visited');
+
+  linkFinanceiro.classList.add('link-ativado', 'link-ativado-visited');
+  linkTurmas.classList.add('link-desativado', 'link-desativado-visited');
+  linkMatriculas.classList.add('link-desativado', 'link-desativado-visited');
 }
-
 
 /* Função para envio de email */
 const sendMail = () => {

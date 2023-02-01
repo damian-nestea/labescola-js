@@ -412,22 +412,20 @@ header{
   color:#707070;
 }
 
-
-
 .layout-desativado{
-  display:none;
+  display:none !important;
 }
 
 .layout-ativado{
-  display:block;
+  display:block !important;
   width: 100%;
 }
 
-#link-desativado{
+.link-desativado{
   color:#707070;
 }
 
-#link-ativado{
+.link-ativado{
   color:#F0F0F0;
 }
 
