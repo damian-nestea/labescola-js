@@ -230,7 +230,7 @@ header{
 
 /* Estilização do top content da página de cursos(cards dos cursos com uma curta descrição */
 .cursos-top-content{
-  height: 80vh;
+  min-height: 80vh;
   background-color: #F6C34A;
   display:flex;
   flex-direction: column;
@@ -242,11 +242,15 @@ header{
 
 .cursos-descricao-cards-container{
   display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 4rem;
 }
 
 .cursos-card{
   background-color: #FFF;
+  min-width: 10vw;
+  max-width: 22vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
