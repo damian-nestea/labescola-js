@@ -512,3 +512,28 @@ const sendMail = () => {
   ;
   window.location.href = link;
 }
+
+const enviaInfoContato = () =>{
+  const inputNomeContato = document.getElementById('nome')
+  const inputEmailContato = document.getElementById('email');
+  const inputMensagemContato = document.getElementById('mensagem');
+
+  if(validaFormulario(inputNomeContato.value,inputEmailContato.value,inputMensagemContato.value)){
+    alert("Mensagem enviada com sucesso!");
+    inputNomeContato.value ="";
+    inputEmailContato.value ="";
+    inputMensagemContato.value ="";
+  }else{
+    alert("Preencha todos os campos!");
+  }
+}
+
+/* Validar se formulário de contato está vazio */
+const validaFormulario = (inputNomeContato,inputEmailContato,inputMensagemContato) => {
+  console.log(inputNomeContato,inputEmailContato,inputMensagemContato);
+  if (inputNomeContato == null || inputNomeContato == "" || inputEmailContato == null || inputEmailContato == "" || inputMensagemContato == null || inputMensagemContato == "") {
+    return false;
+  }else{
+    return true;
+  }
+}
