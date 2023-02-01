@@ -426,6 +426,9 @@ const mostraAreaMatriculas = () => {
   layoutMatriculas.setAttribute('class','layout-ativado');
   console.log(linkMatriculas)
 
+  /* refatorar */
+  layourTurmas.classList.add('')
+
   linkTurmas.setAttribute('class','link-desativado link-desativado-visited');
   linkFinanceiro.setAttribute('class','link-desativado link-desativado-visited');
   linkMatriculas.setAttribute('class','link-ativado link-ativado-visited');
