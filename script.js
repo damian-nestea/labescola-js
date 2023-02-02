@@ -175,6 +175,7 @@ const parcelarCurso = (carrinhoCursos,parcela) => {
     }
   }
 
+
 // cálculo de cursos por numero de parcelas e impressão no console.
   if(parcela === 1){
     valorTotalCursos *= 0.8 // 20 % de desconto
@@ -188,8 +189,7 @@ const parcelarCurso = (carrinhoCursos,parcela) => {
     console.log(`A sua compra dos cursos ficou no valor total de R$${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}.`) 
   } 
 }
-
-parcelarCurso([500,500,1000],2);
+/* parcelarCurso([500,500,1000],2); */
 
 
 // função para imprimir curso 
@@ -248,8 +248,6 @@ const buscarTurma = () => {
 
   inputBuscaTurma.value ="";
   return filtroBuscaTurma.length < 1 ? alert(`Turma não encontrada`): gerarCard(filtroBuscaTurma);
-
-  /* return filtroBuscaTurma.length < 1 ? alert(`Turma não encontrada`): imprimirRelatorioTurmas(filtroBuscaTurma); */
 
 }
 // buscarTurma(`AR`);
@@ -312,7 +310,6 @@ const buscarEstudante = () => {
     alert("Preencha todos os campos!");
   }
 }
-
 //  buscarEstudante('evans');
 
 
@@ -352,7 +349,7 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 // console.log(preencheCarrinhoCursos('HTML e CSS'));
 
 
-// MANIPULAÇÃO DE DOM
+// MANIPULAÇÃO DE DOM ************************************************************************
 
 //Manipulação de DOM, página Area Adm, busca de turmas
 const gerarCard = (arrayTurmasBuscadas) => {
@@ -423,6 +420,7 @@ const gerarCard = (arrayTurmasBuscadas) => {
 }
 
 
+
 //Manipulação de DOM, página Area Adm, abrindo layout de matrícula de estudante
 const mostraAreaMatriculas = () => {
   const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
@@ -453,18 +451,23 @@ const mostraAreaMatriculas = () => {
 }
 
 
-const mostraAlunoMatriculado = () => {
 
+// Função para mostrar aluno matriculado na página area-adm, seção matriculas
+const mostraAlunoMatriculado = () => {
+  //primeiro checa se todos os campos estão preenchidos para poder criar a mensagem aluno matriculado
   if (checarInputs(document.querySelector(".area-adm-matriculas-form")) === true){
     const sectionBuscarTurma = document.querySelector('.area-adm-matriculas-container')
 
+    //declaração dos inputs do form de matrículas
     const inputNomeAluno = document.getElementById('nome')
     const inputCursoAluno = document.getElementById('curso')
     const inputTurmaAluno = document.getElementById('turma')
     const inputNParcelas = document.getElementById('numParcelas')
 
+    //em caso que a div exista, apaga para não acumular divs duplicadas
     apagaDiv('.area-adm-aluno-matriculado-container');
 
+    //criação de elementos para montar o layout de mensagem ALUNO MATRICULADO
     const containerLayoutAlunoMatriculado = document.createElement('div');
     const layoutAlunoMatriculado = document.createElement('div');
     const alunoMatriculadoCorfirmacao = document.createElement('h2');
@@ -474,15 +477,18 @@ const mostraAlunoMatriculado = () => {
     const cursoAluno = document.createElement('p');
     const turmaAluno = document.createElement('p');
 
+    // manipulação do título da mensagem de ALUNO MATRICULADO
     alunoMatriculadoCorfirmacaoLogo.setAttribute('src', '../assets/vector.png');
     alunoMatriculadoCorfirmacao.innerHTML =`Aluno matriculado`;
     alunoMatriculadoCorfirmacao.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacaoLogo);
 
+    // atribuição do conteúdo aos elementos criados anteriormente com a info digitada pelo usuário
     tituloAluno.innerHTML = `Aluno Matriculado`
     nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
     cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
     turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
     
+    //montagem dos elementos no DOM
     containerLayoutAlunoMatriculado.setAttribute('class', 'area-adm-aluno-matriculado-container');
     layoutAlunoMatriculado.setAttribute('class','area-adm-aluno-matriculado');
 
@@ -494,16 +500,19 @@ const mostraAlunoMatriculado = () => {
     containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
     sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
 
+    //Após aparição da mensagem de aluno matriculado, limpeza dos inputs do formulário
     limparInputs(document.querySelector(".area-adm-matriculas-form"));
 
   }else{
-    alert("Preencha todos os campos");
+    alert("Preencha todos os campos");// mensagem caso falte um input para preencher
   }
 }
 
-//Manipulação de DOM, página Area Adm, abrindo layout de Financeiro Alunos
 
+
+//Manipulação de DOM, página Area Adm, abrindo layout de Financeiro Alunos
 const mostraAreaFinanceiro = () => {
+  //seleção dos containers das seções TURMAS, MATRICULAS e FINANCEIRO e seus respectivos links
   const layoutMatriculas = document.querySelector(".area-adm-main-matriculas");
   const layoutTurmas = document.querySelector(".area-adm-busca-turmas");
   const layoutFinanceiro = document.querySelector(".area-adm-main-financeiro-alunos");
@@ -511,30 +520,37 @@ const mostraAreaFinanceiro = () => {
   const linkMatriculas = document.querySelector("#area-adm-matriculas-link");
   const linkFinanceiro = document.querySelector("#area-adm-financeiro-link");
   
+  //remoção de classes referentes à visibilidade no site
   layoutFinanceiro.classList.remove('layout-desativado');
   layoutTurmas.classList.remove('layout-ativado');
   layoutMatriculas.classList.remove('layout-ativado');
 
+  // adição de classes referentes à visibilidade no site, deixando o layout Financeiro visível
   layoutFinanceiro.classList.add('layout-ativado');
   layoutTurmas.classList.add('layout-desativado');
   layoutMatriculas.classList.add('layout-desativado');
 
+  // remoção das classes referentes à estilização do link do menu lateral esquerdo da página area-adm
   linkFinanceiro.classList.remove('link-desativado', 'link-desativado-visited');
   linkTurmas.classList.remove('link-ativado', 'link-ativado-visited');
   linkMatriculas.classList.remove('link-ativado', 'link-ativado-visited');
 
+  // adição de classes para estilizar os links da direita, deixando o link Financeiro 'acesso'
   linkFinanceiro.classList.add('link-ativado', 'link-ativado-visited');
   linkTurmas.classList.add('link-desativado', 'link-desativado-visited');
   linkMatriculas.classList.add('link-desativado', 'link-desativado-visited');
 
+  //apagando divs geradas na manipulação de DOM caso exista e limpeza de inputs dos formulários
   apagaDiv('.area-adm-relatorio-aluno-encontrado');
   limparInputs(document.querySelector(".area-adm-relatorio-aluno"))
   limparInputs(document.querySelector(".area-adm-financeiro"))
 }
 
+
+
 /* Função para envio de email no botão Quero fazer parte, página cursos */
 const sendMail = () => {
-  var link = "mailto:damian.nestea87@gmail.com"
+  const link = "mailto:damian.nestea87@gmail.com"
            + "?cc="
            + "&subject=" + encodeURIComponent("Quero entrar na LabEscola!")
   ;
@@ -542,10 +558,10 @@ const sendMail = () => {
 }
 
 
+
 /* Função para envio de Form de contato com checagem dos campos do form */
 const enviaInfoContato = () =>{
   const formularioContato = document.querySelector(".contato-formulario")
-  
   if(checarInputs(formularioContato)){
     alert("Mensagem enviada com sucesso!");
     limparInputs(formularioContato);
@@ -555,14 +571,14 @@ const enviaInfoContato = () =>{
 }
 
 /* Validar se formulário de contato está vazio */
-const validaFormulario = (inputNomeContato,inputEmailContato,inputMensagemContato) => {
+/* const validaFormulario = (inputNomeContato,inputEmailContato,inputMensagemContato) => {
   console.log(inputNomeContato,inputEmailContato,inputMensagemContato);
   if (inputNomeContato == null || inputNomeContato == "" || inputEmailContato == null || inputEmailContato == "" || inputMensagemContato == null || inputMensagemContato == "") {
     return false;
   }else{
     return true;
   }
-}
+} */
 
 /* Apaga div caso ela exista por identificação com nome da classe */
 const apagaDiv = (nomeClasse) => {
