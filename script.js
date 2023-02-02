@@ -9,6 +9,7 @@ const turmas = ["HC1", "JS1", "JS2", "REST1", "REST2"];
 const estudantes = ["João", "Ana", "Cris"];
  */
 
+
 // array de objetos contendo os cursos da escola de programação e suas propriedades
 const cursos =[
   {
@@ -531,7 +532,7 @@ const mostraAreaFinanceiro = () => {
   limparInputs(document.querySelector(".area-adm-financeiro"))
 }
 
-/* Função para envio de email */
+/* Função para envio de email no botão Quero fazer parte, página cursos */
 const sendMail = () => {
   var link = "mailto:damian.nestea87@gmail.com"
            + "?cc="
@@ -540,16 +541,14 @@ const sendMail = () => {
   window.location.href = link;
 }
 
-const enviaInfoContato = () =>{
-  const inputNomeContato = document.getElementById('nome')
-  const inputEmailContato = document.getElementById('email');
-  const inputMensagemContato = document.getElementById('mensagem');
 
-  if(validaFormulario(inputNomeContato.value,inputEmailContato.value,inputMensagemContato.value)){
+/* Função para envio de Form de contato com checagem dos campos do form */
+const enviaInfoContato = () =>{
+  const formularioContato = document.querySelector(".contato-formulario")
+  
+  if(checarInputs(formularioContato)){
     alert("Mensagem enviada com sucesso!");
-    inputNomeContato.value ="";
-    inputEmailContato.value ="";
-    inputMensagemContato.value ="";
+    limparInputs(formularioContato);
   }else{
     alert("Preencha todos os campos!");
   }
