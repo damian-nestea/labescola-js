@@ -210,8 +210,9 @@ const imprimirRelatorioCurso = (objetoCurso) => {
 const buscarCurso = (nomeDoCurso) => {
   const encontraCurso = cursos.find((curso)=>{
     return curso.curso.toLowerCase().includes(nomeDoCurso.toLowerCase());
-  });
-  return encontraCurso === undefined ? console.log(`Curso não encontrado`):imprimirRelatorioCurso(encontraCurso);
+  })
+  return encontraCurso === undefined ? console.log(`Curso não encontrado`):encontraCurso;
+  /* return encontraCurso === undefined ? console.log(`Curso não encontrado`):imprimirRelatorioCurso(encontraCurso); */
 }
 // buscarCurso("javascript");
 
@@ -454,6 +455,7 @@ const mostraAreaMatriculas = () => {
 
 // Função para mostrar aluno matriculado na página area-adm, seção matriculas
 const mostraAlunoMatriculado = () => {
+
   //primeiro checa se todos os campos estão preenchidos para poder criar a mensagem aluno matriculado
   if (checarInputs(document.querySelector(".area-adm-matriculas-form")) === true){
     const sectionBuscarTurma = document.querySelector('.area-adm-matriculas-container')
@@ -481,6 +483,8 @@ const mostraAlunoMatriculado = () => {
     alunoMatriculadoCorfirmacaoLogo.setAttribute('src', '../assets/vector.png');
     alunoMatriculadoCorfirmacao.innerHTML =`Aluno matriculado`;
     alunoMatriculadoCorfirmacao.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacaoLogo);
+
+    matricular(inputNomeAluno.value,inputCursoAluno.value,inputTurmaAluno.value,inputNParcelas.value);
 
     // atribuição do conteúdo aos elementos criados anteriormente com a info digitada pelo usuário
     tituloAluno.innerHTML = `Aluno Matriculado`
