@@ -291,21 +291,25 @@ const imprimirRelatorioEstudantes = (estudanteBuscado) => {
     layoutAlunoEncontrado.insertAdjacentElement('beforeend',layoutInfoAlunoNumeroParcelas);
   }
   layoutRelatorioAluno.insertAdjacentElement('beforeend',layoutAlunoEncontrado);
+  limparInputs(document.querySelector(".area-adm-relatorio-aluno"));
 }
 
 
 // função para buscar estudante com sequência de letras que o estudante contenha
 const buscarEstudante = () => {
 
-  checarInputs("#nome-relatorio-aluno");
-  const nomeEstudante = document.getElementById('nome-relatorio-aluno').value;
+  if (checarInputs(document.querySelector(".area-adm-relatorio-aluno")) === true){
+    const nomeEstudante = document.getElementById('nome-relatorio-aluno').value;
 
-  console.log(nomeEstudante)
-  const resultadoBuscaEstudante = estudantes.find((aluno) =>{
-    return aluno.estudante.toLowerCase().includes(nomeEstudante.toLowerCase());
-  });
-  
-   return resultadoBuscaEstudante === undefined ? imprimirRelatorioEstudantes(`Aluno não encontrado!`) : imprimirRelatorioEstudantes(resultadoBuscaEstudante); 
+    console.log(nomeEstudante)
+    const resultadoBuscaEstudante = estudantes.find((aluno) =>{
+      return aluno.estudante.toLowerCase().includes(nomeEstudante.toLowerCase());
+    });
+    
+    return resultadoBuscaEstudante === undefined ? imprimirRelatorioEstudantes(`Aluno não encontrado!`) : imprimirRelatorioEstudantes(resultadoBuscaEstudante);
+  }else{
+    alert("Preencha todos os campos!");
+  }
 }
 
 //  buscarEstudante('evans');
@@ -442,6 +446,9 @@ const mostraAreaMatriculas = () => {
   linkMatriculas.classList.add('link-ativado', 'link-ativado-visited');
   linkTurmas.classList.add('link-desativado', 'link-desativado-visited');
   linkFinanceiro.classList.add('link-desativado', 'link-desativado-visited');
+
+  apagaDiv('.area-adm-aluno-matriculado-container');
+  limparInputs(document.querySelector(".area-adm-matriculas-form"))
 }
 
 
@@ -486,10 +493,8 @@ const mostraAlunoMatriculado = () => {
     containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
     sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
 
-    inputNomeAluno.value = "";
-    inputCursoAluno.value = "";
-    inputTurmaAluno.value = "";
-    inputNParcelas.value = "";
+    limparInputs(document.querySelector(".area-adm-matriculas-form"));
+
   }else{
     alert("Preencha todos os campos");
   }
@@ -520,6 +525,10 @@ const mostraAreaFinanceiro = () => {
   linkFinanceiro.classList.add('link-ativado', 'link-ativado-visited');
   linkTurmas.classList.add('link-desativado', 'link-desativado-visited');
   linkMatriculas.classList.add('link-desativado', 'link-desativado-visited');
+
+  apagaDiv('.area-adm-relatorio-aluno-encontrado');
+  limparInputs(document.querySelector(".area-adm-relatorio-aluno"))
+  limparInputs(document.querySelector(".area-adm-financeiro"))
 }
 
 /* Função para envio de email */
@@ -565,31 +574,25 @@ const apagaDiv = (nomeClasse) => {
 	}
 }
 
-
+/* Função para checar se todos os inputs required de um form estão preenchidos */
 function checarInputs(form) {
   const inputs = form.getElementsByTagName('input');
-  for (var i = 0; i < inputs.length; i++) {
-      if(inputs[i].hasAttribute("required")){
-          if(inputs[i].value == ""){
-              // se input do form for requerido e estiver vazio
-              return false;
-          }
+  for (let i = 0; i < inputs.length; i++) {
+    if(inputs[i].hasAttribute("required")){
+      if(inputs[i].value == ""){
+        // se input do form for requerido e estiver vazio
+        return false;
       }
+    }
   }
   return true;
 }
 
+
+/* Função que limpa os inputs do form enviado por parâmetro */
 function limparInputs(form) {
-  // get all the inputs within the submitted form
-  var inputs = form.getElementsByTagName('input');
-  for (var i = 0; i < inputs.length; i++) {
-      // only validate the inputs that have the required attribute
-      if(inputs[i].hasAttribute("required")){
-          if(inputs[i].value == ""){
-              // found an empty field that is required
-              return false;
-          }
-      }
+  const inputs = form.getElementsByTagName('input');
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].value = ""
   }
-  return true;
 }
