@@ -46,13 +46,13 @@
           <form class="area-adm-matriculas-form" action="#">
             <h2>Matrículas</h2>
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome">
+            <input required class="botoes-matricula" type="text" name="nome" id="nome">
             <label for="curso">Curso</label>
-            <input type="text" name="curso" id="curso">
+            <input required class="botoes-matricula" type="text" name="curso" id="curso">
             <label for="turma">Turma</label>
-            <input type="text" name="turma" id="turma">
+            <input required class="botoes-matricula" type="text" name="turma" id="turma">
             <label for="numParcelas">Número de parcelas</label>
-            <input type="number" name="numParcelas" id="numParcelas">
+            <input  required class="botoes-matricula"  type="number" name="numParcelas" id="numParcelas">
             <a class="area-adm-botao-matricular" href="../pages/area-adm.html" onclick="mostraAlunoMatriculado();return false">Matricular Aluno</a>
           </form>
         </div>
@@ -64,17 +64,17 @@
           <form class="area-adm-financeiro" action="#">
             <h2>Financeiro</h2>
             <label for="curso-financeiro">Curso</label>
-            <input type="text" name="curso-financeiro" id="curso-financeiro">
+            <input required type="text" name="curso-financeiro" id="curso-financeiro">
             <p><a class="adiciona-curso" href="">Adicionar outro curso</a></p>
             <label for="numero-parcelas-financeiro">Número de parcelas</label>
-            <input type="number" name="numero-parcelas-financeiro" id="numero-parcelas-financeiro">
+            <input required type="number" name="numero-parcelas-financeiro" id="numero-parcelas-financeiro">
             <a class="area-adm-botao-financeiro" href="../pages/area-adm.html" onclick="mostraValorCurso()">Ver valor</a>
           </form>
           <div class="area-adm-relatorio-aluno-container">
             <form class="area-adm-relatorio-aluno" action="#">
               <h2>Relatório Aluno</h2>
               <label for="nome-relatorio-aluno">Nome</label>
-              <input type="text" name="nome-relatorio-aluno" id="nome-relatorio-aluno">
+              <input required type="text" name="nome-relatorio-aluno" id="nome-relatorio-aluno">
               <a class="area-adm-botao-financeiro" href="../pages/area-adm.html" onclick="buscarEstudante();return false">Buscar</a>
             </form>
             <!-- <div class="area-adm-relatorio-aluno-encontrado">

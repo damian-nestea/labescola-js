@@ -296,6 +296,8 @@ const imprimirRelatorioEstudantes = (estudanteBuscado) => {
 
 // função para buscar estudante com sequência de letras que o estudante contenha
 const buscarEstudante = () => {
+
+  checarInputs("#nome-relatorio-aluno");
   const nomeEstudante = document.getElementById('nome-relatorio-aluno').value;
 
   console.log(nomeEstudante)
@@ -444,46 +446,53 @@ const mostraAreaMatriculas = () => {
 
 
 const mostraAlunoMatriculado = () => {
-  const sectionBuscarTurma = document.querySelector('.area-adm-matriculas-container')
 
-  const inputNomeAluno = document.getElementById('nome')
-  const inputCursoAluno = document.getElementById('curso')
-  const inputTurmaAluno = document.getElementById('turma')
+  if (checarInputs(document.querySelector(".area-adm-matriculas-form")) === true){
+    const sectionBuscarTurma = document.querySelector('.area-adm-matriculas-container')
 
-  apagaDiv('.area-adm-aluno-matriculado-container');
+    const inputNomeAluno = document.getElementById('nome')
+    const inputCursoAluno = document.getElementById('curso')
+    const inputTurmaAluno = document.getElementById('turma')
+    const inputNParcelas = document.getElementById('numParcelas')
 
-  const containerLayoutAlunoMatriculado = document.createElement('div');
-  const layoutAlunoMatriculado = document.createElement('div');
-  const alunoMatriculadoCorfirmacao = document.createElement('h2');
-  const alunoMatriculadoCorfirmacaoLogo = document.createElement('img');
-  const tituloAluno = document.createElement('p');
-  const nomeAluno = document.createElement('p');
-  const cursoAluno = document.createElement('p');
-  const turmaAluno = document.createElement('p');
+    apagaDiv('.area-adm-aluno-matriculado-container');
 
-  alunoMatriculadoCorfirmacaoLogo.setAttribute('src', '../assets/vector.png');
-  alunoMatriculadoCorfirmacao.innerHTML =`Aluno matriculado`;
-  alunoMatriculadoCorfirmacao.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacaoLogo);
+    const containerLayoutAlunoMatriculado = document.createElement('div');
+    const layoutAlunoMatriculado = document.createElement('div');
+    const alunoMatriculadoCorfirmacao = document.createElement('h2');
+    const alunoMatriculadoCorfirmacaoLogo = document.createElement('img');
+    const tituloAluno = document.createElement('p');
+    const nomeAluno = document.createElement('p');
+    const cursoAluno = document.createElement('p');
+    const turmaAluno = document.createElement('p');
 
-  tituloAluno.innerHTML = `Aluno Matriculado`
-  nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
-  cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
-  turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
-  
-  containerLayoutAlunoMatriculado.setAttribute('class', 'area-adm-aluno-matriculado-container');
-  layoutAlunoMatriculado.setAttribute('class','area-adm-aluno-matriculado');
+    alunoMatriculadoCorfirmacaoLogo.setAttribute('src', '../assets/vector.png');
+    alunoMatriculadoCorfirmacao.innerHTML =`Aluno matriculado`;
+    alunoMatriculadoCorfirmacao.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacaoLogo);
 
-  layoutAlunoMatriculado.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacao);
-  layoutAlunoMatriculado.insertAdjacentElement('beforeend',tituloAluno);
-  layoutAlunoMatriculado.insertAdjacentElement('beforeend',nomeAluno);
-  layoutAlunoMatriculado.insertAdjacentElement('beforeend',cursoAluno);
-  layoutAlunoMatriculado.insertAdjacentElement('beforeend',turmaAluno);
-  containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
-  sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
+    tituloAluno.innerHTML = `Aluno Matriculado`
+    nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
+    cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
+    turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
+    
+    containerLayoutAlunoMatriculado.setAttribute('class', 'area-adm-aluno-matriculado-container');
+    layoutAlunoMatriculado.setAttribute('class','area-adm-aluno-matriculado');
 
-  inputNomeAluno.value = "";
-  inputCursoAluno.value = "";
-  inputTurmaAluno.value = "";
+    layoutAlunoMatriculado.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacao);
+    layoutAlunoMatriculado.insertAdjacentElement('beforeend',tituloAluno);
+    layoutAlunoMatriculado.insertAdjacentElement('beforeend',nomeAluno);
+    layoutAlunoMatriculado.insertAdjacentElement('beforeend',cursoAluno);
+    layoutAlunoMatriculado.insertAdjacentElement('beforeend',turmaAluno);
+    containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
+    sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
+
+    inputNomeAluno.value = "";
+    inputCursoAluno.value = "";
+    inputTurmaAluno.value = "";
+    inputNParcelas.value = "";
+  }else{
+    alert("Preencha todos os campos");
+  }
 }
 
 //Manipulação de DOM, página Area Adm, abrindo layout de Financeiro Alunos
@@ -554,4 +563,33 @@ const apagaDiv = (nomeClasse) => {
 		const divARemover = document.querySelector(nomeClasse);
 		divARemover.remove();
 	}
+}
+
+
+function checarInputs(form) {
+  const inputs = form.getElementsByTagName('input');
+  for (var i = 0; i < inputs.length; i++) {
+      if(inputs[i].hasAttribute("required")){
+          if(inputs[i].value == ""){
+              // se input do form for requerido e estiver vazio
+              return false;
+          }
+      }
+  }
+  return true;
+}
+
+function limparInputs(form) {
+  // get all the inputs within the submitted form
+  var inputs = form.getElementsByTagName('input');
+  for (var i = 0; i < inputs.length; i++) {
+      // only validate the inputs that have the required attribute
+      if(inputs[i].hasAttribute("required")){
+          if(inputs[i].value == ""){
+              // found an empty field that is required
+              return false;
+          }
+      }
+  }
+  return true;
 }
