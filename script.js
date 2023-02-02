@@ -257,6 +257,9 @@ const buscarTurma = () => {
 // função para imprimir relatório de estudantes
 const imprimirRelatorioEstudantes = (estudanteBuscado) => {
   const layoutRelatorioAluno = document.querySelector('.area-adm-relatorio-aluno-container');
+  
+  apagaDiv(".area-adm-relatorio-aluno-encontrado");
+  
   const layoutAlunoEncontrado = document.createElement('div');
 
   layoutAlunoEncontrado.setAttribute('class','area-adm-relatorio-aluno-encontrado');
@@ -294,6 +297,8 @@ const imprimirRelatorioEstudantes = (estudanteBuscado) => {
 // função para buscar estudante com sequência de letras que o estudante contenha
 const buscarEstudante = () => {
   const nomeEstudante = document.getElementById('nome-relatorio-aluno').value;
+
+  console.log(nomeEstudante)
   const resultadoBuscaEstudante = estudantes.find((aluno) =>{
     return aluno.estudante.toLowerCase().includes(nomeEstudante.toLowerCase());
   });
