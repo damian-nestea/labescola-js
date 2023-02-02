@@ -230,7 +230,7 @@ header{
 
 /* Estilização do top content da página de cursos(cards dos cursos com uma curta descrição */
 .cursos-top-content{
-  height: 80vh;
+  min-height: 80vh;
   background-color: #F6C34A;
   display:flex;
   flex-direction: column;
@@ -242,11 +242,15 @@ header{
 
 .cursos-descricao-cards-container{
   display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 4rem;
 }
 
 .cursos-card{
   background-color: #FFF;
+  min-width: 8vw;
+  max-width: 20vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -365,8 +369,15 @@ header{
 
 .contato-inputs{
   height: 2rem;
-  font-size: 1.1rem;
 }
+
+.contato-inputs,
+.contato-form-grupo textarea{
+  font-size: 0.85rem;
+  font-family: 'Poppins',sans-serif;
+  padding:0.15rem;
+}
+
 
 
 
@@ -398,6 +409,7 @@ header{
 }
 
 
+/* Classes para estilizar links e alternar visibilidade de layouts da area adm */
 #area-adm-turmas-link,
 #area-adm-matriculas-link,
 #area-adm-financeiro-link{
@@ -428,8 +440,6 @@ header{
 .link-ativado{
   color:#F0F0F0;
 }
-
-
 
 
 /* Estilização do right-content da página de area-adm (conteúdo da direita)*/
@@ -636,8 +646,6 @@ header{
 
 .area-adm-financeiro input,
 .area-adm-relatorio-aluno input{
-  font-size: 1.1rem;
-  font-weight: 400;
   height: 2rem;
   border: none;
   border-radius: 0.3rem;
@@ -673,5 +681,14 @@ header{
 
 .area-adm-relatorio-aluno-encontrado{
   font-family: 'Poppins',sans-serif;
+}
+
+/* Estiliza inputs da area adm das seções matricula e financeiro-alunos */
+.area-adm-matriculas-form input,
+.area-adm-financeiro input,
+.area-adm-relatorio-aluno input{
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding:0 0.5rem;
 }
 

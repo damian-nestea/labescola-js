@@ -346,6 +346,8 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 const gerarCard = (arrayTurmasBuscadas) => {
   const sectionBuscarTurma = document.querySelector('.area-adm-busca-turmas');
 
+  apagaDiv('.area-adm-turmas-cards-container');
+
   const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
   divCardsContainer.setAttribute('class','area-adm-turmas-cards-container');
 
@@ -443,6 +445,8 @@ const mostraAlunoMatriculado = () => {
   const inputCursoAluno = document.getElementById('curso')
   const inputTurmaAluno = document.getElementById('turma')
 
+  apagaDiv('.area-adm-aluno-matriculado-container');
+
   const containerLayoutAlunoMatriculado = document.createElement('div');
   const layoutAlunoMatriculado = document.createElement('div');
   const alunoMatriculadoCorfirmacao = document.createElement('h2');
@@ -511,4 +515,38 @@ const sendMail = () => {
            + "&subject=" + encodeURIComponent("Quero entrar na LabEscola!")
   ;
   window.location.href = link;
+}
+
+const enviaInfoContato = () =>{
+  const inputNomeContato = document.getElementById('nome')
+  const inputEmailContato = document.getElementById('email');
+  const inputMensagemContato = document.getElementById('mensagem');
+
+  if(validaFormulario(inputNomeContato.value,inputEmailContato.value,inputMensagemContato.value)){
+    alert("Mensagem enviada com sucesso!");
+    inputNomeContato.value ="";
+    inputEmailContato.value ="";
+    inputMensagemContato.value ="";
+  }else{
+    alert("Preencha todos os campos!");
+  }
+}
+
+/* Validar se formulário de contato está vazio */
+const validaFormulario = (inputNomeContato,inputEmailContato,inputMensagemContato) => {
+  console.log(inputNomeContato,inputEmailContato,inputMensagemContato);
+  if (inputNomeContato == null || inputNomeContato == "" || inputEmailContato == null || inputEmailContato == "" || inputMensagemContato == null || inputMensagemContato == "") {
+    return false;
+  }else{
+    return true;
+  }
+}
+
+/* Apaga div caso ela exista por identificação com nome da classe */
+const apagaDiv = (nomeClasse) => {
+	if(!!document.querySelector(nomeClasse)){
+		console.log("entrou aqui");
+		const divARemover = document.querySelector(nomeClasse);
+		divARemover.remove();
+	}
 }
