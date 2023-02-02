@@ -12,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- INICIO DO HEADER -->
   <header>
     <div class="logo-container"><a href="../index.html"><img src="../assets/logo.svg" alt="Logo da LabEscola"></a></div>
     <nav>
@@ -23,7 +24,9 @@
       </ul>
     </nav>
   </header>
+  <!-- FIM DO HEADER -->
   <main class="area-adm-main-container">
+    <!-- INICIO DO LAYOUT DO MENU LATERAL ESQUERDO COM AS OPÇÕES TURMAS, MATRICULAS E FINANCEIRO -->
     <nav class="area-adm-menu-lateral">
       <ul>
         <li><a id="area-adm-turmas-link" class="link-ativado link-ativado-visited" href="./area-adm.html">Turmas</a></li>
@@ -31,16 +34,17 @@
         <li><a id="area-adm-financeiro-link" class="link-desativado link-desativado-visited" href="../pages/area-adm.html" onclick="mostraAreaFinanceiro();return false;">Financeiro Alunos</a></li>
       </ul>
     </nav>
+    <!-- FIM DO LAYOUT DO MENU LATERAL ESQUERDO COM AS OPÇÕES TURMAS, MATRICULAS E FINANCEIRO -->
     <section class="area-adm-right-content">
-      <!-- Início Layout de opção Turmas -->
+      <!-- INICIO LAYOUT OPÇÃO TURMAS -->
       <div class="area-adm-busca-turmas">
         <div class="area-adm-busca-container">
           <input id="area-adm-caixa-texto" placeholder="Digite o número da turma" type="text" name="buscar">
           <a onclick="buscarTurma()" class="area-adm-botao-buscar" href="#">Buscar</a>
         </div>
       </div>
-      <!-- Fim Layout de opção Turmas -->
-      <!-- Início Layout de opção Matrículas -->
+      <!-- FIM LAYOUT OPÇÃO TURMAS -->
+      <!-- INICIO LAYOUT OPÇÃO MATRICULAS -->
       <div id="area-adm-matriculas-container" class="area-adm-main-matriculas">
         <div id="area-adm-matriculas" class="area-adm-matriculas-container">
           <form class="area-adm-matriculas-form" action="#">
@@ -57,8 +61,8 @@
           </form>
         </div>
       </div>
-      <!-- Fim Layout de opção Matrículas -->
-      <!-- Início Layout de opção Financeiro Alunos -->
+      <!-- FIM LAYOUT OPÇÃO TURMAS -->
+      <!-- INICIO LAYOUT OPÇÃO FINANCEIRO-ALUNOS -->
       <div class="area-adm-main-financeiro-alunos">
         <div class="area-adm-financeiro-alunos-container">
           <form class="area-adm-financeiro" action="#">
@@ -77,21 +81,13 @@
               <input required type="text" name="nome-relatorio-aluno" id="nome-relatorio-aluno">
               <a class="area-adm-botao-financeiro" href="../pages/area-adm.html" onclick="buscarEstudante();return false">Buscar</a>
             </form>
-            <!-- <div class="area-adm-relatorio-aluno-encontrado">
-              <p>Aluno: Chris Evans</p>
-              <p>Turma: Hipátia</p>
-              <p>Curso: Javascript</p>
-              <p>Valor total: R$900</p>
-              <p>Valor parcela: R$100</p>
-              <p>N. parcelas: 9</p>
-            </div> -->
-
           </div>
         </div>
-        
       </div>
+      <!-- FIM LAYOUT OPÇÃO FINANCEIRO-ALUNOS -->
     </section>
   </main>
+  <!-- INICIO DO FOOTER -->
   <footer class="footer-container">
     <div class="footer-top-content">
       <img class="footer-top-content-logo" src="../assets/logo1.svg" alt="Logo">
@@ -132,8 +128,8 @@
           <li>Espaço do aluno</li>
         </ul>
       </div>
-      
     </div>
   </footer>
+  <!-- FIM DO FOOTER -->
 </body>
 </html>
