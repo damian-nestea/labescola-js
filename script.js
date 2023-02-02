@@ -346,6 +346,8 @@ const preencheCarrinhoCursos =(nomeCurso) => {
 const gerarCard = (arrayTurmasBuscadas) => {
   const sectionBuscarTurma = document.querySelector('.area-adm-busca-turmas');
 
+  apagaDiv('.area-adm-turmas-cards-container');
+
   const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
   divCardsContainer.setAttribute('class','area-adm-turmas-cards-container');
 
@@ -443,6 +445,8 @@ const mostraAlunoMatriculado = () => {
   const inputCursoAluno = document.getElementById('curso')
   const inputTurmaAluno = document.getElementById('turma')
 
+  apagaDiv('.area-adm-aluno-matriculado-container');
+
   const containerLayoutAlunoMatriculado = document.createElement('div');
   const layoutAlunoMatriculado = document.createElement('div');
   const alunoMatriculadoCorfirmacao = document.createElement('h2');
@@ -536,4 +540,13 @@ const validaFormulario = (inputNomeContato,inputEmailContato,inputMensagemContat
   }else{
     return true;
   }
+}
+
+/* Apaga div caso ela exista por identificação com nome da classe */
+const apagaDiv = (nomeClasse) => {
+	if(!!document.querySelector(nomeClasse)){
+		console.log("entrou aqui");
+		const divARemover = document.querySelector(nomeClasse);
+		divARemover.remove();
+	}
 }
