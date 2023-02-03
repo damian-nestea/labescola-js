@@ -238,7 +238,12 @@ header{
   .footer-bottom-content{
     display:flex;
     flex-wrap: wrap;
+    align-self: center;
   }
+  .footer-endereco{
+    display:none;
+  }
+
 }
 
 
