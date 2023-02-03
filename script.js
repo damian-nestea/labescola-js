@@ -165,7 +165,7 @@ const adicionarCarrinho = () => {
 
 
 // função criada para o calculo do valor total do curso  e das parcelas dependendo a quantidade de parcelas
-const parcelarCurso = (carrinhoCursos) => {
+const parcelarCurso = () => {
   const parcela = Number(document.querySelector("#numero-parcelas-financeiro").value)
   console.log(parcela);
   if(carrinhoCursos.length > 0){
