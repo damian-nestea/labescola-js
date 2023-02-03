@@ -159,8 +159,6 @@ const parcelarCurso = (carrinhoCursos,parcela) => {
   
   let valorDaParcela = 0;
   let valorTotalCursos = calculaTotalCarrinhoCursos(carrinhoCursos);
-  
-
 // cálculo de desconto por número de cursos comprados
   if(carrinhoCursos.length > 1){
     switch(carrinhoCursos.length){
@@ -174,8 +172,6 @@ const parcelarCurso = (carrinhoCursos,parcela) => {
         valorTotalCursos *= 1; // sem desconto, paga 100% do valor
     }
   }
-
-
 // cálculo de cursos por numero de parcelas e impressão no console.
   if(parcela === 1){
     valorTotalCursos *= 0.8 // 20 % de desconto
