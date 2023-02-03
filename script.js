@@ -151,7 +151,7 @@ const adicionarCarrinho = () => {
     return curso.curso.toLowerCase() == inputCursoFinanceiro.toLowerCase();
   });
   if(encontraCurso != undefined){
-    if (!(carrinhoCursos.includes(encontraCurso.valor))){
+    if (!(carrinhoCursos.includes(encontraCurso.valor))){//caso o curso exista no carrinho não adiciona
       carrinhoCursos.push(encontraCurso.valor);
       alert("Curso adicionado!");
       limparInputs(document.querySelector(".area-adm-financeiro"))
@@ -607,7 +607,8 @@ const enviaInfoContato = () =>{
   const formularioContato = document.querySelector(".contato-formulario")
   if(checarInputs(formularioContato)){
     alert("Mensagem enviada com sucesso!");
-    limparInputs(formularioContato);
+    limparInputs(formularioContato)
+    document.getElementById("mensagem").value =""; // limpando textarea
   }else{
     alert("Preencha todos os campos!");
   }
