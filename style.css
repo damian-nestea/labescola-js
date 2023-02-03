@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 /* Estilização do header que será igual em todas as páginas */
 header{
   background-color:#FBFBFB;
@@ -107,6 +108,7 @@ header{
 .footer-bottom-content img{
   height: 100%;
 }
+
 
 /* Estilização icone de whatsapp fixo no canto direito inferior*/
 .icone-whatsapp{
@@ -227,7 +229,6 @@ header{
 
 
 /* ESTILIZAÇÃO PÁGINA CURSOS */
-
 /* Estilização do top content da página de cursos(cards dos cursos com uma curta descrição */
 .cursos-top-content{
   min-height: 80vh;
@@ -282,7 +283,6 @@ header{
 
 
 /* Estilização do bottom content da página de cursos (cards dos cursos com conteúdo dos módulos*/
-
 .cursos-bottom-content{
   background-color: #0E0E0E;
   display:flex;
@@ -319,7 +319,6 @@ header{
 
 
 /* ESTILIZAÇÃO PÁGINA CONTATO */
-
 /* Estilização do form-content da página de contato (formulário simples de fale conosco)*/
 .contato-content{
   background-color: #0E0E0E;
@@ -379,13 +378,8 @@ header{
 }
 
 
-
-
-
 /* ESTILIZAÇÃO PÁGINA ÁREA ADMIN */
-
 /* Estilização do menu lateral da página de area-adm (menu à esquerda)*/
-
 .area-adm-main-container{
   display:flex;
 }
@@ -408,7 +402,7 @@ header{
   font-weight: 700;
 }
 
-
+/* ESTILIZAÇÃO DE LINKS E LAYOUTS PARA VISUALIZAÇÃO */
 /* Classes para estilizar links e alternar visibilidade de layouts da area adm */
 #area-adm-turmas-link,
 #area-adm-matriculas-link,
@@ -482,7 +476,6 @@ header{
   border-top-left-radius: 0.3rem;
   border:0px;
 }
-
 
 .area-adm-botao-buscar{
   font-size: 1.2rem;
@@ -682,6 +675,7 @@ header{
 .area-adm-relatorio-aluno-encontrado{
   font-family: 'Poppins',sans-serif;
 }
+
 
 /* Estiliza inputs da area adm das seções matricula e financeiro-alunos */
 .area-adm-matriculas-form input,
