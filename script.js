@@ -142,7 +142,7 @@ const estudantes =[
 ];
 
 // array de carrinhoCursos que conterá os cursos que o estudante vai comprar
-const carrinhoCursos =[];
+let carrinhoCursos =[];
 
 // função para adicionar cursos no carrinho
 const adicionarCarrinho = () => {
@@ -199,15 +199,18 @@ const parcelarCurso = () => {
       if(parcela === 1){
         valorTotalCursos *= 0.8 // 20 % de desconto
         mensagemValor  = `O valor do pagamento é de R$ ${valorTotalCursos} com 20% de desconto, pagamento à vista.`
+        geraMensagemValor(mensagemValor);
         console.log(`O valor do pagamento é de R$ ${valorTotalCursos} com 20% de desconto, pagamento à vista.`);
       }else if(parcela <= 2){
         valorTotalCursos *= 0.8;  // 20 % de desconto
         valorDaParcela = (valorTotalCursos / parcela);
         mensagemValor  = `A sua compra dos cursos ficou no valor total de R$ ${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}. Foi concedido desconto de 20%`
+        geraMensagemValor(mensagemValor);
         console.log(`A sua compra dos cursos ficou no valor total de R$ ${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}. Foi concedido desconto de 20%`);
       }else{
         valorDaParcela = (valorTotalCursos / parcela);
         mensagemValor = `A sua compra dos cursos ficou no valor total de R$${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}.`
+        geraMensagemValor(mensagemValor);
         console.log(`A sua compra dos cursos ficou no valor total de R$${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}.`) 
       }
     }else{
@@ -219,6 +222,29 @@ const parcelarCurso = () => {
   limparInputs(document.querySelector(".area-adm-financeiro"))
 }
  /* parcelarCurso([500,500,1000]);  */
+
+
+/* Função para gerar elementos html para mensagem com valor das parcelas e curso na página area-adm opção financeiro */
+const geraMensagemValor = (mensagem) => {
+  apagaDiv(".valor-financeiro");
+  apagaDiv(".titulo-valor-financeiro");
+  const layoutFormFinanceiro = document.querySelector(".area-adm-financeiro");
+
+  const tituloValorFinanceiro = document.createElement('h4');
+  const mensagemValorFinanceiro = document.createElement('p');
+
+  tituloValorFinanceiro.setAttribute('class', 'titulo-valor-financeiro');
+  mensagemValorFinanceiro.setAttribute('class','valor-financeiro');
+
+  tituloValorFinanceiro.innerHTML = "Valor";
+  mensagemValorFinanceiro.innerHTML = mensagem;
+
+  layoutFormFinanceiro.insertAdjacentElement('beforeend',tituloValorFinanceiro);
+  layoutFormFinanceiro.insertAdjacentElement('beforeend',mensagemValorFinanceiro);
+
+}
+
+
 
 
 // função para imprimir curso 
@@ -447,7 +473,7 @@ const gerarCard = (arrayTurmasBuscadas) => {
     /* Adição de período da turma no card */
     keyConteudoTurma.innerHTML = "Período:";
     conteudoTurmaPeriodo.insertAdjacentElement('beforeend',keyConteudoTurma);
-    conteudoTurmaPeriodo.innerHTML += ` ${item.periodo}`;
+    conteudoTurmaPeriodo.innerHTML += ` ${primeiraLetraMaiuscula(item.periodo)}`;
     divCard.insertAdjacentElement('beforeend',conteudoTurmaPeriodo);
     /* Adição de info se a turma já foi concluída no card */
     keyConteudoTurma.innerHTML = "Concluído:";
@@ -491,6 +517,8 @@ const mostraAreaMatriculas = () => {
   linkFinanceiro.classList.add('link-desativado', 'link-desativado-visited');
 
   apagaDiv('.area-adm-aluno-matriculado-container');
+  apagaDiv(".valor-financeiro");
+  apagaDiv(".titulo-valor-financeiro");
   limparInputs(document.querySelector(".area-adm-matriculas-form"))
 }
 
@@ -599,6 +627,8 @@ const mostraAreaFinanceiro = () => {
   apagaDiv('.area-adm-relatorio-aluno-encontrado');
   limparInputs(document.querySelector(".area-adm-relatorio-aluno"))
   limparInputs(document.querySelector(".area-adm-financeiro"))
+
+    carrinhoCursos = []; // zera o carrinho de cursos
 }
 
 
@@ -667,4 +697,10 @@ function limparInputs(form) {
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].value = ""
   }
+}
+
+
+/* Função para retornar primeira palavra de uma string em maiúsculo */
+function primeiraLetraMaiuscula(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
