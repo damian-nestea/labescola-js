@@ -209,12 +209,26 @@ const imprimirRelatorioCurso = (objetoCurso) => {
 // função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
 const buscarCurso = (nomeDoCurso) => {
   const encontraCurso = cursos.find((curso)=>{
-    return curso.curso.toLowerCase().includes(nomeDoCurso.toLowerCase());
+    return curso.curso.toLowerCase() == nomeDoCurso;
+/*     return curso.curso.toLowerCase().includes(nomeDoCurso.toLowerCase()); */
   })
-  return encontraCurso === undefined ? console.log(`Curso não encontrado`):encontraCurso;
-  /* return encontraCurso === undefined ? console.log(`Curso não encontrado`):imprimirRelatorioCurso(encontraCurso); */
+  return encontraCurso === undefined ? "":encontraCurso;
+  /* return encontraCurso === undefined ? console.log(`Curso não encontrado`):encontraCurso; */
 }
 // buscarCurso("javascript");
+
+
+// função para buscar um turma pelo curso e retorna o objeto contendo a turma selecionada com suas propriedades
+const buscarTurmaPorCurso = (nomeDoCurso,nomeDaTurma) => {
+  const encontraTurma = turmas.filter((turma)=>{
+    return turma.curso.toLowerCase() == nomeDoCurso.toLowerCase();
+  }).find((turma)=>{
+    return turma.turma.toLowerCase() == nomeDaTurma.toLowerCase();
+  });
+  console.log(encontraTurma);
+  return encontraTurma === undefined || encontraTurma === "" ? "":encontraTurma;
+  /* return encontraCurso === undefined ? console.log(`Curso não encontrado`):encontraCurso; */
+}
 
 
 // função para imprimir turmas
@@ -336,8 +350,8 @@ const matricular = (nomeEstudante, nomeDoCurso, nomeDaTurma, numeroParcelas) =>{
   // impressão no console apenas do último aluno adicionado
   console.log("Aluno Matriculado");
   console.log(`Nome: ${estudantes[estudantes.length-1].estudante}`);
-  console.log(`Nome: ${estudantes[estudantes.length-1].curso}`);
-  console.log(`Nome: ${estudantes[estudantes.length-1].turma}`);
+  console.log(`Curso: ${estudantes[estudantes.length-1].curso}`);
+  console.log(`Turma: ${estudantes[estudantes.length-1].turma}`);
 }
 // matricular("Carlos", "HTML e CSS", "Clarke", 2);
 
@@ -456,61 +470,69 @@ const mostraAreaMatriculas = () => {
 // Função para mostrar aluno matriculado na página area-adm, seção matriculas
 const mostraAlunoMatriculado = () => {
 
-  //primeiro checa se todos os campos estão preenchidos para poder criar a mensagem aluno matriculado
-  if (checarInputs(document.querySelector(".area-adm-matriculas-form")) === true){
-    const sectionBuscarTurma = document.querySelector('.area-adm-matriculas-container')
+  //declaração dos inputs do form de matrículas
+  const inputNomeAluno = document.getElementById('nome')
+  const inputCursoAluno = document.getElementById('curso')
+  const inputTurmaAluno = document.getElementById('turma')
+  const inputNParcelas = document.getElementById('numParcelas')
 
-    //declaração dos inputs do form de matrículas
-    const inputNomeAluno = document.getElementById('nome')
-    const inputCursoAluno = document.getElementById('curso')
-    const inputTurmaAluno = document.getElementById('turma')
-    const inputNParcelas = document.getElementById('numParcelas')
-
-    //em caso que a div exista, apaga para não acumular divs duplicadas
-    apagaDiv('.area-adm-aluno-matriculado-container');
-
-    //criação de elementos para montar o layout de mensagem ALUNO MATRICULADO
-    const containerLayoutAlunoMatriculado = document.createElement('div');
-    const layoutAlunoMatriculado = document.createElement('div');
-    const alunoMatriculadoCorfirmacao = document.createElement('h2');
-    const alunoMatriculadoCorfirmacaoLogo = document.createElement('img');
-    const tituloAluno = document.createElement('p');
-    const nomeAluno = document.createElement('p');
-    const cursoAluno = document.createElement('p');
-    const turmaAluno = document.createElement('p');
-
-    // manipulação do título da mensagem de ALUNO MATRICULADO
-    alunoMatriculadoCorfirmacaoLogo.setAttribute('src', '../assets/vector.png');
-    alunoMatriculadoCorfirmacao.innerHTML =`Aluno matriculado`;
-    alunoMatriculadoCorfirmacao.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacaoLogo);
-
-    matricular(inputNomeAluno.value,inputCursoAluno.value,inputTurmaAluno.value,inputNParcelas.value);
-
-    // atribuição do conteúdo aos elementos criados anteriormente com a info digitada pelo usuário
-    tituloAluno.innerHTML = `Aluno Matriculado`
-    nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
-    cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
-    turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
+  /* if(buscarCurso(inputCursoAluno.value) != "" && buscarTurmaPorCurso(inputCursoAluno.value,inputTurmaAluno.value)!= ""){ */
+    if (checarInputs(document.querySelector(".area-adm-matriculas-form")) === true){
+      /* inputCursoAluno.value = buscarCurso(inputCursoAluno.value).curso
+      inputTurmaAluno.value = (buscarTurmaPorCurso(inputCursoAluno.value,inputTurmaAluno.value)).turma */
+      //primeiro checa se todos os campos estão preenchidos para poder criar a mensagem aluno matriculado
     
-    //montagem dos elementos no DOM
-    containerLayoutAlunoMatriculado.setAttribute('class', 'area-adm-aluno-matriculado-container');
-    layoutAlunoMatriculado.setAttribute('class','area-adm-aluno-matriculado');
+      const sectionBuscarTurma = document.querySelector('.area-adm-matriculas-container')
 
-    layoutAlunoMatriculado.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacao);
-    layoutAlunoMatriculado.insertAdjacentElement('beforeend',tituloAluno);
-    layoutAlunoMatriculado.insertAdjacentElement('beforeend',nomeAluno);
-    layoutAlunoMatriculado.insertAdjacentElement('beforeend',cursoAluno);
-    layoutAlunoMatriculado.insertAdjacentElement('beforeend',turmaAluno);
-    containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
-    sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
+      //em caso que a div exista, apaga para não acumular divs duplicadas
+      apagaDiv('.area-adm-aluno-matriculado-container');
 
-    //Após aparição da mensagem de aluno matriculado, limpeza dos inputs do formulário
-    limparInputs(document.querySelector(".area-adm-matriculas-form"));
+      //criação de elementos para montar o layout de mensagem ALUNO MATRICULADO
+      const containerLayoutAlunoMatriculado = document.createElement('div');
+      const layoutAlunoMatriculado = document.createElement('div');
+      const alunoMatriculadoCorfirmacao = document.createElement('h2');
+      const alunoMatriculadoCorfirmacaoLogo = document.createElement('img');
+      const tituloAluno = document.createElement('p');
+      const nomeAluno = document.createElement('p');
+      const cursoAluno = document.createElement('p');
+      const turmaAluno = document.createElement('p');
 
-  }else{
-    alert("Preencha todos os campos");// mensagem caso falte um input para preencher
-  }
-}
+      // manipulação do título da mensagem de ALUNO MATRICULADO
+      alunoMatriculadoCorfirmacaoLogo.setAttribute('src', '../assets/vector.png');
+      alunoMatriculadoCorfirmacao.innerHTML =`Aluno matriculado`;
+      alunoMatriculadoCorfirmacao.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacaoLogo);
+
+      matricular(inputNomeAluno.value,inputCursoAluno.value,inputTurmaAluno.value,inputNParcelas.value);
+
+      // atribuição do conteúdo aos elementos criados anteriormente com a info digitada pelo usuário
+      tituloAluno.innerHTML = `Aluno Matriculado`
+      nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
+      cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
+      turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
+      
+      //montagem dos elementos no DOM
+      containerLayoutAlunoMatriculado.setAttribute('class', 'area-adm-aluno-matriculado-container');
+      layoutAlunoMatriculado.setAttribute('class','area-adm-aluno-matriculado');
+
+      layoutAlunoMatriculado.insertAdjacentElement('beforeend',alunoMatriculadoCorfirmacao);
+      layoutAlunoMatriculado.insertAdjacentElement('beforeend',tituloAluno);
+      layoutAlunoMatriculado.insertAdjacentElement('beforeend',nomeAluno);
+      layoutAlunoMatriculado.insertAdjacentElement('beforeend',cursoAluno);
+      layoutAlunoMatriculado.insertAdjacentElement('beforeend',turmaAluno);
+      containerLayoutAlunoMatriculado.insertAdjacentElement('beforeend',layoutAlunoMatriculado);
+      sectionBuscarTurma.insertAdjacentElement('beforeend',containerLayoutAlunoMatriculado);
+
+      //Após aparição da mensagem de aluno matriculado, limpeza dos inputs do formulário
+      limparInputs(document.querySelector(".area-adm-matriculas-form"));
+
+    }else{
+      alert("Preencha todos os campos");// mensagem caso falte um input para preencher
+    }
+  }/* else{
+    console.log(buscarCurso(inputCursoAluno.value), buscarTurmaPorCurso(inputCursoAluno.value,inputTurmaAluno.value))
+    alert("Curso ou turma inválida")
+  } */
+
 
 
 
