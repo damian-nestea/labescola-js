@@ -648,6 +648,7 @@ function checarInputs(form) {
 }
 
 
+
 /* Função que limpa os inputs do form enviado por parâmetro */
 function limparInputs(form) {
   const inputs = form.getElementsByTagName('input');
