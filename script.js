@@ -144,10 +144,31 @@ const estudantes =[
 // array de carrinhoCursos que conterá os cursos que o estudante vai comprar
 const carrinhoCursos =[];
 
+// função para adicionar cursos no carrinho
+const adicionarCarrinho = () => {
+  const inputCursoFinanceiro = document.querySelector("#curso-financeiro").value;
+  const encontraCurso = cursos.find((curso)=>{
+    return curso.curso.toLowerCase() == inputCursoFinanceiro.toLowerCase();
+  });
+  if(encontraCurso != undefined){
+    if (!(carrinhoCursos.includes(encontraCurso.valor))){
+      carrinhoCursos.push(encontraCurso.valor);
+      alert("Curso adicionado!");
+      limparInputs(document.querySelector(".area-adm-financeiro"))
+    }else{
+      alert("Curso já foi adicionado");
+    }
+  }else{
+    alert("Curso não encontrado");
+  }
+}
+
 
 // função criada para o calculo do valor total do curso  e das parcelas dependendo a quantidade de parcelas
-const parcelarCurso = (carrinhoCursos,parcela) => {
+const parcelarCurso = (carrinhoCursos) => {
 
+  const parcela = document.querySelector("#numero-parcelas-financeiro").value
+  console.log(parcela);
 // função que percorre o array de cursos e devolve o valor total de todas as compras
   const calculaTotalCarrinhoCursos = (arrayCursos) => {
     let valorTotal = 0;
@@ -185,7 +206,7 @@ const parcelarCurso = (carrinhoCursos,parcela) => {
     console.log(`A sua compra dos cursos ficou no valor total de R$${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}.`) 
   } 
 }
-/* parcelarCurso([500,500,1000],2); */
+ /* parcelarCurso([500,500,1000]);  */
 
 
 // função para imprimir curso 
