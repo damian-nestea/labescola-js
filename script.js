@@ -168,7 +168,6 @@ const adicionarCarrinho = () => {
 const parcelarCurso = () => {
   let mensagemValor = "";
   const parcela = Number(document.querySelector("#numero-parcelas-financeiro").value)
-  console.log(parcela);
   if(carrinhoCursos.length > 0){
     if(parcela > 0 && parcela <= 10){
       // função que percorre o array de cursos e devolve o valor total de todas as compras
@@ -200,18 +199,16 @@ const parcelarCurso = () => {
         valorTotalCursos *= 0.8 // 20 % de desconto
         mensagemValor  = `O valor do pagamento é de R$ ${valorTotalCursos} com 20% de desconto, pagamento à vista.`
         geraMensagemValor(mensagemValor);
-        console.log(`O valor do pagamento é de R$ ${valorTotalCursos} com 20% de desconto, pagamento à vista.`);
       }else if(parcela <= 2){
         valorTotalCursos *= 0.8;  // 20 % de desconto
         valorDaParcela = (valorTotalCursos / parcela);
         mensagemValor  = `A sua compra dos cursos ficou no valor total de R$ ${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}. Foi concedido desconto de 20%`
         geraMensagemValor(mensagemValor);
-        console.log(`A sua compra dos cursos ficou no valor total de R$ ${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}. Foi concedido desconto de 20%`);
       }else{
         valorDaParcela = (valorTotalCursos / parcela);
         mensagemValor = `A sua compra dos cursos ficou no valor total de R$${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}.`
         geraMensagemValor(mensagemValor);
-        console.log(`A sua compra dos cursos ficou no valor total de R$${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}.`) 
+         
       }
     }else{
       alert("Adicione número de parcelas válido!");
@@ -280,7 +277,6 @@ const buscarTurmaPorCurso = (nomeDoCurso,nomeDaTurma) => {
   }).find((turma)=>{
     return turma.turma.toLowerCase() == nomeDaTurma.toLowerCase();
   });
-  console.log(encontraTurma);
   return encontraTurma === undefined || encontraTurma === "" ? "":encontraTurma;
   /* return encontraCurso === undefined ? console.log(`Curso não encontrado`):encontraCurso; */
 }
@@ -370,7 +366,6 @@ const buscarEstudante = () => {
   if (checarInputs(document.querySelector(".area-adm-relatorio-aluno")) === true){
     const nomeEstudante = document.getElementById('nome-relatorio-aluno').value;
 
-    console.log(nomeEstudante)
     const resultadoBuscaEstudante = estudantes.find((aluno) =>{
       return aluno.estudante.toLowerCase().includes(nomeEstudante.toLowerCase());
     });
@@ -399,14 +394,14 @@ const matricular = (nomeEstudante, nomeDoCurso, nomeDaTurma, numeroParcelas) =>{
   
   // impressão do array  no console
   for(let estudante of estudantes){
-    console.log(estudante);
+    //console.log(estudante);
   }
   
   // impressão no console apenas do último aluno adicionado
-  console.log("Aluno Matriculado");
+  /* console.log("Aluno Matriculado");
   console.log(`Nome: ${estudantes[estudantes.length-1].estudante}`);
   console.log(`Curso: ${estudantes[estudantes.length-1].curso}`);
-  console.log(`Turma: ${estudantes[estudantes.length-1].turma}`);
+  console.log(`Turma: ${estudantes[estudantes.length-1].turma}`); */
 }
 // matricular("Carlos", "HTML e CSS", "Clarke", 2);
 
@@ -434,10 +429,8 @@ const gerarCard = (arrayTurmasBuscadas) => {
     const divCard = document.createElement('div'); // div que contém o card
     divCard.setAttribute('class','area-adm-turmas-card');
 
-    console.log(item,index);
-
     const nomeDaTurma = document.createElement('h2'); // criando h2 com o nome da turma do card
-    console.log(item)
+    
     nomeDaTurma.innerHTML = item.turma;
     divCard.insertAdjacentElement('afterbegin',nomeDaTurma);
 
@@ -669,7 +662,6 @@ const enviaInfoContato = () =>{
 /* Apaga div caso ela exista por identificação com nome da classe */
 const apagaDiv = (nomeClasse) => {
 	if(!!document.querySelector(nomeClasse)){
-		console.log("entrou aqui");
 		const divARemover = document.querySelector(nomeClasse);
 		divARemover.remove();
 	}
