@@ -142,7 +142,7 @@ const estudantes =[
 ];
 
 // array de carrinhoCursos que conterá os cursos que o estudante vai comprar
-const carrinhoCursos =[];
+let carrinhoCursos =[];
 
 // função para adicionar cursos no carrinho
 const adicionarCarrinho = () => {
@@ -166,8 +166,8 @@ const adicionarCarrinho = () => {
 
 // função criada para o calculo do valor total do curso  e das parcelas dependendo a quantidade de parcelas
 const parcelarCurso = () => {
+  let mensagemValor = "";
   const parcela = Number(document.querySelector("#numero-parcelas-financeiro").value)
-  console.log(parcela);
   if(carrinhoCursos.length > 0){
     if(parcela > 0 && parcela <= 10){
       // função que percorre o array de cursos e devolve o valor total de todas as compras
@@ -197,14 +197,18 @@ const parcelarCurso = () => {
     // cálculo de cursos por numero de parcelas e impressão no console.
       if(parcela === 1){
         valorTotalCursos *= 0.8 // 20 % de desconto
-        console.log(`O valor do pagamento é de R$ ${valorTotalCursos} com 20% de desconto, pagamento à vista.`);
+        mensagemValor  = `O valor do pagamento é de R$ ${valorTotalCursos} com 20% de desconto, pagamento à vista.`
+        geraMensagemValor(mensagemValor);
       }else if(parcela <= 2){
         valorTotalCursos *= 0.8;  // 20 % de desconto
         valorDaParcela = (valorTotalCursos / parcela);
-        console.log(`A sua compra dos cursos ficou no valor total de R$ ${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}. Foi concedido desconto de 20%`);
+        mensagemValor  = `A sua compra dos cursos ficou no valor total de R$ ${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}. Foi concedido desconto de 20%`
+        geraMensagemValor(mensagemValor);
       }else{
         valorDaParcela = (valorTotalCursos / parcela);
-        console.log(`A sua compra dos cursos ficou no valor total de R$${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}.`) 
+        mensagemValor = `A sua compra dos cursos ficou no valor total de R$${valorTotalCursos.toFixed(2)}. Em ${parcela}x de R$ ${valorDaParcela.toFixed(2)}.`
+        geraMensagemValor(mensagemValor);
+         
       }
     }else{
       alert("Adicione número de parcelas válido!");
@@ -215,6 +219,29 @@ const parcelarCurso = () => {
   limparInputs(document.querySelector(".area-adm-financeiro"))
 }
  /* parcelarCurso([500,500,1000]);  */
+
+
+/* Função para gerar elementos html para mensagem com valor das parcelas e curso na página area-adm opção financeiro */
+const geraMensagemValor = (mensagem) => {
+  apagaDiv(".valor-financeiro");
+  apagaDiv(".titulo-valor-financeiro");
+  const layoutFormFinanceiro = document.querySelector(".area-adm-financeiro");
+
+  const tituloValorFinanceiro = document.createElement('h4');
+  const mensagemValorFinanceiro = document.createElement('p');
+
+  tituloValorFinanceiro.setAttribute('class', 'titulo-valor-financeiro');
+  mensagemValorFinanceiro.setAttribute('class','valor-financeiro');
+
+  tituloValorFinanceiro.innerHTML = "Valor";
+  mensagemValorFinanceiro.innerHTML = mensagem;
+
+  layoutFormFinanceiro.insertAdjacentElement('beforeend',tituloValorFinanceiro);
+  layoutFormFinanceiro.insertAdjacentElement('beforeend',mensagemValorFinanceiro);
+
+}
+
+
 
 
 // função para imprimir curso 
@@ -250,7 +277,6 @@ const buscarTurmaPorCurso = (nomeDoCurso,nomeDaTurma) => {
   }).find((turma)=>{
     return turma.turma.toLowerCase() == nomeDaTurma.toLowerCase();
   });
-  console.log(encontraTurma);
   return encontraTurma === undefined || encontraTurma === "" ? "":encontraTurma;
   /* return encontraCurso === undefined ? console.log(`Curso não encontrado`):encontraCurso; */
 }
@@ -340,7 +366,6 @@ const buscarEstudante = () => {
   if (checarInputs(document.querySelector(".area-adm-relatorio-aluno")) === true){
     const nomeEstudante = document.getElementById('nome-relatorio-aluno').value;
 
-    console.log(nomeEstudante)
     const resultadoBuscaEstudante = estudantes.find((aluno) =>{
       return aluno.estudante.toLowerCase().includes(nomeEstudante.toLowerCase());
     });
@@ -369,14 +394,14 @@ const matricular = (nomeEstudante, nomeDoCurso, nomeDaTurma, numeroParcelas) =>{
   
   // impressão do array  no console
   for(let estudante of estudantes){
-    console.log(estudante);
+    //console.log(estudante);
   }
   
   // impressão no console apenas do último aluno adicionado
-  console.log("Aluno Matriculado");
+  /* console.log("Aluno Matriculado");
   console.log(`Nome: ${estudantes[estudantes.length-1].estudante}`);
   console.log(`Curso: ${estudantes[estudantes.length-1].curso}`);
-  console.log(`Turma: ${estudantes[estudantes.length-1].turma}`);
+  console.log(`Turma: ${estudantes[estudantes.length-1].turma}`); */
 }
 // matricular("Carlos", "HTML e CSS", "Clarke", 2);
 
@@ -404,10 +429,8 @@ const gerarCard = (arrayTurmasBuscadas) => {
     const divCard = document.createElement('div'); // div que contém o card
     divCard.setAttribute('class','area-adm-turmas-card');
 
-    console.log(item,index);
-
     const nomeDaTurma = document.createElement('h2'); // criando h2 com o nome da turma do card
-    console.log(item)
+    
     nomeDaTurma.innerHTML = item.turma;
     divCard.insertAdjacentElement('afterbegin',nomeDaTurma);
 
@@ -443,7 +466,7 @@ const gerarCard = (arrayTurmasBuscadas) => {
     /* Adição de período da turma no card */
     keyConteudoTurma.innerHTML = "Período:";
     conteudoTurmaPeriodo.insertAdjacentElement('beforeend',keyConteudoTurma);
-    conteudoTurmaPeriodo.innerHTML += ` ${item.periodo}`;
+    conteudoTurmaPeriodo.innerHTML += ` ${primeiraLetraMaiuscula(item.periodo)}`;
     divCard.insertAdjacentElement('beforeend',conteudoTurmaPeriodo);
     /* Adição de info se a turma já foi concluída no card */
     keyConteudoTurma.innerHTML = "Concluído:";
@@ -487,6 +510,8 @@ const mostraAreaMatriculas = () => {
   linkFinanceiro.classList.add('link-desativado', 'link-desativado-visited');
 
   apagaDiv('.area-adm-aluno-matriculado-container');
+  apagaDiv(".valor-financeiro");
+  apagaDiv(".titulo-valor-financeiro");
   limparInputs(document.querySelector(".area-adm-matriculas-form"))
 }
 
@@ -595,6 +620,8 @@ const mostraAreaFinanceiro = () => {
   apagaDiv('.area-adm-relatorio-aluno-encontrado');
   limparInputs(document.querySelector(".area-adm-relatorio-aluno"))
   limparInputs(document.querySelector(".area-adm-financeiro"))
+
+    carrinhoCursos = []; // zera o carrinho de cursos
 }
 
 
@@ -635,7 +662,6 @@ const enviaInfoContato = () =>{
 /* Apaga div caso ela exista por identificação com nome da classe */
 const apagaDiv = (nomeClasse) => {
 	if(!!document.querySelector(nomeClasse)){
-		console.log("entrou aqui");
 		const divARemover = document.querySelector(nomeClasse);
 		divARemover.remove();
 	}
@@ -663,4 +689,10 @@ function limparInputs(form) {
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].value = ""
   }
+}
+
+
+/* Função para retornar primeira palavra de uma string em maiúsculo */
+function primeiraLetraMaiuscula(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }

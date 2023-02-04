@@ -8,7 +8,7 @@
 /* Estilização do header que será igual em todas as páginas */
 header{
   background-color:#FBFBFB;
-  min-height: 7rem;
+  min-height: 14vh;
   display:flex;
   align-items: center;
   justify-content: space-around;
@@ -23,7 +23,7 @@ header{
   font-size: 1.1rem;
   list-style: none;
   display:flex;
-  gap: 3rem;
+  gap: 3vw;
 }
 
 .menu a{
@@ -45,12 +45,12 @@ header{
   background-color: #F6C34A;
   display:flex;
   flex-direction: column;
-  gap: 4rem;
-  padding:2rem 9rem 5rem 9rem;
+  gap: 4vh;
+  padding:2vh 9vw 5vh 9vw;
 }
 
 .footer-top-content{
-  height: 2.5rem;
+  height: 5vh;
 }
 
 .footer-top-content-logo{
@@ -60,7 +60,7 @@ header{
 .footer-bottom-content{
   display:flex;
   justify-content: space-between;
-  gap:5rem;
+  gap:3vw;
 }
 
 .footer-endereco,
@@ -69,12 +69,12 @@ header{
 .footer-area-restrita{
   display:flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3vh;
 }
 
 .mapouter{
   border:0.1rem solid #0E0E0E;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5vh;
   position:relative;
   text-align:right;
   height:inherit;
@@ -86,7 +86,7 @@ header{
   list-style: none;
   display:flex;
   flex-direction: column;
-  gap:0.7rem;
+  gap:1.5vh;
 }
 
 .footer-list-links a,
@@ -100,9 +100,9 @@ header{
 }
 
 .footer-list-redes-sociais{
-  height: 2rem;
+  height: 4vh;
   display:flex;
-  gap:0.5rem;
+  gap:0.7vw;
 }
 
 .footer-bottom-content img{
@@ -113,8 +113,8 @@ header{
 /* Estilização icone de whatsapp fixo no canto direito inferior*/
 .icone-whatsapp{
   position:fixed;
-  bottom: 3rem;
-  right: 3rem;
+  bottom: 8vh;
+  right: 3vw;
   width: 4rem;
   z-index: 1;
 }
@@ -132,7 +132,7 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:1rem;
+  gap:1vh;
 }
 
 #titulo-top-content{
@@ -148,12 +148,12 @@ header{
 
 #botao-conheca-cursos{
   font-weight: 700;
-  margin-top: 2rem;
+  margin-top: 4vh;
   text-decoration: none;
   color: #FBFBFB;
   background-color: #0E0E0E;
-  padding:1rem 3rem;
-  border-radius: 0.3rem;
+  padding:2vh 3vw;
+  border-radius: 0.3vw;
 }
 
 
@@ -163,7 +163,7 @@ header{
   padding: 15vh 20vw 10vh 20vw;
   display:flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4vh;
   justify-content: center;
   align-items: center;
 }
@@ -175,7 +175,7 @@ header{
 
 #sobre-nos-middle-content{
   color: #FBFBFB;
-  line-height: 2rem;
+  line-height: 4.5vh;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -183,12 +183,12 @@ header{
 /* Estilização do bottom-content da página home (depoimentos)*/
 .bottom-content{
   background-color: #0E0E0E;
-  padding: 0 10vw 18vh 10vw;
+  padding: 0 6vw 18vh 6vw;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.5vh;
 }
 
 #titulo-bottom-content{
@@ -206,13 +206,13 @@ header{
 .depoimentos-card{
   background-color: #FBFBFB;
   width: 17rem;
-  margin-top: 2rem;
-  padding: 1.5rem;
+  margin-top: 5vh;
+  padding: 1.5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  border-radius: 0.5rem;
+  gap: 5vh;
+  border-radius: 0.5vw;
   font-family: 'Open Sans',sans-serif;
 }
 
@@ -224,6 +224,33 @@ header{
 .foto-depoimento{
   display: flex;
   justify-content: center;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media screen and (min-width: 700px) and (max-width: 1300px) {
+  html{
+    font-size: 13px;
+  }
+  /* FOOTER */
+  .footer-top-content{
+    display:flex;
+    justify-content: center;
+  }
+  .footer-bottom-content{
+    display:flex;
+    flex-wrap: wrap;
+    gap:5vw;
+  }
+  .footer-endereco{
+    display:none;
+  }
+  /* CURSOS */
+  .cursos-descricao-cards-container{
+    flex-wrap:wrap;
+  }
+  .cursos-card{
+    width: 40rem;
+  }
 }
 
 
@@ -238,20 +265,21 @@ header{
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  padding: 4vh 12vw;
+  padding: 4vh 8vw;
 }
 
 .cursos-descricao-cards-container{
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4rem;
+  gap: 4vw;
+  padding: 4vh 8vw;
 }
 
 .cursos-card{
   background-color: #FFF;
-  min-width: 8vw;
-  max-width: 20vw;
+  width: 18rem;
+  height: 23rem;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -653,7 +681,7 @@ header{
   color: #F0F0F0;
   text-decoration: none;
   padding: 0.5rem 0;
-  margin-top: 2rem;
+  margin: 2rem 0;
   border-radius: 0.3rem;
 }
 
@@ -665,6 +693,7 @@ header{
 .area-adm-financeiro p{
   margin-bottom: 0.8rem;
 }
+
 
 .area-adm-relatorio-aluno-container{
   display:flex;
