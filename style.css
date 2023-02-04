@@ -231,6 +231,7 @@ header{
   html{
     font-size: 13px;
   }
+  /* FOOTER */
   .footer-top-content{
     display:flex;
     justify-content: center;
@@ -238,12 +239,18 @@ header{
   .footer-bottom-content{
     display:flex;
     flex-wrap: wrap;
-    align-self: center;
+    gap:5vw;
   }
   .footer-endereco{
     display:none;
   }
-
+  /* CURSOS */
+  .cursos-descricao-cards-container{
+    flex-wrap:wrap;
+  }
+  .cursos-card{
+    width: 40rem;
+  }
 }
 
 
@@ -258,20 +265,21 @@ header{
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  padding: 4vh 12vw;
+  padding: 4vh 8vw;
 }
 
 .cursos-descricao-cards-container{
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 4rem;
+  gap: 4vw;
+  padding: 4vh 8vw;
 }
 
 .cursos-card{
   background-color: #FFF;
-  min-width: 8vw;
-  max-width: 20vw;
+  width: 18rem;
+  height: 23rem;
   display:flex;
   flex-direction: column;
   justify-content: center;
