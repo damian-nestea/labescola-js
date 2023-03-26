@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body{
+  animation: fadein 1s;
+}
+
 
 /* Estilização do header que será igual em todas as páginas */
 header{
