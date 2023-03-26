@@ -49,17 +49,17 @@ header{
   bottom: 0;
   left: 0;
   background-color:#F6C34A;
-  transform-origin: bottom right;
+  transform-origin: bottom;
   transition: transform 0.5s ease-out;
 }
 
 .menu a:hover:after {
   transform: scaleX(1);
-  transform-origin: bottom left;
+  transform-origin: bottom;
 }
 
 .menu-selected{
-  text-decoration: underline !important; 
+  color:#F6C34A !important;
 }
 
 
