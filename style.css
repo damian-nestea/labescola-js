@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body{
+  animation: fadein 1s;
+}
+
 
 /* Estilização do header que será igual em todas as páginas */
 header{
@@ -27,14 +31,39 @@ header{
 }
 
 .menu a{
+  display: inline-block;
+  position: relative;
   text-decoration: none;
   color: #0E0E0E;
   font-weight: 700;
   font-family: 'Poppins', sans-serif;
+  transition:0.8s;  
+}
+
+.menu a:hover{
+  color:#F6C34A;
+}
+
+.menu a::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color:#F6C34A;
+  transform-origin: bottom;
+  transition: transform 0.35s ease-out;
+}
+
+.menu a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom;
 }
 
 .menu-selected{
-  text-decoration: underline !important; 
+  color:#F6C34A !important;
 }
 
 
