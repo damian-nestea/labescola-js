@@ -271,34 +271,6 @@ header{
   justify-content: center;
 }
 
-/* MEDIA QUERIES PARA RESPONSIVIDADE */
-@media screen and (min-width: 700px) and (max-width: 1300px) {
-  html{
-    font-size: 13px;
-  }
-  /* FOOTER */
-  .footer-top-content{
-    display:flex;
-    justify-content: center;
-  }
-  .footer-bottom-content{
-    display:flex;
-    flex-wrap: wrap;
-    gap:5vw;
-  }
-  .footer-endereco{
-    display:none;
-  }
-  /* CURSOS */
-  .cursos-descricao-cards-container{
-    flex-wrap:wrap;
-  }
-  .cursos-card{
-    width: 40rem;
-  }
-}
-
-
 
 /* ESTILIZAÇÃO PÁGINA CURSOS */
 /* Estilização do top content da página de cursos(cards dos cursos com uma curta descrição */
@@ -774,5 +746,33 @@ header{
   font-size: 0.9rem;
   font-weight: 400;
   padding:0 0.5rem;
+}
+
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+@media screen and (min-width: 700px) and (max-width: 1300px) {
+  html{
+    font-size: 13px;
+  }
+  /* FOOTER */
+  .footer-top-content{
+    display:flex;
+    justify-content: center;
+  }
+  .footer-bottom-content{
+    display:flex;
+    flex-wrap: wrap;
+    gap:5vw;
+  }
+  .footer-endereco{
+    display:none;
+  }
+  /* CURSOS */
+  .cursos-descricao-cards-container{
+    flex-wrap:wrap;
+  }
+  .cursos-card{
+    width: 40rem;
+  }
 }
 
