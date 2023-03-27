@@ -157,6 +157,11 @@ header{
   right: 3vw;
   width: 4rem;
   z-index: 1;
+  transition: 0.8s  ease-in-out;
+}
+
+.icone-whatsapp:hover{
+  width: 5rem;
 }
 
 
