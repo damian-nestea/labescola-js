@@ -185,6 +185,10 @@ header{
   border-radius: 0.3vw;
 }
 
+#botao-conheca-cursos:hover{
+  color:#F6C34A;
+}
+
 
 /* Estilização do middle-content da página home (sobre nós)*/
 .middle-content{
@@ -338,6 +342,10 @@ header{
   border-radius: 0.3rem;
 }
 
+.botao-quero-fazer-parte:hover{
+  color:#F6C34A;
+}
+
 
 /* Estilização do bottom content da página de cursos (cards dos cursos com conteúdo dos módulos*/
 .cursos-bottom-content{
@@ -421,6 +429,11 @@ header{
 .botao-enviar-contato:link,
 .botao-enviar-contato:visited{
   color:#0E0E0E;
+}
+
+.botao-enviar-contato:hover{
+  background-color: #0E0E0E;
+  color:#F6C34A;
 }
 
 .contato-inputs{
@@ -547,6 +560,10 @@ header{
   align-items: center;  
   border-top-right-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
+}
+
+.area-adm-botao-buscar:hover{
+  color:#F6C34A;
 }
 
 .area-adm-turmas-cards-container{
