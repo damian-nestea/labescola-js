@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body{
+body,
+.area-adm-turmas-cards-container{
   animation: fadein 1s;
 }
 

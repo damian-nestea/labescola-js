@@ -424,7 +424,7 @@ const gerarCard = (arrayTurmasBuscadas) => {
 
   const divCardsContainer = document.createElement('div'); // container de todos os cards que forem gerados
   divCardsContainer.setAttribute('class','area-adm-turmas-cards-container');
-
+ 
   arrayTurmasBuscadas.forEach(function(item,index){
     const divCard = document.createElement('div'); // div que contém o card
     divCard.setAttribute('class','area-adm-turmas-card');
