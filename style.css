@@ -5,7 +5,8 @@
 }
 
 body,
-.area-adm-turmas-cards-container{
+.area-adm-turmas-cards-container,
+.area-adm-aluno-matriculado-container{
   animation: fadein 1s;
 }
 
