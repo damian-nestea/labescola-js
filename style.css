@@ -6,7 +6,12 @@
 
 body,
 .area-adm-turmas-cards-container,
-.area-adm-aluno-matriculado-container{
+.area-adm-aluno-matriculado-container,
+.area-adm-main-matriculas,
+.area-adm-main-financeiro-alunos,
+.area-adm-relatorio-aluno-encontrado,
+.titulo-valor-financeiro,
+.valor-financeiro{
   animation: fadein 1s;
 }
 
