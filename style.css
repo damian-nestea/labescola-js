@@ -793,8 +793,14 @@ header {
   }
   .area-adm-menu-lateral ul {
     flex-direction: row;
+    gap: 10rem;
   }
   .area-adm-right-content {
     width: 100vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .area-adm-busca-turmas {
+    width: 100%;
   }
 }
