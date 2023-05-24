@@ -761,6 +761,7 @@ header {
   }
   /* CURSOS */
   .cursos-descricao-cards-container {
+    padding: 0;
     flex-wrap: wrap;
   }
   .cursos-card {
