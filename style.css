@@ -497,6 +497,8 @@ header {
   min-height: 100vh;
   padding: 3rem 0;
   border-bottom: 0.1rem solid #0e0e0e;
+  display: flex;
+  justify-content: center;
 }
 
 /* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO TURMAS*/
@@ -551,7 +553,7 @@ header {
 
 .area-adm-turmas-cards-container {
   display: flex;
-  padding: 0 4rem;
+  padding: 0 2rem;
   gap: 1rem;
   justify-content: center;
   align-items: flex-start;
@@ -779,5 +781,20 @@ header {
   .cursos-titulo-modulo,
   .cursos-conteudo-modulo {
     text-align: center;
+  }
+
+  /* AREA ADM */
+  .area-adm-main-container {
+    flex-direction: column;
+  }
+  .area-adm-menu-lateral {
+    width: 100vw;
+    padding: 2vh;
+  }
+  .area-adm-menu-lateral ul {
+    flex-direction: row;
+  }
+  .area-adm-right-content {
+    width: 100vw;
   }
 }
