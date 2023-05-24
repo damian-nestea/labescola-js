@@ -497,6 +497,8 @@ header {
   min-height: 100vh;
   padding: 3rem 0;
   border-bottom: 0.1rem solid #0e0e0e;
+  display: flex;
+  justify-content: center;
 }
 
 /* Estilização do right-content da página de area-adm (conteúdo da direita) OPÇÃO TURMAS*/
@@ -551,7 +553,7 @@ header {
 
 .area-adm-turmas-cards-container {
   display: flex;
-  padding: 0 4rem;
+  padding: 0 2rem;
   gap: 1rem;
   justify-content: center;
   align-items: flex-start;
@@ -666,10 +668,10 @@ header {
 }
 
 .area-adm-financeiro-alunos-container {
-  padding: 0 10vw;
+  padding: 0 12vw;
   display: flex;
-  gap: 15vw;
-  justify-content: center;
+  gap: 2rem;
+  justify-content: space-between;
 }
 
 .area-adm-financeiro,
@@ -677,7 +679,7 @@ header {
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  width: 18vw;
+  width: 15rem;
   gap: 0.2rem;
 }
 
@@ -779,5 +781,30 @@ header {
   .cursos-titulo-modulo,
   .cursos-conteudo-modulo {
     text-align: center;
+  }
+
+  /* AREA ADM */
+  .area-adm-main-container {
+    flex-direction: column;
+  }
+  .area-adm-menu-lateral {
+    width: 100vw;
+    padding: 2vh;
+  }
+  .area-adm-menu-lateral ul {
+    flex-direction: row;
+    gap: 10rem;
+  }
+  .area-adm-right-content {
+    width: 100vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .area-adm-busca-turmas {
+    width: 100%;
+  }
+  .area-adm-financeiro,
+  .area-adm-relatorio-aluno {
+    width: 18rem;
   }
 }
