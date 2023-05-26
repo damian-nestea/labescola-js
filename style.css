@@ -748,6 +748,10 @@ header {
   html {
     font-size: 14px;
   }
+  /* HEADER */
+  .menu {
+    gap: 5vw;
+  }
   /* FOOTER */
   .footer-top-content {
     display: flex;
@@ -806,5 +810,13 @@ header {
   .area-adm-financeiro,
   .area-adm-relatorio-aluno {
     width: 18rem;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 699px) {
+  /* HEADER */
+  .menu {
+    display: none;
+    justify-content: space-between;
   }
 }
