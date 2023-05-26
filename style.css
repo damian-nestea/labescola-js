@@ -28,6 +28,11 @@ header {
   width: 20vw;
 }
 
+.logo-container a {
+  display: flex;
+  align-items: center;
+}
+
 .logo-container img {
   width: 90%;
   transition: 0.6s ease-out;
@@ -79,6 +84,16 @@ header {
 
 .menu-selected {
   color: #f6c34a !important;
+}
+
+.menu-burguer {
+  display: none;
+  width: 4vw;
+  height: 4vh;
+}
+
+.menu-burguer img {
+  width: 100%;
 }
 
 /* Estilização do footer que será igual em todas as páginas */
@@ -815,8 +830,14 @@ header {
 
 @media screen and (min-width: 400px) and (max-width: 699px) {
   /* HEADER */
+  header {
+    justify-content: space-between;
+    padding: 0 6vw;
+  }
   .menu {
     display: none;
-    justify-content: space-between;
+  }
+  .menu-burguer {
+    display: block;
   }
 }
