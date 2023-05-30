@@ -49,7 +49,9 @@ header {
   display: flex;
   gap: 3vw;
 }
-
+.desativado {
+  display: none;
+}
 .menu a,
 .links-menu-burguer a {
   display: inline-block;
