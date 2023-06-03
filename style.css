@@ -875,4 +875,13 @@ header {
   .footer-area-restrita {
     align-items: center;
   }
+
+  /* HOME PAGE */
+
+  #frase-top-content {
+    font-size: 1rem;
+  }
+  .depoimentos-card p {
+    text-align: center;
+  }
 }
