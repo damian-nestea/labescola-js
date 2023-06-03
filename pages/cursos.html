@@ -1,163 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursos</title>
-  <script src="../script.js"></script>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../efeitofade.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- INICIO DO HEADER -->
-  <header>
-    <div class="logo-container"><a href="../index.html"><img src="../assets/logo.svg" alt="Logo da LabEscola"></a></div>
-    <nav>
-      <ul class="menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a  class="menu-selected" href="../pages/cursos.html">Cursos</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos</title>
+    <script src="../script.js"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../efeitofade.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- INICIO DO HEADER -->
+    <header>
+      <div class="logo-container">
+        <a href="../index.html"
+          ><img src="../assets/logo.svg" alt="Logo da LabEscola"
+        /></a>
+      </div>
+      <nav>
+        <a
+          href="#"
+          onclick="showMenuBurguerLinks() ;return false"
+          class="menu-burguer"
+        >
+          <img src="../assets/menu-icon.png" alt="" />
+        </a>
+        <ul class="menu">
+          <li><a href="../index.html">Home</a></li>
+          <li>
+            <a class="menu-selected" href="../pages/cursos.html">Cursos</a>
+          </li>
+          <li><a href="../pages/contato.html">Contato</a></li>
+          <li><a href="../pages/area-adm.html">Área ADM</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- FIM DO HEADER -->
+    <main>
+      <ul id="menu-burguer" class="desativado">
+        <li><a class="menu-selected" href="../index.html">Home</a></li>
+        <li><a href="../pages/cursos.html">Cursos</a></li>
         <li><a href="../pages/contato.html">Contato</a></li>
         <li><a href="../pages/area-adm.html">Área ADM</a></li>
       </ul>
-    </nav>
-  </header>
-  <!-- FIM DO HEADER -->
-  <main>
-    <a href="https://wa.link/lsvbsn" target="_blank"><img class="icone-whatsapp" src="../assets/whatsapp-icon.png" alt="Icone do WhatsApp"></a>
-    <!-- INICIO DO TOP CONTENT CARDS COM DESCRIÇÃO DE CURSOS -->
-    <section class="cursos-top-content">
-      <div class="cursos-descricao-cards-container">
-        <div class="cursos-card">
-          <h2 class="cursos-cards-titulo">HTML e CSS</h2>
-          <p class="cursos-cards-descricao">Maecenas ullamcorper, metus eu mattis tristique, ante metus ultrices ex, vel auctor tortor dolor nec dui. Nullam vestibulum eleifend ipsum elementum accumsan. Fusce tempus finibus odio a faucibus. Etiam justo ante, viverra ut iaculis vel, vulputate sed massa. Quisque tincidunt ultricies enim, ac</p>
-        </div>
-        <div class="cursos-card">
-          <h2 class="cursos-cards-titulo">JavaScript</h2>
-          <p class="cursos-cards-descricao">Maecenas ullamcorper, metus eu mattis tristique, ante metus ultrices ex, vel auctor tortor dolor nec dui. Nullam vestibulum eleifend ipsum elementum accumsan. Fusce tempus finibus odio a faucibus. Etiam justo ante, viverra ut iaculis vel, vulputate sed massa. Quisque tincidunt ultricies enim, ac</p>
-        </div>
-        <div class="cursos-card">
-          <h2 class="cursos-cards-titulo">APIsRest</h2>
-          <p class="cursos-cards-descricao">Maecenas ullamcorper, metus eu mattis tristique, ante metus ultrices ex, vel auctor tortor dolor nec dui. Nullam vestibulum eleifend ipsum elementum accumsan. Fusce tempus finibus odio a faucibus. Etiam justo ante, viverra ut iaculis vel, vulputate sed massa. Quisque tincidunt ultricies enim, ac</p>
-        </div>
-      </div>
-      <a class="botao-quero-fazer-parte" href="./cursos.html" onclick="sendMail(); return false">Quero fazer parte!</a>
-    </section>
-    <!-- FIM DO TOP CONTENT CARDS COM DESCRIÇÃO DE CURSOS -->
-    <!-- INICIO DO BOTTOM CONTENT CARDS COM CONTEÚDO PROGRAMÁTICO DOS CURSOS POR MÓDULOS -->
-    <section class="cursos-bottom-content">
-      <div class="cursos-bottom-content-card">
-        <h2 class="cursos-bottom-content-titulo">HTML e CSS</h2>
-        <div class="cursos-modulo">
-          <h3 class="cursos-titulo-modulo">Modulo 1</h3>
-          <div class="cursos-conteudo-modulo">
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
+      <a href="https://wa.link/lsvbsn" target="_blank"
+        ><img
+          class="icone-whatsapp"
+          src="../assets/whatsapp-icon.png"
+          alt="Icone do WhatsApp"
+      /></a>
+      <!-- INICIO DO TOP CONTENT CARDS COM DESCRIÇÃO DE CURSOS -->
+      <section class="cursos-top-content">
+        <div class="cursos-descricao-cards-container">
+          <div class="cursos-card">
+            <h2 class="cursos-cards-titulo">HTML e CSS</h2>
+            <p class="cursos-cards-descricao">
+              Maecenas ullamcorper, metus eu mattis tristique, ante metus
+              ultrices ex, vel auctor tortor dolor nec dui. Nullam vestibulum
+              eleifend ipsum elementum accumsan. Fusce tempus finibus odio a
+              faucibus. Etiam justo ante, viverra ut iaculis vel, vulputate sed
+              massa. Quisque tincidunt ultricies enim, ac
+            </p>
+          </div>
+          <div class="cursos-card">
+            <h2 class="cursos-cards-titulo">JavaScript</h2>
+            <p class="cursos-cards-descricao">
+              Maecenas ullamcorper, metus eu mattis tristique, ante metus
+              ultrices ex, vel auctor tortor dolor nec dui. Nullam vestibulum
+              eleifend ipsum elementum accumsan. Fusce tempus finibus odio a
+              faucibus. Etiam justo ante, viverra ut iaculis vel, vulputate sed
+              massa. Quisque tincidunt ultricies enim, ac
+            </p>
+          </div>
+          <div class="cursos-card">
+            <h2 class="cursos-cards-titulo">APIsRest</h2>
+            <p class="cursos-cards-descricao">
+              Maecenas ullamcorper, metus eu mattis tristique, ante metus
+              ultrices ex, vel auctor tortor dolor nec dui. Nullam vestibulum
+              eleifend ipsum elementum accumsan. Fusce tempus finibus odio a
+              faucibus. Etiam justo ante, viverra ut iaculis vel, vulputate sed
+              massa. Quisque tincidunt ultricies enim, ac
+            </p>
           </div>
         </div>
-        <div class="cursos-modulo">
-          <h3 class="cursos-titulo-modulo">Modulo 2</h3>
-          <div class="cursos-conteudo-modulo">
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
+        <a
+          class="botao-quero-fazer-parte"
+          href="./cursos.html"
+          onclick="sendMail(); return false"
+          >Quero fazer parte!</a
+        >
+      </section>
+      <!-- FIM DO TOP CONTENT CARDS COM DESCRIÇÃO DE CURSOS -->
+      <!-- INICIO DO BOTTOM CONTENT CARDS COM CONTEÚDO PROGRAMÁTICO DOS CURSOS POR MÓDULOS -->
+      <section class="cursos-bottom-content">
+        <div class="cursos-bottom-content-card">
+          <h2 class="cursos-bottom-content-titulo">HTML e CSS</h2>
+          <div class="cursos-modulo">
+            <h3 class="cursos-titulo-modulo">Modulo 1</h3>
+            <div class="cursos-conteudo-modulo">
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+            </div>
+          </div>
+          <div class="cursos-modulo">
+            <h3 class="cursos-titulo-modulo">Modulo 2</h3>
+            <div class="cursos-conteudo-modulo">
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="cursos-bottom-content-card">
-        <h2 class="cursos-bottom-content-titulo">JavaScript</h2>
-        <div class="cursos-modulo">
-          <h3 class="cursos-titulo-modulo">Modulo 1</h3>
-          <div class="cursos-conteudo-modulo">
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
+        <div class="cursos-bottom-content-card">
+          <h2 class="cursos-bottom-content-titulo">JavaScript</h2>
+          <div class="cursos-modulo">
+            <h3 class="cursos-titulo-modulo">Modulo 1</h3>
+            <div class="cursos-conteudo-modulo">
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+            </div>
+          </div>
+          <div class="cursos-modulo">
+            <h3 class="cursos-titulo-modulo">Modulo 2</h3>
+            <div class="cursos-conteudo-modulo">
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+            </div>
           </div>
         </div>
-        <div class="cursos-modulo">
-          <h3 class="cursos-titulo-modulo">Modulo 2</h3>
-          <div class="cursos-conteudo-modulo">
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
+        <div class="cursos-bottom-content-card">
+          <h2 class="cursos-bottom-content-titulo">APIs e Rest</h2>
+          <div class="cursos-modulo">
+            <h3 class="cursos-titulo-modulo">Modulo 1</h3>
+            <div class="cursos-conteudo-modulo">
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+            </div>
+          </div>
+          <div class="cursos-modulo">
+            <h3 class="cursos-titulo-modulo">Modulo 2</h3>
+            <div class="cursos-conteudo-modulo">
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+              <p>Suspendisse condimentum</p>
+            </div>
           </div>
         </div>
+      </section>
+      <!-- FIM DO BOTTOM CONTENT CARDS COM CONTEÚDO PROGRAMÁTICO DOS CURSOS POR MÓDULOS -->
+    </main>
+    <!-- INICIO DO FOOTER -->
+    <footer class="footer-container">
+      <div class="footer-top-content">
+        <img
+          class="footer-top-content-logo"
+          src="../assets/logo1.svg"
+          alt="Logo"
+        />
       </div>
-      <div class="cursos-bottom-content-card">
-        <h2 class="cursos-bottom-content-titulo">APIs e Rest</h2>
-        <div class="cursos-modulo">
-          <h3 class="cursos-titulo-modulo">Modulo 1</h3>
-          <div class="cursos-conteudo-modulo">
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
+      <div class="footer-bottom-content">
+        <div class="footer-endereco">
+          <h3>Endereço</h3>
+          <div>
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe
+                  width="400"
+                  height="280"
+                  id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=rua%20pa%C3%ADs%20leme%20215&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                ></iframe
+                ><a href="https://fmovies-online.net">fmovies</a><br /><a
+                  href="https://www.embedgooglemap.net"
+                  >interactive google map for website</a
+                ><style>
+                  .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 280px;
+                    width: 400px;
+                  }
+                </style>
+              </div>
+            </div>
+            <p>R. Pais Leme, 215. CEP 05424-150 - Pinheiros</p>
           </div>
         </div>
-        <div class="cursos-modulo">
-          <h3 class="cursos-titulo-modulo">Modulo 2</h3>
-          <div class="cursos-conteudo-modulo">
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
-            <p>Suspendisse condimentum</p>
+        <!--  -->
+        <div class="footer-links">
+          <h3>Links</h3>
+          <ul class="footer-list-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./cursos.html">Cursos</a></li>
+            <li>Blog</li>
+            <li><a href="./contato.html">Fale conosco</a></li>
+            <li>Termos e condições</li>
+            <li>Política de privacidade</li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+        <div class="footer-redes-sociais">
+          <h3>Redes sociais</h3>
+          <div class="footer-list-redes-sociais">
+            <a href="https://twitter.com/" target="_blank"
+              ><img src="../assets/icon-twitter1.png" alt="Logo do Twitter"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/jair-dami%C3%A1n-mart%C3%ADnez-bautista-4b35b1a6/"
+              target="_blank"
+              ><img src="../assets/icon-linkedin1.png" alt="Logo do Linkedin"
+            /></a>
+            <a
+              href="https://www.facebook.com/jairdamian.martinez/"
+              target="_blank"
+              ><img src="../assets/icon-fb1.png" alt="Logo do Facebook"
+            /></a>
+            <a
+              href="https://www.instagram.com/jairdamianmartinez/"
+              target="_blank"
+              ><img src="../assets/icon-ig1.png" alt="Logo do Instagram"
+            /></a>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- FIM DO BOTTOM CONTENT CARDS COM CONTEÚDO PROGRAMÁTICO DOS CURSOS POR MÓDULOS -->
-  </main>
-  <!-- INICIO DO FOOTER -->
-  <footer class="footer-container">
-    <div class="footer-top-content">
-      <img class="footer-top-content-logo" src="../assets/logo1.svg" alt="Logo">
-    </div>
-    <div class="footer-bottom-content">
-      <div class="footer-endereco">
-        <h3>Endereço</h3>
-        <div>
-          <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="280" id="gmap_canvas" src="https://maps.google.com/maps?q=rua%20pa%C3%ADs%20leme%20215&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies</a><br><a href="https://www.embedgooglemap.net">interactive google map for website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:280px;width:400px;}</style></div></div>
-          <p>R. Pais Leme, 215. CEP 05424-150 - Pinheiros</p>
-        </div>
-      </div><!--  -->
-      <div class="footer-links">
-        <h3>Links</h3>
-        <ul class="footer-list-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="./cursos.html">Cursos</a></li>
-          <li>Blog</li>
-          <li><a href="./contato.html">Fale conosco</a></li>
-          <li>Termos e condições</li>
-          <li>Política de privacidade</li>
-          <li>FAQ</li>
-        </ul>
-      </div>
-      <div class="footer-redes-sociais">
-        <h3>Redes sociais</h3>
-        <div class="footer-list-redes-sociais">
-          <a href="https://twitter.com/" target="_blank"><img src="../assets/icon-twitter1.png" alt="Logo do Twitter"></a>
-          <a href="https://www.linkedin.com/in/jair-dami%C3%A1n-mart%C3%ADnez-bautista-4b35b1a6/" target="_blank"><img src="../assets/icon-linkedin1.png" alt="Logo do Linkedin"></a>
-          <a href="https://www.facebook.com/jairdamian.martinez/" target="_blank"><img src="../assets/icon-fb1.png" alt="Logo do Facebook"></a>
-          <a href="https://www.instagram.com/jairdamianmartinez/" target="_blank"><img src="../assets/icon-ig1.png" alt="Logo do Instagram"></a>
+        <div class="footer-area-restrita">
+          <h3>Área restrita</h3>
+          <ul class="footer-list-pocoes-area-adm">
+            <li><a href="./area-adm.html">Área restrita</a></li>
+            <li>Espaço do aluno</li>
+          </ul>
         </div>
       </div>
-      <div class="footer-area-restrita">
-        <h3>Área restrita</h3>
-        <ul class="footer-list-pocoes-area-adm">
-          <li><a href="./area-adm.html">Área restrita</a></li>
-          <li>Espaço do aluno</li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-  <!-- FIM DO FOOTER -->
-</body>
+    </footer>
+    <!-- FIM DO FOOTER -->
+  </body>
 </html>
