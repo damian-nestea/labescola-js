@@ -876,12 +876,28 @@ header {
     align-items: center;
   }
 
-  /* HOME PAGE */
+  .footer-list-redes-sociais,
+  .footer-list-pocoes-area-adm {
+    justify-content: center;
+    text-align: center;
+  }
 
+  /* HOME PAGE */
   #frase-top-content {
     font-size: 1rem;
   }
   .depoimentos-card p {
+    text-align: center;
+  }
+
+  /* CURSOS */
+  .cursos-bottom-content-card {
+    flex-direction: column;
+    width: auto;
+    padding: 2rem 4rem;
+  }
+  .cursos-titulo-modulo,
+  .cursos-conteudo-modulo {
     text-align: center;
   }
 }
