@@ -900,4 +900,13 @@ header {
   .cursos-conteudo-modulo {
     text-align: center;
   }
+
+  /* CONTATO */
+  .contato-content {
+    padding: 2rem;
+    background: #777;
+  }
+  .contato-formulario {
+    width: 80vw;
+  }
 }
