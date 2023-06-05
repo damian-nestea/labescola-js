@@ -348,6 +348,7 @@ header {
   padding: 1rem 5rem;
   border-radius: 0.3rem;
   transition: 0.6s ease-in;
+  text-align: center;
 }
 
 .botao-quero-fazer-parte:hover {
@@ -801,7 +802,9 @@ header {
   }
   .cursos-bottom-content-titulo {
     grid-column: 1/3;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .cursos-titulo-modulo,
   .cursos-conteudo-modulo {
@@ -834,7 +837,7 @@ header {
   }
 }
 
-@media screen and (min-width: 400px) and (max-width: 699px) {
+@media screen and (max-width: 699px) {
   /* HEADER */
   header {
     justify-content: space-between;
@@ -883,24 +886,31 @@ header {
   }
 
   /* HOME PAGE */
-  #frase-top-content {
-    font-size: 1rem;
-  }
+
+  #titulo-top-content,
+  #sobre-nos-middle-content,
+  #frase-top-content,
   .depoimentos-card p {
     text-align: center;
+  }
+  #frase-top-content {
+    font-size: 1rem;
   }
 
   /* CURSOS */
   .cursos-bottom-content-card {
     flex-direction: column;
     width: auto;
-    padding: 2rem 4rem;
+    padding: 2rem 2rem;
   }
   .cursos-titulo-modulo,
-  .cursos-conteudo-modulo {
+  .cursos-conteudo-modulo,
+  .cursos-cards-descricao {
     text-align: center;
   }
-
+  .botao-quero-fazer-parte {
+    padding: 1rem 3rem;
+  }
   /* CONTATO */
   .contato-content {
     padding: 2rem;
