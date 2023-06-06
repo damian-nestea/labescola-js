@@ -64,6 +64,10 @@ header {
   transition: 0.8s;
 }
 
+.links-menu-burguer a {
+  color: #fbfbfb;
+}
+
 .menu a:hover,
 .links-menu-burguer a:hover {
   color: #f6c34a;
