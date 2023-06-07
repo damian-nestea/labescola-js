@@ -742,6 +742,7 @@ header {
 }
 
 .adiciona-curso {
+  display:block;
   color: #0e0e0e;
   font-size: 0.8rem;
 }
@@ -922,5 +923,76 @@ header {
   }
   .contato-formulario {
     width: 80vw;
+  }
+
+  /* AREA ADM */
+  .area-adm-main-container {
+    flex-direction: column;
+  }
+  .area-adm-menu-lateral {
+    width: 100vw;
+    padding: 2vh 0;
+  }
+  .area-adm-menu-lateral ul {
+    font-size: 1rem;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .area-adm-right-content {
+    width: 100vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  /* AREA ADM - Seção Turmas */
+  .area-adm-busca-turmas {
+    width: 100vw;
+    padding: 1rem;
+  }
+  .area-adm-busca-container {
+    height: 2rem;
+  }
+  #area-adm-caixa-texto {
+    width: 50vw;
+  }
+  .area-adm-turmas-cards-container {
+    padding: 0;
+  }
+  .area-adm-turmas-card {
+    width: 13.5rem;
+  }
+  /* AREA ADM - Seção Matrículas */
+  .area-adm-matriculas-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  /* AREA ADM - Seção Financeiro */
+  .area-adm-financeiro-alunos-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+  .area-adm-financeiro h2,
+  .area-adm-financeiro label {
+    text-align: center;
+  }
+  .area-adm-financeiro p {
+    display: flex;
+    justify-items: center;
+  }
+  .adiciona-curso{
+    margin:auto;
+  }
+  .titulo-valor-financeiro,
+  .valor-financeiro{
+    text-align:center;
+  }
+  .area-adm-relatorio-aluno h2,
+  .area-adm-relatorio-aluno label{
+    text-align:center;
+  }
+  .area-adm-relatorio-aluno-encontrado p{
+    text-align:center;
   }
 }
