@@ -742,7 +742,7 @@ header {
 }
 
 .adiciona-curso {
-  display:block;
+  display: block;
   color: #0e0e0e;
   font-size: 0.8rem;
 }
@@ -849,6 +849,10 @@ header {
     padding: 0 6vw;
   }
 
+  .logo-container {
+    width: 10rem;
+  }
+
   .menu-burguer {
     display: block;
   }
@@ -888,6 +892,12 @@ header {
   .footer-list-pocoes-area-adm {
     justify-content: center;
     text-align: center;
+  }
+
+  /* ICONE WHATSAPP */
+  .icone-whatsapp {
+    right: 5vw;
+    width: 3rem;
   }
 
   /* HOME PAGE */
@@ -981,18 +991,64 @@ header {
     display: flex;
     justify-items: center;
   }
-  .adiciona-curso{
-    margin:auto;
+  .adiciona-curso {
+    margin: auto;
   }
   .titulo-valor-financeiro,
-  .valor-financeiro{
-    text-align:center;
+  .valor-financeiro {
+    text-align: center;
   }
   .area-adm-relatorio-aluno h2,
-  .area-adm-relatorio-aluno label{
-    text-align:center;
+  .area-adm-relatorio-aluno label {
+    text-align: center;
   }
-  .area-adm-relatorio-aluno-encontrado p{
-    text-align:center;
+  .area-adm-relatorio-aluno-encontrado p {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 469px) {
+  /* CONTATO */
+  .contato-content {
+    padding: 1rem;
+  }
+  .contato-formulario {
+    width: 100%;
+  }
+
+  /* AREA ADM */
+  .area-adm-menu-lateral {
+    padding: 0;
+  }
+  .area-adm-menu-lateral ul {
+    width: 100vw;
+    font-size: 1rem;
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+  .area-adm-menu-lateral li {
+    border-top: 1px solid #fbfbfb;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+  .area-adm-busca-container {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    height: 4rem;
+  }
+  #area-adm-caixa-texto {
+    width: 100%;
+    height: 2rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-left-radius: 0;
+    text-align: center;
+  }
+  .area-adm-botao-buscar {
+    height: 2rem;
+    border-top-right-radius: 0rem;
+    border-bottom-left-radius: 0.3rem;
+    justify-content: center;
   }
 }
