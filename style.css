@@ -894,6 +894,10 @@ header {
     text-align: center;
   }
 
+  .footer-list-redes-sociais {
+    gap: 1rem;
+  }
+
   /* ICONE WHATSAPP */
   .icone-whatsapp {
     right: 5vw;
@@ -971,6 +975,9 @@ header {
     width: 13.5rem;
   }
   /* AREA ADM - Seção Matrículas */
+  .area-adm-matriculas-form{
+    text-align:center;
+  }
   .area-adm-matriculas-container {
     flex-direction: column;
     gap: 2rem;
@@ -1014,6 +1021,11 @@ header {
   }
   .contato-formulario {
     width: 100%;
+  }
+
+  /* CURSOS */
+  .cursos-bottom-content {
+    padding: 1rem;
   }
 
   /* AREA ADM */
