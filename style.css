@@ -149,6 +149,20 @@ header {
   width: inherit;
 }
 
+.google-map {
+  width: 500px;
+  height: 400px;
+  padding-bottom: 50%;
+  position: relative;
+}
+.google-map iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
 .footer-list-links,
 .footer-list-pocoes-area-adm {
   list-style: none;
@@ -256,7 +270,7 @@ header {
 /* Estilização do bottom-content da página home (depoimentos)*/
 .bottom-content {
   background-color: #0e0e0e;
-  padding: 0 6vw 18vh 6vw;
+  padding: 10vh 6vw 10vh 6vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -434,6 +448,7 @@ header {
   text-align: center;
   text-decoration: none;
   transition: 0.6s ease-in;
+  cursor: pointer;
 }
 
 .botao-enviar-contato,
@@ -898,6 +913,11 @@ header {
     gap: 1rem;
   }
 
+  .google-map {
+    width: 400px;
+    height: 300px;
+  }
+
   /* ICONE WHATSAPP */
   .icone-whatsapp {
     right: 5vw;
@@ -914,6 +934,9 @@ header {
   }
   #frase-top-content {
     font-size: 1rem;
+  }
+
+  .bottom-content {
   }
 
   /* CURSOS */
@@ -975,8 +998,8 @@ header {
     width: 13.5rem;
   }
   /* AREA ADM - Seção Matrículas */
-  .area-adm-matriculas-form{
-    text-align:center;
+  .area-adm-matriculas-form {
+    text-align: center;
   }
   .area-adm-matriculas-container {
     flex-direction: column;
@@ -1015,6 +1038,15 @@ header {
 }
 
 @media screen and (max-width: 469px) {
+  /* FOOTER */
+  .google-map {
+    width: 300px;
+    height: 200px;
+  }
+  .footer-endereco p {
+    font-size: 0.8rem;
+  }
+
   /* CONTATO */
   .contato-content {
     padding: 1rem;

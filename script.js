@@ -702,15 +702,31 @@ const sendMail = () => {
 
 /* Função para envio de Form de contato com checagem dos campos do form */
 const enviaInfoContato = () => {
+  const email = document.querySelector("#email").value;
+
   const formularioContato = document.querySelector(".contato-formulario");
   if (checarInputs(formularioContato)) {
-    alert("Mensagem enviada com sucesso!");
-    limparInputs(formularioContato);
-    document.getElementById("mensagem").value = ""; // limpando textarea
+    if (validateEmail(email)) {
+      alert("Mensagem enviada com sucesso!");
+      limparInputs(formularioContato);
+      document.getElementById("mensagem").value = ""; // limpando textarea
+    } else {
+      alert("Verifique o email!");
+    }
   } else {
     alert("Preencha todos os campos!");
   }
 };
+
+function validateEmail(email) {
+  const isValidEmail =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (!isValidEmail.test(email)) {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 /* Validar se formulário de contato está vazio */
 /* const validaFormulario = (inputNomeContato,inputEmailContato,inputMensagemContato) => {
