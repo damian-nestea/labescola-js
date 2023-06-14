@@ -1,14 +1,3 @@
-/* 
-// array com os cursos que fazem parte da escola de programação
-const cursos = ["HTML e CSS", "JavaScript", "APIs REST"];
-
-// array com as turmas que estudam na escola de programação
-const turmas = ["HC1", "JS1", "JS2", "REST1", "REST2"];
-
-// array com o nome dos estudantes do curso
-const estudantes = ["João", "Ana", "Cris"];
- */
-
 // array de objetos contendo os cursos da escola de programação e suas propriedades
 const cursos = [
   {
@@ -158,7 +147,7 @@ const adicionarCarrinho = () => {
       alert("Curso já foi adicionado");
     }
   } else {
-    alert("Curso não encontrado");
+    alert("Curso inválido. Escolha entre HTML e CSS, Javascript e APIsRest");
   }
 };
 
@@ -223,7 +212,6 @@ const parcelarCurso = () => {
   }
   limparInputs(document.querySelector(".area-adm-financeiro"));
 };
-/* parcelarCurso([500,500,1000]);  */
 
 /* Função para gerar elementos html para mensagem com valor das parcelas e curso na página area-adm opção financeiro */
 const geraMensagemValor = (mensagem) => {
@@ -266,13 +254,10 @@ const imprimirRelatorioCurso = (objetoCurso) => {
 // função para buscar um curso e retorna o objeto contendo o curso selecionado com suas propriedades
 const buscarCurso = (nomeDoCurso) => {
   const encontraCurso = cursos.find((curso) => {
-    return curso.curso.toLowerCase() == nomeDoCurso;
-    /*     return curso.curso.toLowerCase().includes(nomeDoCurso.toLowerCase()); */
+    return curso.curso.toLowerCase() == nomeDoCurso.toLowerCase();
   });
   return encontraCurso === undefined ? "" : encontraCurso;
-  /* return encontraCurso === undefined ? console.log(`Curso não encontrado`):encontraCurso; */
 };
-// buscarCurso("javascript");
 
 // função para buscar um turma pelo curso e retorna o objeto contendo a turma selecionada com suas propriedades
 const buscarTurmaPorCurso = (nomeDoCurso, nomeDaTurma) => {
@@ -286,7 +271,6 @@ const buscarTurmaPorCurso = (nomeDoCurso, nomeDaTurma) => {
   return encontraTurma === undefined || encontraTurma === ""
     ? ""
     : encontraTurma;
-  /* return encontraCurso === undefined ? console.log(`Curso não encontrado`):encontraCurso; */
 };
 
 // função para imprimir turmas
@@ -322,7 +306,6 @@ const buscarTurma = () => {
     ? alert(`Turma não encontrada`)
     : gerarCard(filtroBuscaTurma);
 };
-// buscarTurma(`AR`);
 
 // função para imprimir relatório de estudantes
 const imprimirRelatorioEstudantes = (estudanteBuscado) => {
@@ -413,7 +396,6 @@ const buscarEstudante = () => {
     alert("Preencha todos os campos!");
   }
 };
-//  buscarEstudante('evans');
 
 // função de matrícula de estudante
 const matricular = (
@@ -433,26 +415,13 @@ const matricular = (
   };
   // inserindo o aluno no array de estudantes
   estudantes.push(novoEstudante);
-
-  // impressão do array  no console
-  for (let estudante of estudantes) {
-    //console.log(estudante);
-  }
-
-  // impressão no console apenas do último aluno adicionado
-  /* console.log("Aluno Matriculado");
-  console.log(`Nome: ${estudantes[estudantes.length-1].estudante}`);
-  console.log(`Curso: ${estudantes[estudantes.length-1].curso}`);
-  console.log(`Turma: ${estudantes[estudantes.length-1].turma}`); */
 };
-// matricular("Carlos", "HTML e CSS", "Clarke", 2);
 
 // função para preencher o carrinho de cursos com o valor do curso buscando pelo nome que recebe como parâmetro
 const preencheCarrinhoCursos = (nomeCurso) => {
   carrinhoCursos.push(buscarCurso(nomeCurso).valor);
   return carrinhoCursos;
 };
-// console.log(preencheCarrinhoCursos('HTML e CSS'));
 
 // MANIPULAÇÃO DE DOM ************************************************************************
 
@@ -570,82 +539,85 @@ const mostraAlunoMatriculado = () => {
   const inputTurmaAluno = document.getElementById("turma");
   const inputNParcelas = document.getElementById("numParcelas");
 
-  /* if(buscarCurso(inputCursoAluno.value) != "" && buscarTurmaPorCurso(inputCursoAluno.value,inputTurmaAluno.value)!= ""){ */
   if (
     checarInputs(document.querySelector(".area-adm-matriculas-form")) === true
   ) {
     //primeiro checa se todos os campos estão preenchidos para poder criar a mensagem aluno matriculado
     if (+inputNParcelas.value > 0 && +inputNParcelas.value <= 10) {
-      const sectionBuscarTurma = document.querySelector(
-        ".area-adm-matriculas-container"
-      );
+      if (buscarCurso(inputCursoAluno.value) !== "") {
+        const sectionBuscarTurma = document.querySelector(
+          ".area-adm-matriculas-container"
+        );
 
-      //em caso que a div exista, apaga para não acumular divs duplicadas
-      apagaDiv(".area-adm-aluno-matriculado-container");
+        //em caso que a div exista, apaga para não acumular divs duplicadas
+        apagaDiv(".area-adm-aluno-matriculado-container");
 
-      //criação de elementos para montar o layout de mensagem ALUNO MATRICULADO
-      const containerLayoutAlunoMatriculado = document.createElement("div");
-      const layoutAlunoMatriculado = document.createElement("div");
-      const alunoMatriculadoCorfirmacao = document.createElement("h2");
-      const alunoMatriculadoCorfirmacaoLogo = document.createElement("img");
-      const tituloAluno = document.createElement("p");
-      const nomeAluno = document.createElement("p");
-      const cursoAluno = document.createElement("p");
-      const turmaAluno = document.createElement("p");
+        //criação de elementos para montar o layout de mensagem ALUNO MATRICULADO
+        const containerLayoutAlunoMatriculado = document.createElement("div");
+        const layoutAlunoMatriculado = document.createElement("div");
+        const alunoMatriculadoCorfirmacao = document.createElement("h2");
+        const alunoMatriculadoCorfirmacaoLogo = document.createElement("img");
+        const tituloAluno = document.createElement("p");
+        const nomeAluno = document.createElement("p");
+        const cursoAluno = document.createElement("p");
+        const turmaAluno = document.createElement("p");
 
-      // manipulação do título da mensagem de ALUNO MATRICULADO
-      alunoMatriculadoCorfirmacaoLogo.setAttribute(
-        "src",
-        "../assets/vector.png"
-      );
-      alunoMatriculadoCorfirmacao.innerHTML = `Aluno matriculado`;
-      alunoMatriculadoCorfirmacao.insertAdjacentElement(
-        "beforeend",
-        alunoMatriculadoCorfirmacaoLogo
-      );
+        // manipulação do título da mensagem de ALUNO MATRICULADO
+        alunoMatriculadoCorfirmacaoLogo.setAttribute(
+          "src",
+          "../assets/vector.png"
+        );
+        alunoMatriculadoCorfirmacao.innerHTML = `Aluno matriculado`;
+        alunoMatriculadoCorfirmacao.insertAdjacentElement(
+          "beforeend",
+          alunoMatriculadoCorfirmacaoLogo
+        );
 
-      matricular(
-        inputNomeAluno.value,
-        inputCursoAluno.value,
-        inputTurmaAluno.value,
-        inputNParcelas.value
-      );
+        matricular(
+          inputNomeAluno.value,
+          inputCursoAluno.value,
+          inputTurmaAluno.value,
+          inputNParcelas.value
+        );
 
-      // atribuição do conteúdo aos elementos criados anteriormente com a info digitada pelo usuário
-      tituloAluno.innerHTML = `Aluno Matriculado`;
-      nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
-      cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
-      turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
+        // atribuição do conteúdo aos elementos criados anteriormente com a info digitada pelo usuário
+        tituloAluno.innerHTML = `Aluno Matriculado`;
+        nomeAluno.innerHTML = `Nome: ${inputNomeAluno.value}`;
+        cursoAluno.innerHTML = `Curso: ${inputCursoAluno.value}`;
+        turmaAluno.innerHTML = `Turma: ${inputTurmaAluno.value}`;
 
-      //montagem dos elementos no DOM
-      containerLayoutAlunoMatriculado.setAttribute(
-        "class",
-        "area-adm-aluno-matriculado-container"
-      );
-      layoutAlunoMatriculado.setAttribute(
-        "class",
-        "area-adm-aluno-matriculado"
-      );
+        //montagem dos elementos no DOM
+        containerLayoutAlunoMatriculado.setAttribute(
+          "class",
+          "area-adm-aluno-matriculado-container"
+        );
+        layoutAlunoMatriculado.setAttribute(
+          "class",
+          "area-adm-aluno-matriculado"
+        );
 
-      layoutAlunoMatriculado.insertAdjacentElement(
-        "beforeend",
-        alunoMatriculadoCorfirmacao
-      );
-      layoutAlunoMatriculado.insertAdjacentElement("beforeend", tituloAluno);
-      layoutAlunoMatriculado.insertAdjacentElement("beforeend", nomeAluno);
-      layoutAlunoMatriculado.insertAdjacentElement("beforeend", cursoAluno);
-      layoutAlunoMatriculado.insertAdjacentElement("beforeend", turmaAluno);
-      containerLayoutAlunoMatriculado.insertAdjacentElement(
-        "beforeend",
-        layoutAlunoMatriculado
-      );
-      sectionBuscarTurma.insertAdjacentElement(
-        "beforeend",
-        containerLayoutAlunoMatriculado
-      );
+        layoutAlunoMatriculado.insertAdjacentElement(
+          "beforeend",
+          alunoMatriculadoCorfirmacao
+        );
+        layoutAlunoMatriculado.insertAdjacentElement("beforeend", tituloAluno);
+        layoutAlunoMatriculado.insertAdjacentElement("beforeend", nomeAluno);
+        layoutAlunoMatriculado.insertAdjacentElement("beforeend", cursoAluno);
+        layoutAlunoMatriculado.insertAdjacentElement("beforeend", turmaAluno);
+        containerLayoutAlunoMatriculado.insertAdjacentElement(
+          "beforeend",
+          layoutAlunoMatriculado
+        );
+        sectionBuscarTurma.insertAdjacentElement(
+          "beforeend",
+          containerLayoutAlunoMatriculado
+        );
 
-      //Após aparição da mensagem de aluno matriculado, limpeza dos inputs do formulário
-      limparInputs(document.querySelector(".area-adm-matriculas-form"));
+        //Após aparição da mensagem de aluno matriculado, limpeza dos inputs do formulário
+        limparInputs(document.querySelector(".area-adm-matriculas-form"));
+      } else {
+        alert("Curso válido. Escolhe entre HTML e CSS, Javascript e APIsRest");
+      }
     } else {
       alert("Digite um número de parcelas válido - entre 1 e 10");
     }
@@ -731,16 +703,6 @@ function validateEmail(email) {
     return true;
   }
 }
-
-/* Validar se formulário de contato está vazio */
-/* const validaFormulario = (inputNomeContato,inputEmailContato,inputMensagemContato) => {
-  console.log(inputNomeContato,inputEmailContato,inputMensagemContato);
-  if (inputNomeContato == null || inputNomeContato == "" || inputEmailContato == null || inputEmailContato == "" || inputMensagemContato == null || inputMensagemContato == "") {
-    return false;
-  }else{
-    return true;
-  }
-} */
 
 /* Apaga div caso ela exista por identificação com nome da classe */
 const apagaDiv = (nomeClasse) => {
