@@ -1,4 +1,4 @@
-# Projeto Pokedex
+# Projeto LabEscola
 
 Projeto de Website para Escola de programação como landing page, página mostrando o conteúdo dos cursos, página de contato e sistema para matrículas, busca de alunos e turmas e orçamento de compra de cursos.
 
