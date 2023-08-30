@@ -1,26 +1,29 @@
+# Projeto Labescola
 
-# Project Layouts
+Projeto de Website para Escola de programação como landing page, página mostrando o conteúdo dos cursos, página de contato e sistema para matrículas, busca de alunos e turmas e orçamento de compra de cursos.
 
-A bunch of projects where I reply layouts using HTML, CSS and Javascript. Most of them are from Rockeseat course 'Explorer'.
+> :checkered_flag: Projeto finalizado... :checkered_flag:
 
-> 🚧 In progress... 🚧
+# :hammer: Funcionalidades do projeto
 
-# 📄 Projects
+- `1`: Página Home com informação básica da escola e depoimentos.
+- `2`: Página Cursos com informação mais detalhada sobre os cursos oferecidos na escola.
+- `3`: Dentro da página Cursos, botão para enviar um email diretamente para a escola caso exista interesse.
+- `4`: Página Contato com formulário para envio de dados do cliente interessado na escola.
+- `5`: Página Área Admin para visualização de informação sobre turmas, alunos e orçamento para compra de cursos.
+- `6`: Seção Turmas dentro da Área Admin para busca de turmas por nome.
+- `7`: Seção Matrículas dentro da Área Admin para matricular aluno novo.(Cursos existentes: HTML e CSS, Javascript e APIsRest)
+- `8`: Seção Financeiro dentro da Área Admin (opção FINANCEIRO) para orçamento de compra de cursos.(Cursos existentes: HTML e CSS, Javascript e APIsRest). Número de parcelas máximo é de 10.
+- `9`: Seção Financeiro dentro da Área Admin (opção RELATÓRIO ALUNO) para busca de aluno por nome.
 
-- `layout-html-css-01`: Simple layout for Travel webpage using the basics of  HTML and CSS. 
-- `layout-html-css-02`: Technology webpage layout using the basics of HTML and CSS.
-- `layout-html-css-03`: Menthorship Control webpage layout using HTML forms and CSS.
-- `layout-html-css-04`: Cats Blog layout using HTML and basic CSS animations.
-- `layout-html-css-05`: Ice Cream webpage using HTML grids and more CSS animations. Responsive Layout.
-- `layout-html-css-06`: Webpage with Astronomic layout using HTML grid, flexbox and forms concepts, CSS animations. Responsive website(Mobile-first).
-- `layout-vanilla-js-01`: Simple Fortune Biscuit's App, using HTML, CSS and Javascript.
 
-
-
-### 🛠 Stack
+### 🛠 Tecnologias
 - HTML
 - CSS
 - Javascript
 
+### Link Projeto
+https://projeto-introducao-web-js.vercel.app/
+
 ### Autor
-Developed by Jair Damián Martínez!
+Desenvolvido por Jair Damián Martínez!
